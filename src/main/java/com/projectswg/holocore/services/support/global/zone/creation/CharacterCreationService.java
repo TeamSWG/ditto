@@ -277,7 +277,7 @@ public class CharacterCreationService extends Service {
 			Log.e("Failed to get spawn information for location: " + spawnLocation);
 			return null;
 		}
-		CharacterCreation creation = new CharacterCreation(profTemplates.get(create.getClothes()), create);
+		CharacterCreation creation = new CharacterCreation(profTemplates.get(create.getClothes()), create, create.getBiography());
 		return creation.createCharacter(player.getAccessLevel(), info);
 	}
 	

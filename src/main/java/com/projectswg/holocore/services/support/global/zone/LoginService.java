@@ -125,7 +125,6 @@ public class LoginService extends Service {
 		assert player.getPlayerServer() == PlayerServer.NONE;
 		player.setPlayerState(PlayerState.LOGGING_IN);
 		player.setPlayerServer(PlayerServer.LOGIN);
-		
 		UserMetadata user = userDatabase.getUser(loginRequest.getUsername());
 		player.setUsername(loginRequest.getUsername());
 		if (user == null) {

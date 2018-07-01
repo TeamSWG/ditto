@@ -34,7 +34,6 @@ import com.projectswg.common.network.packets.swg.zone.HeartBeat;
 import com.projectswg.common.network.packets.swg.zone.ParametersMessage;
 import com.projectswg.common.network.packets.swg.zone.UpdateContainmentMessage;
 import com.projectswg.common.network.packets.swg.zone.chat.ChatOnConnectAvatar;
-import com.projectswg.common.network.packets.swg.zone.chat.VoiceChatStatus;
 import com.projectswg.common.network.packets.swg.zone.insertion.ChatServerStatus;
 import com.projectswg.common.network.packets.swg.zone.insertion.CmdStartScene;
 import com.projectswg.common.network.packets.swg.zone.object_controller.DataTransform;
@@ -203,7 +202,6 @@ public class AwarenessService extends Service {
 		if (firstZone) {
 			player.sendPacket(new HeartBeat());
 			player.sendPacket(new ChatServerStatus(true));
-			player.sendPacket(new VoiceChatStatus());
 			player.sendPacket(new ParametersMessage());
 			player.sendPacket(new ChatOnConnectAvatar());
 			firstZoneIntent = new PlayerEventIntent(player, PlayerEvent.PE_FIRST_ZONE);

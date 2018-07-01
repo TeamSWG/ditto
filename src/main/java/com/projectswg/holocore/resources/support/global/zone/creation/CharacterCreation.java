@@ -56,10 +56,12 @@ public class CharacterCreation {
 	
 	private final ProfTemplateData templateData;
 	private final ClientCreateCharacter create;
+	private final String biography;
 	
-	public CharacterCreation(ProfTemplateData templateData, ClientCreateCharacter create) {
+	public CharacterCreation(ProfTemplateData templateData, ClientCreateCharacter create, String biography) {
 		this.templateData = templateData;
 		this.create = create;
+		this.biography = biography;
 	}
 	
 	public CreatureObject createCharacter(AccessLevel accessLevel, SpawnInformation info) {
@@ -72,6 +74,7 @@ public class CharacterCreation {
 		createHair(creatureObj, create.getHair(), create.getHairCustomization());
 		createStarterClothing(creatureObj, create.getRace());
 		playerObj.setAdminTag(accessLevel);
+		playerObj.setBiography(biography);
 		new ObjectCreatedIntent(creatureObj).broadcast();
 		return creatureObj;
 	}
@@ -148,8 +151,15 @@ public class CharacterCreation {
 		creatureObj.setVolume(0x000F4240);
 		creatureObj.setBankBalance(1000);
 		creatureObj.setCashBalance(100);
-		new GrantSkillIntent(GrantSkillIntent.IntentType.GRANT, create.getStartingPhase(), creatureObj, true).broadcast();
+		
+		// New characters are Novices in all basic professions in the Combat Upgrade
 		new GrantSkillIntent(GrantSkillIntent.IntentType.GRANT, "species_" + creatureObj.getRace().getSpecies(), creatureObj, true).broadcast();
+		new GrantSkillIntent(GrantSkillIntent.IntentType.GRANT, "social_entertainer_novice", creatureObj, true).broadcast();
+		new GrantSkillIntent(GrantSkillIntent.IntentType.GRANT, "outdoors_scout_novice", creatureObj, true).broadcast();
+		new GrantSkillIntent(GrantSkillIntent.IntentType.GRANT, "science_medic_novice", creatureObj, true).broadcast();
+		new GrantSkillIntent(GrantSkillIntent.IntentType.GRANT, "crafting_artisan_novice", creatureObj, true).broadcast();
+		new GrantSkillIntent(GrantSkillIntent.IntentType.GRANT, "combat_brawler_novice", creatureObj, true).broadcast();
+		new GrantSkillIntent(GrantSkillIntent.IntentType.GRANT, "combat_marksman_novice", creatureObj, true).broadcast();
 		
 		WeaponObject defWeapon = (WeaponObject) createInventoryObject(creatureObj, "object/weapon/melee/unarmed/shared_unarmed_default_player.iff");
 		defWeapon.setMaxRange(5);
@@ -160,13 +170,11 @@ public class CharacterCreation {
 		creatureObj.setEquippedWeapon(defWeapon);
 		createDefaultObject(creatureObj, "object/tangible/inventory/shared_character_inventory.iff");
 		createInventoryObject(creatureObj, "object/tangible/datapad/shared_character_datapad.iff");
-		createInventoryObject(creatureObj, "object/tangible/inventory/shared_appearance_inventory.iff");
 		createInventoryObject(creatureObj, "object/tangible/bank/shared_character_bank.iff");
 		createInventoryObject(creatureObj, "object/tangible/mission_bag/shared_mission_bag.iff");
 	}
 	
 	private void setPlayerObjectValues(PlayerObject playerObj) {
-		playerObj.setProfession(create.getProfession());
 		Calendar date = Calendar.getInstance();
 		playerObj.setBornDate(date.get(Calendar.YEAR), date.get(Calendar.MONTH) + 1, date.get(Calendar.DAY_OF_MONTH));
 	}

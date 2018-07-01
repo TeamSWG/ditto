@@ -37,7 +37,7 @@ class PswgDatabaseConnectionPool {
 		
 		if (primary.getBoolean("LOCAL-AUTH", false)) {
 			String username = primary.getString("LOCAL-USER", "ditto");
-			String password = primary.getString("LOCAL-PASS", "password");
+			String password = primary.getString("LOCAL-PASS", "pass");
 			this.client = new MongoClient(new ServerAddress(), MongoCredential.createScramSha1Credential(username, database, password.toCharArray()), createClientOptions());
 		} else {
 			this.client = new MongoClient(new ServerAddress(), createClientOptions());

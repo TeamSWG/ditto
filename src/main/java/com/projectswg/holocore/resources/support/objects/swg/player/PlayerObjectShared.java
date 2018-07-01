@@ -42,20 +42,10 @@ class PlayerObjectShared implements Persistable {
 
 	private final SWGFlag		flagsList			= new SWGFlag(3, 5);
 	private final SWGFlag		profileFlags		= new SWGFlag(3, 6);
-	private final SWGBitSet		collectionBadges	= new SWGBitSet(3, 16);
-	private final SWGBitSet		collectionBadges2	= new SWGBitSet(3, 17);
-	
 	private String 				title				= "";
 	private int 				bornDate			= 0;
 	private int 				playTime			= 0;
 	private int					professionIcon		= 0;
-	private String				profession			= "";
-	private int 				gcwPoints			= 0;
-	private int 				pvpKills			= 0;
-	private long 				lifetimeGcwPoints	= 0;
-	private int 				lifetimePvpKills	= 0;
-	private boolean				showHelmet			= true;
-	private boolean				showBackpack		= true;
 	
 	public PlayerObjectShared() {
 		
@@ -85,40 +75,6 @@ class PlayerObjectShared implements Persistable {
 		return professionIcon;
 	}
 	
-	public String getProfession() {
-		return profession;
-	}
-	
-	public int getGcwPoints() {
-		return gcwPoints;
-	}
-	
-	public int getPvpKills() {
-		return pvpKills;
-	}
-	
-	public long getLifetimeGcwPoints() {
-		return lifetimeGcwPoints;
-	}
-	
-	public int getLifetimePvpKills() {
-		return lifetimePvpKills;
-	}
-	
-	public byte[] getCollectionBadges() {
-		synchronized (collectionBadges) {
-			return collectionBadges.toByteArray();
-		}
-	}
-	
-	public boolean isShowHelmet() {
-		return showHelmet;
-	}
-	
-	public boolean isShowBackpack() {
-		return showBackpack;
-	}
-	
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -135,44 +91,8 @@ class PlayerObjectShared implements Persistable {
 		this.professionIcon = professionIcon;
 	}
 	
-	public void setProfession(String profession) {
-		this.profession = profession;
-	}
-	
 	public void setBornDate(int year, int month, int day) {
 		this.bornDate = MathUtils.numberDaysSince(year, month, day, 2000, 12, 31);
-	}
-	
-	public void setGcwPoints(int gcwPoints) {
-		this.gcwPoints = gcwPoints;
-	}
-	
-	public void setPvpKills(int pvpKills) {
-		this.pvpKills = pvpKills;
-	}
-	
-	public void setLifetimeGcwPoints(long lifetimeGcwPoints) {
-		this.lifetimeGcwPoints = lifetimeGcwPoints;
-	}
-	
-	public void setLifetimePvpKills(int lifetimePvpKills) {
-		this.lifetimePvpKills = lifetimePvpKills;
-	}
-	
-	public void setCollectionBadges(byte [] collection, SWGObject target) {
-		synchronized (collectionBadges) {
-			this.collectionBadges.clear();
-			this.collectionBadges.or(BitSet.valueOf(collection));
-			collectionBadges.sendDeltaMessage(target);
-		}
-	}
-	
-	public void setShowHelmet(boolean showHelmet) {
-		this.showHelmet = showHelmet;
-	}
-	
-	public void setShowBackpack(boolean showBackpack) {
-		this.showBackpack = showBackpack;
 	}
 	
 	public void setFlagBitmask(SWGObject target, PlayerFlags ... flags) {
@@ -208,17 +128,8 @@ class PlayerObjectShared implements Persistable {
 		bb.addInt(bornDate); // Born Date -- 4001 = 12/15/2011 || Number of days after 12/31/2000 -- 8
 		bb.addInt(playTime); // 9
 		bb.addInt(professionIcon); // 10
-		bb.addAscii(profession); // 11
-		bb.addInt(gcwPoints); // 12
-		bb.addInt(pvpKills); // 13
-		bb.addLong(lifetimeGcwPoints); // 14
-		bb.addInt(lifetimePvpKills); // 15
-		bb.addObject(collectionBadges); // 16
-		bb.addObject(collectionBadges2); // 17
-		bb.addBoolean(showBackpack); // 18
-		bb.addBoolean(showHelmet); // 19
 		
-		bb.incrementOperandCount(15);
+		bb.incrementOperandCount(6);
 	}
 	
 	@Override
@@ -226,18 +137,10 @@ class PlayerObjectShared implements Persistable {
 		stream.addByte(0);
 		flagsList.save(stream);
 		profileFlags.save(stream);
-		collectionBadges.save(stream);
 		stream.addAscii(title);
-		stream.addAscii(profession);
 		stream.addInt(bornDate);
 		stream.addInt(playTime);
 		stream.addInt(professionIcon);
-		stream.addInt(gcwPoints);
-		stream.addInt(pvpKills);
-		stream.addInt(lifetimePvpKills);
-		stream.addLong(lifetimeGcwPoints);
-		stream.addBoolean(showBackpack);
-		stream.addBoolean(showHelmet);
 	}
 	
 	@Override
@@ -245,18 +148,10 @@ class PlayerObjectShared implements Persistable {
 		stream.getByte();
 		flagsList.read(stream);
 		profileFlags.read(stream);
-		collectionBadges.read(stream);
 		title = stream.getAscii();
-		profession = stream.getAscii();
 		bornDate = stream.getInt();
 		playTime = stream.getInt();
 		professionIcon = stream.getInt();
-		gcwPoints = stream.getInt();
-		pvpKills = stream.getInt();
-		lifetimePvpKills = stream.getInt();
-		lifetimeGcwPoints = stream.getLong();
-		showBackpack = stream.getBoolean();
-		showHelmet = stream.getBoolean();
 	}
 	
 }

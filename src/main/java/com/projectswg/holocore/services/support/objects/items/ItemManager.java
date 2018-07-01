@@ -4,8 +4,7 @@ import me.joshlarson.jlcommon.control.Manager;
 import me.joshlarson.jlcommon.control.ManagerStructure;
 
 @ManagerStructure(children = {
-		StaticItemService.class,
-		UniformBoxService.class
+		StaticItemService.class
 })
 public class ItemManager extends Manager {
 	

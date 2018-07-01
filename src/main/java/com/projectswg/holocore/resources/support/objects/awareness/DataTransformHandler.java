@@ -61,8 +61,6 @@ public class DataTransformHandler {
 		transform.setUpdateCounter(obj.getNextUpdateCount());
 		transform.setDirection(getMovementAngle(loc));
 		transform.setSpeed((byte) (speed+0.5));
-		transform.setLookAtYaw((byte) 0);
-		transform.setUseLookAtYaw(false);
 		return transform;
 	}
 	
@@ -73,8 +71,6 @@ public class DataTransformHandler {
 		transform.setUpdateCounter(obj.getNextUpdateCount());
 		transform.setDirection(getMovementAngle(loc));
 		transform.setSpeed((byte) (speed + 0.5));
-		transform.setLookDirection((byte) 0); // lookAtYaw * 16
-		transform.setUseLookDirection(false);
 		return transform;
 	}
 	

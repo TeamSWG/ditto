@@ -54,7 +54,6 @@ class CreatureObjectClientServerNP implements Persistable {
 	private double slopeModPercent = 1;
 	private double waterModPercent = 0.75;
 	private long performanceListenTarget = 0;
-	private int totalLevelXp = 0;
 	
 	private final SWGSet<String> missionCriticalObjs = new SWGSet<>(4, 13);
 	
@@ -111,10 +110,6 @@ class CreatureObjectClientServerNP implements Persistable {
 		this.performanceListenTarget = performanceListenTarget;
 	}
 	
-	public void setTotalLevelXp(int totalLevelXp) {
-		this.totalLevelXp = totalLevelXp;
-	}
-	
 	public double getMovementScale() {
 		return movementScale;
 	}
@@ -157,10 +152,6 @@ class CreatureObjectClientServerNP implements Persistable {
 	
 	public long getPerformanceListenTarget() {
 		return performanceListenTarget;
-	}
-	
-	public int getTotalLevelXp() {
-		return totalLevelXp;
 	}
 	
 	public void adjustSkillmod(String skillModName, int base, int modifier, SWGObject target) {
@@ -239,7 +230,6 @@ class CreatureObjectClientServerNP implements Persistable {
 		bb.addFloat((float) waterModPercent); // 12
 		bb.addObject(missionCriticalObjs); // Group Missions? 13
 		bb.addObject(abilities); // 14
-		bb.addInt(totalLevelXp); // 15
 		
 		bb.incrementOperandCount(16);
 	}
@@ -260,7 +250,6 @@ class CreatureObjectClientServerNP implements Persistable {
 		waterModPercent = buffer.getFloat();
 		missionCriticalObjs.addAll(SWGSet.getSwgSet(buffer, 4, 13, StringType.ASCII));
 		abilities.putAll(SWGMap.getSwgMap(buffer, 4, 14, StringType.ASCII, Integer.class));
-		totalLevelXp = buffer.getInt();
 	}
 	
 	@Override
@@ -276,7 +265,6 @@ class CreatureObjectClientServerNP implements Persistable {
 		stream.addFloat((float) turnScale);
 		stream.addFloat((float) walkSpeed);
 		stream.addFloat((float) waterModPercent);
-		stream.addInt(totalLevelXp);
 		synchronized (hamEncumbList) {
 			stream.addList(hamEncumbList, stream::addInt);
 		}
@@ -310,7 +298,6 @@ class CreatureObjectClientServerNP implements Persistable {
 		turnScale = stream.getFloat();
 		walkSpeed = stream.getFloat();
 		waterModPercent = stream.getFloat();
-		totalLevelXp = stream.getInt();
 		stream.getList((i) -> hamEncumbList.add(stream.getInt()));
 		stream.getList((i) -> {
 			SkillMod mod = new SkillMod();

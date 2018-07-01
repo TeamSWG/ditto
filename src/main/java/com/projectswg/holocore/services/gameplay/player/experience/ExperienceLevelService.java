@@ -4,12 +4,15 @@ import com.projectswg.common.data.RGB;
 import com.projectswg.common.data.encodables.oob.OutOfBandPackage;
 import com.projectswg.common.data.encodables.oob.ProsePackage;
 import com.projectswg.common.data.encodables.oob.StringId;
+import com.projectswg.common.data.info.RelationalDatabase;
+import com.projectswg.common.data.info.RelationalServerFactory;
 import com.projectswg.common.data.swgfile.ClientFactory;
 import com.projectswg.common.data.swgfile.visitors.DatatableData;
 import com.projectswg.common.network.packets.swg.zone.object_controller.ShowFlyText;
 import com.projectswg.common.network.packets.swg.zone.object_controller.ShowFlyText.Scale;
 import com.projectswg.holocore.intents.gameplay.player.experience.ExperienceIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.LevelChangedIntent;
+import com.projectswg.holocore.intents.support.global.chat.SystemMessageIntent;
 import com.projectswg.holocore.resources.support.data.config.ConfigFile;
 import com.projectswg.holocore.resources.support.objects.swg.creature.CreatureObject;
 import com.projectswg.holocore.resources.support.objects.swg.player.PlayerObject;
@@ -18,31 +21,52 @@ import me.joshlarson.jlcommon.control.IntentHandler;
 import me.joshlarson.jlcommon.control.Service;
 import me.joshlarson.jlcommon.log.Log;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ExperienceLevelService extends Service {
 	
+	private static final String GET_ALL_LEVELS = "SELECT * FROM player_level";
+	private static final String GET_ALL_MULTIPLIERS = "SELECT * FROM combat_xp_multipliers";
+	private static final String COMBAT_XP_TYPE = "combat_general";
+	
 	private final Map<Short, Integer> levelXpMap;
+	private final Map<String, Integer> combatXpMultiplierMap;	// Maps XP type to a multiplier for Combat XP
 	private final double xpMultiplier;
 	
 	public ExperienceLevelService() {
 		levelXpMap = new HashMap<>();
+		combatXpMultiplierMap = new HashMap<>();
 		xpMultiplier = DataManager.getConfig(ConfigFile.FEATURES).getDouble("XP-MULTIPLIER", 1);
 	}
 	
 	@Override
 	public boolean initialize() {
-		DatatableData skillTemplateTable = (DatatableData) ClientFactory.getInfoFromFile("datatables/player/player_level.iff");
-
-		for (int row = 0; row < skillTemplateTable.getRowCount(); row++) {
-			int level = (int) skillTemplateTable.getCell(row, 0);
-			int xpRequired = (int) skillTemplateTable.getCell(row, 1);
-			
-			levelXpMap.put((short) level, xpRequired);
+		try (RelationalDatabase spawnerDatabase = RelationalServerFactory.getServerData("experience/player_level.db", "player_level")) {
+			try (ResultSet set = spawnerDatabase.executeQuery(GET_ALL_LEVELS)) {
+				while (set.next()) {
+					// Load player level
+					levelXpMap.put(set.getShort("level"), set.getInt("required_combat_xp"));
+					// TODO store level granted health
+				}
+			}
+		} catch (SQLException e) {
+			Log.e(e);
 		}
 		
-		return true;
+		try (RelationalDatabase spawnerDatabase = RelationalServerFactory.getServerData("experience/combat_xp_multipliers.db", "combat_xp_multipliers")) {
+			try (ResultSet set = spawnerDatabase.executeQuery(GET_ALL_MULTIPLIERS)) {
+				while (set.next()) {
+					combatXpMultiplierMap.put(set.getString("xp_type"), set.getInt("multiplier"));
+				}
+			}
+		} catch (SQLException e) {
+			Log.e(e);
+		}
+		
+		return super.initialize();
 	}
 	
 	@IntentHandler
@@ -51,17 +75,24 @@ public class ExperienceLevelService extends Service {
 		PlayerObject playerObject = creatureObject.getPlayerObject();
 		
 		if (playerObject != null) {
-			int newXpTotal = awardExperience(creatureObject, playerObject, ei.getXpType(), ei.getExperienceGained());
+			int experienceGained = ei.getExperienceGained();
+			String xpType = ei.getXpType();
 			
-			// At this point, we check if their level should be adjusted.
-			short oldLevel = creatureObject.getLevel();
-			short newLevel = attemptLevelUp(creatureObject.getLevel(), creatureObject, newXpTotal);
+			if (combatXpMultiplierMap.containsKey(xpType)) {
+				// Give Combat XP, which works toward their combat level
+				awardExperience(creatureObject, playerObject, COMBAT_XP_TYPE, experienceGained * combatXpMultiplierMap.get(xpType));
 			
-			if (oldLevel < newLevel) {	// If we've leveled up at least once
-				creatureObject.setLevel(newLevel);
-				new LevelChangedIntent(creatureObject, oldLevel, newLevel).broadcast();
-				// TODO NGE: system message health and action differences. @spam:level_up_stat_gain_#
-				Log.i("%s leveled from %d to %d", creatureObject, oldLevel, newLevel);
+				int newXpTotal = awardExperience(creatureObject, playerObject, ei.getXpType(), ei.getExperienceGained());
+				
+				// At this point, we check if their level should be adjusted.
+				short oldLevel = creatureObject.getLevel();
+				short newLevel = attemptLevelUp(creatureObject.getLevel(), creatureObject, newXpTotal);
+				
+				if (oldLevel < newLevel) {	// If we've leveled up at least once
+					creatureObject.setLevel(newLevel);
+					new LevelChangedIntent(creatureObject, oldLevel, newLevel).broadcast();
+					Log.i("%s leveled from %d to %d", creatureObject, oldLevel, newLevel);
+				}
 			}
 		}
 	}
@@ -71,11 +102,17 @@ public class ExperienceLevelService extends Service {
 		int newXpTotal = currentXp + (int) (xpGained * xpMultiplier);
 		
 		playerObject.setExperiencePoints(xpType, newXpTotal);
-		creatureObject.setTotalLevelXp(newXpTotal);
 		Log.d("%s gained %d %s XP", creatureObject, xpGained, xpType);
 		
 		// Show flytext above the creature that received XP, but only to them
 		creatureObject.sendSelf(new ShowFlyText(creatureObject.getObjectId(), new OutOfBandPackage(new ProsePackage(new StringId("base_player", "prose_flytext_xp"), "DI", xpGained)), Scale.MEDIUM, new RGB(255, 0, 255)));
+		
+		// TODO CU: flytext is displayed over the killed creature
+		// TODO CU: is the displayed number the gained Combat XP with all bonuses applied?
+		
+		// TODO only display in console. Isn't displayed for Combat XP.
+		// TODO display different messages with inspiration bonus and/or group bonus
+		SystemMessageIntent.broadcastPersonal(creatureObject.getOwner(), new ProsePackage(new StringId("base_player", "prose_grant_xp"), "TO", new StringId("exp_n", xpType)));
 		
 		return newXpTotal;
 	}
@@ -97,7 +134,7 @@ public class ExperienceLevelService extends Service {
 		return newXpTotal >= xpNextLevel ? attemptLevelUp(nextLevel, creatureObject, newXpTotal) : currentLevel;
 	}
 	
-		
+	
 	private int getMaxLevel() {
 		return levelXpMap.size();
 	}

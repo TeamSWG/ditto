@@ -42,12 +42,10 @@ class PlayerObjectPrivate  implements Persistable {
 	
 	private final SWGMap<String, Integer> 		experience			= new SWGMap<>(8, 0, StringType.ASCII);
 	private final SWGMap<Long, WaypointObject> 	waypoints			= new SWGMap<>(8, 1);
-	private int 							guildRankTitle		= 0;
+	private int 							currentForcePower	= 0;
+	private int 							maxForcePower		= 0;
 	private int 							activeQuest			= 0;
 	private final SWGMap<Integer, Integer>		quests				= new SWGMap<>(8, 7);
-	private String 							profWheelPosition	= "";
-	private final SWGBitSet						completedQuests		= new SWGBitSet(8,4); // TODO: Save this value when it's implemented
-	private final SWGBitSet						activeQuests		= new SWGBitSet(8,5); // TODO: Save this value when it's implemented
 	
 	public PlayerObjectPrivate() {
 		
@@ -89,28 +87,28 @@ class PlayerObjectPrivate  implements Persistable {
 		}
 	}
 	
-	public int getGuildRankTitle() {
-		return guildRankTitle;
+	public int getCurrentForcePower() {
+		return currentForcePower;
+	}
+	
+	public void setCurrentForcePower(int currentForcePower) {
+		this.currentForcePower = currentForcePower;
+	}
+	
+	public int getMaxForcePower() {
+		return maxForcePower;
+	}
+	
+	public void setMaxForcePower(int maxForcePower) {
+		this.maxForcePower = maxForcePower;
 	}
 	
 	public int getActiveQuest() {
 		return activeQuest;
 	}
 	
-	public String getProfWheelPosition() {
-		return profWheelPosition;
-	}
-	
-	public void setGuildRankTitle(int guildRankTitle) {
-		this.guildRankTitle = guildRankTitle;
-	}
-	
 	public void setActiveQuest(int activeQuest) {
 		this.activeQuest = activeQuest;
-	}
-	
-	public void setProfWheelPosition(String profWheelPosition) {
-		this.profWheelPosition = profWheelPosition;
 	}
 	
 	public int getExperiencePoints(String xpType) {
@@ -139,21 +137,23 @@ class PlayerObjectPrivate  implements Persistable {
 	public void createBaseline8(Player target, BaselineBuilder bb) {
 		bb.addObject(experience); // 0
 		bb.addObject(waypoints); // 1
-		bb.addInt(100); // Current Force Power -- 2
-		bb.addInt(100); // Max Force Power -- 3
-		bb.addObject(completedQuests); // Completed Quests (List) -- 4
-		bb.addObject(activeQuests); // Active Quests (List) -- 5
+		bb.addInt(currentForcePower); // Current Force Power -- 2
+		bb.addInt(maxForcePower); // Max Force Power -- 3
+		bb.addInt(0); // Completed Quests (List) -- 4
+		bb.addInt(0);
+		bb.addInt(0); // Active Quests (List) -- 5
+		bb.addInt(0);
 		bb.addInt(activeQuest); // Current Quest -- 6
-		bb.addObject(quests); // All Quests 7
-		bb.addAscii(profWheelPosition); // Position of ProfWheel 8
-		bb.incrementOperandCount(9);
+		bb.addObject(quests); // 7
+		
+		bb.incrementOperandCount(8);
 	}
 	
 	@Override
 	public void save(NetBufferStream stream) {
 		stream.addByte(0);
-		stream.addAscii(profWheelPosition);
-		stream.addInt(guildRankTitle);
+		stream.addInt(currentForcePower);
+		stream.addInt(maxForcePower);
 		stream.addInt(activeQuest);
 		synchronized (experience) {
 			stream.addMap(experience, (e) -> {
@@ -178,8 +178,8 @@ class PlayerObjectPrivate  implements Persistable {
 	@Override
 	public void read(NetBufferStream stream) {
 		stream.getByte();
-		profWheelPosition = stream.getAscii();
-		guildRankTitle = stream.getInt();
+		currentForcePower = stream.getInt();
+		maxForcePower = stream.getInt();
 		activeQuest = stream.getInt();
 		stream.getList((i) -> experience.put(stream.getAscii(), stream.getInt()));
 		stream.getList((i) -> quests.put(stream.getInt(), stream.getInt()));

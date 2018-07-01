@@ -49,19 +49,13 @@ public class BuffMap {
 		buffMap.clear();
 		for (int row = 0; row < rows; ++row) {
 			BuffData buff = new BuffData(buffTable.getString(row, "NAME"), buffTable.getString(row, "GROUP1"), buffTable.getInt(row, "PRIORITY"));
-			buff.setMaxStackCount(buffTable.getInt(row, "MAX_STACKS"));
 			for (int i = 0; i < 5; i++) {
 				buff.setEffectName(i, buffTable.getString(row, "EFFECT"+(i+1)+"_PARAM"));
 				buff.setEffectValue(i, buffTable.getFloat(row, "EFFECT"+(i+1)+"_VALUE"));
 			}
 			buff.setDefaultDuration(buffTable.getFloat(row, "DURATION"));
 			buff.setEffectFileName(buffTable.getString(row, "PARTICLE"));
-			buff.setParticleHardPoint(buffTable.getString(row, "PARTICLE_HARDPOINT"));
-			buff.setStanceParticle(buffTable.getString(row, "STANCE_PARTICLE"));
 			buff.setCallback(buffTable.getString(row, "CALLBACK"));
-			buff.setPersistent(buffTable.getInt(row, "IS_PERSISTENT") == 1);
-			buff.setRemovedOnDeath(buffTable.getInt(row, "REMOVE_ON_DEATH") == 1);
-			buff.setDecayOnPvpDeath(buffTable.getInt(row, "DECAY_ON_PVP_DEATH") == 1);
 			buffMap.put(buff.getCrc(), buff);
 		}
 	}

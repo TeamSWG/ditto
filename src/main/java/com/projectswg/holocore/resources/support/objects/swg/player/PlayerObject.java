@@ -26,6 +26,7 @@
  ***********************************************************************************/
 package com.projectswg.holocore.resources.support.objects.swg.player;
 
+import com.projectswg.common.data.Badges;
 import com.projectswg.common.encoding.StringType;
 import com.projectswg.common.network.NetBufferStream;
 import com.projectswg.common.network.packets.swg.zone.baselines.Baseline.BaselineType;
@@ -52,6 +53,7 @@ public class PlayerObject extends IntangibleObject {
 	private String	biography		= "";
 	
 	private int	lastUpdatePlayTime = 0;
+	private Badges badges			= new Badges();
 	
 	public PlayerObject(long objectId) {
 		super(objectId, BaselineType.PLAY);
@@ -101,83 +103,16 @@ public class PlayerObject extends IntangibleObject {
 		sendDelta(3, 9, playTime);
 	}
 
-	public int getGcwPoints() {
-		return play3.getGcwPoints();
-	}
-
-	public void setGcwPoints(int gcwPoints) {
-		play3.setGcwPoints(gcwPoints);
-		sendDelta(3, 12, gcwPoints);
-	}
-
-	public int getPvpKills() {
-		return play3.getPvpKills();
-	}
-
-	public void setPvpKills(int pvpKills) {
-		play3.setPvpKills(pvpKills);
-		sendDelta(3, 13, pvpKills);
-	}
-
-	public long getLifetimeGcwPoints() {
-		return play3.getLifetimeGcwPoints();
-	}
-
-	public void setLifetimeGcwPoints(long lifetimeGcwPoints) {
-		play3.setLifetimeGcwPoints(lifetimeGcwPoints);
-		sendDelta(3, 14, lifetimeGcwPoints);
-	}
-
-	public int getLifetimePvpKills() {
-		return play3.getLifetimePvpKills();
-	}
-
-	public void setLifetimePvpKills(int lifetimePvpKills) {
-		play3.setLifetimePvpKills(lifetimePvpKills);
-		sendDelta(3, 15, lifetimePvpKills);
-	}
-	
-	public byte[] getCollectionBadges() {
-		return play3.getCollectionBadges();
-	}
-	
-	public void setCollectionBadges(byte[] collection) {
-		play3.setCollectionBadges(collection, this);
-	}
-
-	public boolean isShowHelmet() {
-		return play3.isShowHelmet();
-	}
-
-	public void setShowHelmet(boolean showHelmet) {
-		play3.setShowHelmet(showHelmet);
-		sendDelta(3, 19, showHelmet);
-	}
-
-	public boolean isShowBackpack() {
-		return play3.isShowBackpack();
-	}
-
-	public void setShowBackpack(boolean showBackpack) {
-		play3.setShowBackpack(showBackpack);
-		sendDelta(3, 18, showBackpack);
-	}
-
-	public String getProfession() {
-		return play3.getProfession();
-	}
-	
-	public void setProfession(String profession) {
-		play3.setProfession(profession);
-		sendDelta(3, 11, profession, StringType.ASCII);
-	}
-	
 	public String getBiography() {
 		return biography;
 	}
 	
 	public void setBiography(String biography) {
 		this.biography = biography;
+	}
+	
+	public Badges getBadges() {
+		return badges;
 	}
 	
 	public void setBornDate(int year, int month, int day) {
@@ -197,51 +132,6 @@ public class PlayerObject extends IntangibleObject {
 		sendDelta(6, 2, play6.getAdminTag());
 	}
 	
-	public int getCurrentRank() {
-		return play6.getCurrentRank();
-	}
-
-	public void setCurrentRank(int currentRank) {
-		play6.setCurrentRank(currentRank);
-		sendDelta(6, 3, currentRank);
-	}
-
-	public float getRankProgress() {
-		return play6.getRankProgress();
-	}
-
-	public void setRankProgress(float rankProgress) {
-		play6.setRankProgress(rankProgress);
-		sendDelta(6, 4, rankProgress);
-	}
-
-	public int getHighestRebelRank() {
-		return play6.getHighestRebelRank();
-	}
-
-	public void setHighestRebelRank(int highestRebelRank) {
-		play6.setHighestRebelRank(highestRebelRank);
-		sendDelta(6, 5, highestRebelRank);
-	}
-
-	public int getHighestImperialRank() {
-		return play6.getHighestImperialRank();
-	}
-
-	public void setHighestImperialRank(int highestImperialRank) {
-		play6.setHighestImperialRank(highestImperialRank);
-		sendDelta(6, 6, highestImperialRank);
-	}
-
-	public int getGcwNextUpdate() {
-		return play6.getGcwNextUpdate();
-	}
-
-	public void setGcwNextUpdate(int gcwNextUpdate) {
-		play6.setGcwNextUpdate(gcwNextUpdate);
-		sendDelta(6, 7, gcwNextUpdate);
-	}
-
 	public String getHome() {
 		return play6.getHome();
 	}
@@ -259,16 +149,25 @@ public class PlayerObject extends IntangibleObject {
 		play6.setCitizen(citizen);
 		sendDelta(6, 9, citizen);
 	}
-
-	public int getGuildRankTitle() {
-		return play8.getGuildRankTitle();
+	
+	public int getCurrentForcePower() {
+		return play8.getCurrentForcePower();
 	}
-
-	public void setGuildRankTitle(int guildRankTitle) {
-		play8.setGuildRankTitle(guildRankTitle);
-		sendDelta(6, 13, guildRankTitle);
+	
+	public void setCurrentForcePower(int currentForcePower) {
+		play8.setCurrentForcePower(currentForcePower);
+		sendDelta(8, 2, currentForcePower);
 	}
-
+	
+	public int getMaxForcePower() {
+		return play8.getMaxForcePower();
+	}
+	
+	public void setMaxForcePower(int maxForcePower) {
+		play8.setMaxForcePower(maxForcePower);
+		sendDelta(8, 3, maxForcePower);
+	}
+	
 	public int getActiveQuest() {
 		return play8.getActiveQuest();
 	}
@@ -318,15 +217,6 @@ public class PlayerObject extends IntangibleObject {
 		play9.sendIgnoreList(this);
 	}
 
-	public String getProfWheelPosition() {
-		return play8.getProfWheelPosition();
-	}
-
-	public void setProfWheelPosition(String profWheelPosition) {
-		play8.setProfWheelPosition(profWheelPosition);
-		sendDelta(8, 8, profWheelPosition, StringType.ASCII);
-	}
-	
 	public void setFlagBitmask(PlayerFlags ... flags) {
 		play3.setFlagBitmask(this, flags);
 	}

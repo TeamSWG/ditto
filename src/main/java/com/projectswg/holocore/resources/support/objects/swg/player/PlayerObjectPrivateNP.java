@@ -41,24 +41,25 @@ import java.util.List;
 import java.util.Locale;
 
 class PlayerObjectPrivateNP implements Persistable {
-
+	
 	private int 				experimentFlag		= 0;
 	private int 				craftingStage		= 0;
 	private long 				nearbyCraftStation	= 0;
 	private SWGMap<Long, Integer> 	draftSchemMap	= new SWGMap<>(9, 3);
-	private SWGList<String>		draftSchemList		= new SWGList<>(9,3, StringType.ASCII);
 	private int 				experimentPoints	= 0;
 	private SWGList<String> 	friendsList			= new SWGList<>(9, 7, StringType.ASCII);
 	private SWGList<String> 	ignoreList			= new SWGList<>(9, 8, StringType.ASCII);
 	private int 				languageId			= 0;
-	private SWGSet<Long> 		defenders			= new SWGSet<>(9, 17);
-	private int 				killMeter			= 0;
-	private long 				petId				= 0;
-	private SWGList<String> 	petAbilities		= new SWGList<>(9, 21);
-	private SWGList<String> 	activePetAbilities	= new SWGList<>(9, 22);
+	private int					currentStomach		= 0;
+	private int					maxStomach			= 100;
+	private int					currentDrink		= 0;
+	private int					maxDrink			= 100;
+	private int					currentConsumable	= 0;
+	private int					maxConsumable		= 100;
+	private int					jediStateBitmask	= 0;
 	
 	public PlayerObjectPrivateNP() {
-		
+	
 	}
 	
 	public boolean addFriend(String friend, SWGObject target) {
@@ -144,56 +145,49 @@ class PlayerObjectPrivateNP implements Persistable {
 		bb.addObject(friendsList); // 7
 		bb.addObject(ignoreList); // 8
 		bb.addInt(languageId); // 9
-		bb.addInt(0); // Current Stomach -- 10
-		bb.addInt(100); // Max Stomach -- 11
-		bb.addInt(0); // Current Drink -- 12
-		bb.addInt(100); // Max Drink -- 13
-		bb.addInt(0); // Current Consumable -- 14
-		bb.addInt(100); // Max Consumable -- 15
+		bb.addInt(currentStomach); // Current Stomach -- 10
+		bb.addInt(maxStomach); // Max Stomach -- 11
+		bb.addInt(currentDrink); // Current Drink -- 12
+		bb.addInt(maxDrink); // Max Drink -- 13
+		bb.addInt(currentConsumable); // Current Consumable -- 14
+		bb.addInt(maxConsumable); // Max Consumable -- 15
 		bb.addInt(0); // Group Waypoints -- 16
 		bb.addInt(0);
-		bb.addObject(defenders); // 17
-		bb.addInt(killMeter); // 18
-		bb.addInt(0); // Unk -- 19
-		bb.addLong(petId); // 20
-		bb.addObject(petAbilities); // 21
-		bb.addObject(activePetAbilities); // 22
-		bb.addByte(0); // Unk sometimes 0x01 or 0x02 -- 23
-		bb.addInt(0); // Unk sometimes 4 -- 24
-		bb.addLong(0); // Unk Bitmask starts with 0x20 ends with 0x40 -- 25
-		bb.addLong(0); // Unk Changes from 6 bytes to 9 -- 26
-		bb.addByte(0); // Unk Changes from 6 bytes to 9 -- 27
-		bb.addLong(0); // Unk sometimes 856 -- 28
-		bb.addLong(0); // Unk sometimes 8559 -- 29
-		bb.addInt(0); // Residence Time? Seen as Saturday 28th May 2011 -- 30
+		bb.addInt(jediStateBitmask); // Jedi state bitmask -- 17
 		
-		bb.incrementOperandCount(31);
+		bb.incrementOperandCount(18);
 	}
 	
 	@Override
 	public void save(NetBufferStream stream) {
-		stream.addByte(1);
+		stream.addByte(0);
 		stream.addInt(languageId);
-		stream.addInt(killMeter);
-		stream.addLong(petId);
-		stream.addList(friendsList, stream::addAscii);
-		stream.addList(ignoreList, stream::addAscii);
-		stream.addList(petAbilities, stream::addAscii);
-		stream.addList(activePetAbilities, stream::addAscii);
+		stream.addInt(currentStomach);
+		stream.addInt(maxStomach);
+		stream.addInt(currentDrink);
+		stream.addInt(maxDrink);
+		stream.addInt(currentConsumable);
+		stream.addInt(maxConsumable);
+		stream.addMap(draftSchemMap, (s) -> {
+			stream.addLong(s.getKey());
+			stream.addInt(s.getValue());
+		});
+		stream.addList(friendsList, (s) -> stream.addAscii(s));
+		stream.addList(ignoreList, (s) -> stream.addAscii(s));
 	}
 	
 	@Override
 	public void read(NetBufferStream stream) {
-		byte version = stream.getByte();
+		stream.getByte();
 		languageId = stream.getInt();
-		killMeter = stream.getInt();
-		petId = stream.getLong();
-		if(version == 0){
-			stream.getList((i) -> draftSchemList.add(stream.getAscii()));
-		}
+		currentStomach = stream.getInt();
+		maxStomach = stream.getInt();
+		currentDrink = stream.getInt();
+		maxDrink = stream.getInt();
+		currentConsumable = stream.getInt();
+		maxConsumable = stream.getInt();
+		stream.getList((i) -> draftSchemMap.put(stream.getLong(), stream.getInt()));
 		stream.getList((i) -> friendsList.add(stream.getAscii()));
 		stream.getList((i) -> ignoreList.add(stream.getAscii()));
-		stream.getList((i) -> petAbilities.add(stream.getAscii()));
-		stream.getList((i) -> activePetAbilities.add(stream.getAscii()));
 	}
 }

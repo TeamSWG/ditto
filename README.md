@@ -87,7 +87,8 @@ The project uses submodules. Get them by running: `git submodule update --init`
 
 User information is read from a MongoDB database that must run on the same machine as this software.
 1. Create database: `use ditto`
-2. Insert your user into the users collection of your database: `db.users.insert({username: "user", password: "pass", accessLevel: "dev", banned: false, characters: []})`
+2. Create a user for Ditto: `db.createUser({user: "ditto", pwd: "pass", roles: []})`
+3. Insert your user into the users collection of your database: `db.users.insert({username: "user", password: "pass", accessLevel: "dev", banned: false, characters: []})`
 
 ## Gradle ##
 

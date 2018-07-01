@@ -83,7 +83,6 @@ public class AICombatSupport {
 		double distance = obj.getWorldLocation().distanceTo(target.getWorldLocation());
 		if (distance > weapon.getMaxRange())
 			return;
-		obj.setIntendedTargetId(target.getObjectId());
 		obj.setLookAtTargetId(target.getObjectId());
 		if (target.getPosture() == Posture.INCAPACITATED) {
 			QueueCommandIntent.broadcast(obj, target, "", DataLoader.commands().getCommand("deathblow"), 0);

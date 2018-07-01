@@ -38,17 +38,6 @@ public class TerminalBankRadial implements RadialHandlerInterface {
 			use.addChildWithOverriddenText(RadialItem.SERVER_MENU4, "@sui:bank_withdrawall");
 		if (creature.getCashBalance() > 0)
 			use.addChildWithOverriddenText(RadialItem.SERVER_MENU3, "@sui:bank_depositall");
-		
-		if (isInGalacticReserveCity(creature)) {
-			RadialOption reserve = new RadialOption(RadialItem.SERVER_MENU50);
-			reserve.setOverriddenText("@sui:bank_galactic_reserve");
-			
-			if (creature.getBankBalance() >= 1E9 || creature.getCashBalance() >= 1E9)
-				reserve.addChildWithOverriddenText(RadialItem.SERVER_MENU49, "@sui:bank_galactic_reserve_deposit");
-			if (creature.getReserveBalance() > 0)
-				reserve.addChildWithOverriddenText(RadialItem.SERVER_MENU48, "@sui:bank_galactic_reserve_withdraw");
-			options.add(reserve);
-		}
 	}
 	
 	@Override
@@ -67,12 +56,6 @@ public class TerminalBankRadial implements RadialHandlerInterface {
 				break;
 			case SERVER_MENU4:
 				handleBankWithdraw(player, creature);
-				break;
-			case SERVER_MENU49:
-				handleGalacticReserveDeposit(player, creature);
-				break;
-			case SERVER_MENU48:
-				handleGalacticReserveWithdraw(player, creature);
 				break;
 		}
 	}
@@ -121,40 +104,6 @@ public class TerminalBankRadial implements RadialHandlerInterface {
 		return creature.getCurrentCity().equals("@corellia_region_names:coronet")
 				|| creature.getCurrentCity().equals("@naboo_region_names:theed")
 				|| creature.getCurrentCity().equals("@tatooine_region_names:mos_eisley");
-	}
-	
-	private static void handleGalacticReserveDeposit(Player player, CreatureObject creature) {
-		if (!creature.canPerformGalacticReserveTransaction()) {
-			SystemMessageIntent.broadcastPersonal(player, "You have to wait to perform another Galactic Reserve transaction");
-			return;
-		}
-		long amount = creature.getBankBalance();
-		if (amount > 1E9)
-			amount = (long) 1E9;
-		if (creature.getReserveBalance() + amount > 3E9 || amount == 0) {
-			SystemMessageIntent.broadcastPersonal(player, "@error_message:bank_deposit");
-			return;
-		}
-		creature.setBankBalance((creature.getBankBalance() - amount));
-		creature.setReserveBalance((creature.getReserveBalance() + amount));
-		creature.updateLastGalacticReserveTime();
-	}
-	
-	private static void handleGalacticReserveWithdraw(Player player, CreatureObject creature) {
-		if (!creature.canPerformGalacticReserveTransaction()) {
-			SystemMessageIntent.broadcastPersonal(player, "You have to wait to perform another Galactic Reserve transaction");
-			return;
-		}
-		long amount = creature.getReserveBalance();
-		if (amount > 1E9)
-			amount = (long) 1E9;
-		if (creature.getBankBalance() + amount > 2E9 || amount == 0) {
-			SystemMessageIntent.broadcastPersonal(player, "@error_message:bank_withdraw");
-			return;
-		}
-		creature.setBankBalance(creature.getBankBalance() + amount);
-		creature.setReserveBalance(creature.getReserveBalance() - amount);
-		creature.updateLastGalacticReserveTime();
 	}
 	
 	private static void handleBankTransfer(Player player, CreatureObject creature, Map<String, String> parameters) {

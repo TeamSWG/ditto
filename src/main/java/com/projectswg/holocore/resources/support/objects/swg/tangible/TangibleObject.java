@@ -38,17 +38,13 @@ import com.projectswg.common.network.packets.swg.zone.baselines.Baseline.Baselin
 import com.projectswg.holocore.intents.gameplay.gcw.faction.FactionIntent;
 import com.projectswg.holocore.intents.gameplay.gcw.faction.FactionIntent.FactionIntentType;
 import com.projectswg.holocore.intents.support.objects.swg.DestroyObjectIntent;
-import com.projectswg.holocore.resources.support.data.collections.SWGMap;
 import com.projectswg.holocore.resources.support.data.collections.SWGSet;
 import com.projectswg.holocore.resources.support.global.network.BaselineBuilder;
 import com.projectswg.holocore.resources.support.global.player.Player;
 import com.projectswg.holocore.resources.support.objects.swg.SWGObject;
 import com.projectswg.holocore.resources.support.objects.swg.creature.CreatureObject;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class TangibleObject extends SWGObject {
 	
@@ -66,9 +62,7 @@ public class TangibleObject extends SWGObject {
 	private int		counter			= 0;
 	private String	currentCity				= "";
 	
-	private SWGSet<Long>	defenders	= new SWGSet<>(6, 3);
-	
-	private SWGMap<String, String> effectsMap	= new SWGMap<>(6, 7);
+	private Set<Long>	defenders	= new HashSet<>();
 	
 	public TangibleObject(long objectId) {
 		this(objectId, BaselineType.TANO);
@@ -198,7 +192,6 @@ public class TangibleObject extends SWGObject {
 	
 	public void setInCombat(boolean inCombat) {
 		this.inCombat = inCombat;
-		sendDelta(6, 2, inCombat);
 	}
 	
 	public void setCondition(int condition) {
@@ -256,13 +249,11 @@ public class TangibleObject extends SWGObject {
 	}
 	
 	public void addDefender(CreatureObject creature) {
-		if (defenders.add(creature.getObjectId()))
-			defenders.sendDeltaMessage(this);
+		defenders.add(creature.getObjectId());
 	}
 	
 	public void removeDefender(CreatureObject creature) {
-		if (defenders.remove(creature.getObjectId()))
-			defenders.sendDeltaMessage(this);
+		defenders.remove(creature.getObjectId());
 	}
 	
 	public List<Long> getDefenders() {
@@ -271,7 +262,6 @@ public class TangibleObject extends SWGObject {
 	
 	public void clearDefenders() {
 		defenders.clear();
-		defenders.sendDeltaMessage(this);
 	}
 	
 	public boolean hasDefenders() {
@@ -284,7 +274,7 @@ public class TangibleObject extends SWGObject {
 
 	public void setCounter(int counter) {
 		this.counter = counter;
-		sendDelta(3, 9, counter);
+		sendDelta(3, 7, counter);
 	}
 	
 	/**
@@ -367,21 +357,6 @@ public class TangibleObject extends SWGObject {
 	}
 	
 	@Override
-	protected void createBaseline6(Player target, BaselineBuilder bb) {
-		super.createBaseline6(target, bb);
-		bb.addBoolean(inCombat); // 2 - Combat flag
-		bb.addObject(defenders); // 3 - Defenders List (Set, Long)
-		bb.addInt(0); // 4 - Map color
-		bb.addInt(0); // 5 - Access List
-			bb.addInt(0);
-		bb.addInt(0); // 6 - Guild Access Set
-			bb.addInt(0);
-		bb.addObject(effectsMap); // 7 - Effects Map
-		
-		bb.incrementOperandCount(6);
-	}
-	
-	@Override
 	protected void parseBaseline3(NetBuffer buffer) {
 		super.parseBaseline3(buffer);
 		pvpFaction = PvpFaction.getFactionForCrc(buffer.getInt());
@@ -403,7 +378,6 @@ public class TangibleObject extends SWGObject {
 		buffer.getInt();
 		SWGSet.getSwgSet(buffer, 6, 5, StringType.ASCII);
 		SWGSet.getSwgSet(buffer, 6, 6, StringType.ASCII);
-		effectsMap = SWGMap.getSwgMap(buffer, 6, 7, StringType.ASCII);
 	}
 	
 	@Override
@@ -420,10 +394,6 @@ public class TangibleObject extends SWGObject {
 		stream.addBoolean(visibleGmOnly);
 		stream.addArray(objectEffects);
 		stream.addInt(optionFlags);
-		stream.addMap(effectsMap, (e) -> {
-			stream.addAscii(e.getKey());
-			stream.addAscii(e.getValue());
-		});
 	}
 	
 	@Override
@@ -442,7 +412,6 @@ public class TangibleObject extends SWGObject {
 		visibleGmOnly = stream.getBoolean();
 		objectEffects = stream.getArray();
 		optionFlags = stream.getInt();
-		stream.getList((i) -> effectsMap.put(stream.getAscii(), stream.getAscii()));
 	}
 
 }

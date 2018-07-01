@@ -40,15 +40,9 @@ public class BuffData {
 	private final String [] effectNames;
 	private final float [] effectValues;
 	
-	private int maxStackCount;
 	private float defaultDuration;
 	private String effectFileName;
-	private String particleHardPoint;
-	private String stanceParticle;
 	private String callback;
-	private boolean persistent;
-	private boolean removedOnDeath;
-	private boolean decayOnPvpDeath;
 	
 	public BuffData(String name, String groupName, int groupPriority) {
 		this.crc = CRC.getCrc(name.toLowerCase(Locale.ENGLISH));
@@ -75,10 +69,6 @@ public class BuffData {
 		return groupPriority;
 	}
 	
-	public int getMaxStackCount() {
-		return maxStackCount;
-	}
-	
 	public String getEffectName(int effect) {
 		Arguments.validate(effect >= 0 && effect < 5, "Effect # must be in range: [0, 5)");
 		return effectNames[effect];
@@ -97,32 +87,8 @@ public class BuffData {
 		return effectFileName;
 	}
 	
-	public String getParticleHardPoint() {
-		return particleHardPoint;
-	}
-	
-	public String getStanceParticle() {
-		return stanceParticle;
-	}
-	
 	public String getCallback() {
 		return callback;
-	}
-	
-	public boolean isPersistent() {
-		return persistent;
-	}
-	
-	public boolean isRemovedOnDeath() {
-		return removedOnDeath;
-	}
-	
-	public boolean isDecayOnPvpDeath() {
-		return decayOnPvpDeath;
-	}
-	
-	public void setMaxStackCount(int maxStackCount) {
-		this.maxStackCount = maxStackCount;
 	}
 	
 	public void setEffectName(int effect, String name) {
@@ -143,28 +109,8 @@ public class BuffData {
 		this.effectFileName = effectFileName;
 	}
 	
-	public void setParticleHardPoint(String particleHardPoint) {
-		this.particleHardPoint = particleHardPoint;
-	}
-	
-	public void setStanceParticle(String stanceParticle) {
-		this.stanceParticle = stanceParticle;
-	}
-	
 	public void setCallback(String callback) {
 		this.callback = callback;
-	}
-	
-	public void setPersistent(boolean persistent) {
-		this.persistent = persistent;
-	}
-	
-	public void setRemovedOnDeath(boolean removedOnDeath) {
-		this.removedOnDeath = removedOnDeath;
-	}
-	
-	public void setDecayOnPvpDeath(boolean decayOnPvpDeath) {
-		this.decayOnPvpDeath = decayOnPvpDeath;
 	}
 	
 }

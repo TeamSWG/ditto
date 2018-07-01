@@ -35,11 +35,6 @@ import com.projectswg.holocore.resources.support.global.player.Player;
 class PlayerObjectSharedNP implements Persistable {
 	
 	private int			adminTag			= 0;
-	private int 		currentRank			= 0;
-	private float 		rankProgress		= 0;
-	private int 		highestRebelRank	= 0;
-	private int 		highestImperialRank	= 0;
-	private int 		gcwNextUpdate		= 0;
 	private String 		home				= "";
 	private boolean 	citizen				= false;
 	
@@ -65,46 +60,6 @@ class PlayerObjectSharedNP implements Persistable {
 		this.adminTag = tag;
 	}
 	
-	public int getCurrentRank() {
-		return currentRank;
-	}
-	
-	public void setCurrentRank(int currentRank) {
-		this.currentRank = currentRank;
-	}
-	
-	public float getRankProgress() {
-		return rankProgress;
-	}
-	
-	public void setRankProgress(float rankProgress) {
-		this.rankProgress = rankProgress;
-	}
-	
-	public int getHighestRebelRank() {
-		return highestRebelRank;
-	}
-	
-	public void setHighestRebelRank(int highestRebelRank) {
-		this.highestRebelRank = highestRebelRank;
-	}
-	
-	public int getHighestImperialRank() {
-		return highestImperialRank;
-	}
-	
-	public void setHighestImperialRank(int highestImperialRank) {
-		this.highestImperialRank = highestImperialRank;
-	}
-	
-	public int getGcwNextUpdate() {
-		return gcwNextUpdate;
-	}
-	
-	public void setGcwNextUpdate(int gcwNextUpdate) {
-		this.gcwNextUpdate = gcwNextUpdate;
-	}
-	
 	public String getHome() {
 		return home;
 	}
@@ -123,37 +78,20 @@ class PlayerObjectSharedNP implements Persistable {
 	
 	public void createBaseline6(Player target, BaselineBuilder bb) {
 		bb.addByte(adminTag); // Admin Tag (0 = none, 1 = CSR, 2 = Developer, 3 = Warden, 4 = QA) -- 2
-		bb.addInt(currentRank); // 3
-		bb.addFloat(rankProgress); // 4
-		bb.addInt(highestImperialRank); // 5
-		bb.addInt(highestRebelRank); // 6
-		bb.addInt(gcwNextUpdate); // 7
 		bb.addAscii(home); // 8
 		bb.addBoolean(citizen); // 9
-		bb.addAscii(""); // City Region Defender 'region' -- 10
-			bb.addBoolean(false); // City Region Defender byte #1
-			bb.addBoolean(false); // City Region Defender byte #2
-		bb.addAscii(""); // Guild Region Defender 'region' -- 11
-			bb.addBoolean(false); // Guild Region Defender byte #1
-			bb.addBoolean(false); // Guild Region Defender byte #2
-		bb.addLong(0); // General? -- 12
 		bb.addAscii(""); // 13
 		bb.addInt(0); // Citizen Rank Title? 6 bytes -- 14
 		bb.addInt(0); // Environment Flags Override -- 15
 		bb.addAscii(""); // Vehicle Attack Command -- 16
 		
-		bb.incrementOperandCount(15);
+		bb.incrementOperandCount(6);
 	}
 	
 	@Override
 	public void save(NetBufferStream stream) {
 		stream.addByte(0);
 		stream.addInt(adminTag);
-		stream.addInt(currentRank);
-		stream.addFloat(rankProgress);
-		stream.addInt(highestRebelRank);
-		stream.addInt(highestImperialRank);
-		stream.addInt(gcwNextUpdate);
 		stream.addAscii(home);
 		stream.addBoolean(citizen);
 	}
@@ -162,11 +100,6 @@ class PlayerObjectSharedNP implements Persistable {
 	public void read(NetBufferStream stream) {
 		stream.getByte();
 		adminTag = stream.getInt();
-		currentRank = stream.getInt();
-		rankProgress = stream.getFloat();
-		highestRebelRank = stream.getInt();
-		highestImperialRank = stream.getInt();
-		gcwNextUpdate = stream.getInt();
 		home = stream.getAscii();
 		citizen = stream.getBoolean();
 	}

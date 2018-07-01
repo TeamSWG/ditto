@@ -67,7 +67,7 @@ import java.util.List;
 
 public class LoginService extends Service {
 	
-	private static final String REQUIRED_VERSION = "20111130-15:46";
+	private static final String REQUIRED_VERSION = "20051010-17:00";
 	private static final byte [] SESSION_TOKEN = new byte[24];
 	
 	private final PswgUserDatabase userDatabase;

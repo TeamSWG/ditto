@@ -32,7 +32,7 @@ The following assumes that you're familiar with:
 ## Java Development Kit ##
 
 In order to compile the source code, you need a JDK installation on your machine. The `JAVA_HOME` environment variable
-should point to the directory of the JDK! It should be version 9 as minimum. You can see your installed Java version
+should point to the directory of the JDK! It should be version 10 as minimum. You can see your installed Java version
 by running `java -version`.
 
 ## Clientdata ##
@@ -79,13 +79,22 @@ holocore/
 	...
 ```
 
+## Submodules ##
+
+The project uses submodules. Get them by running: `git submodule update --init`
+
+## Database ##
+
+User information is read from a MongoDB database that must run on the same machine as this software.
+1. Create database: `use ditto`
+2. Insert your user into the users collection of your database: `db.users.insert({username: "user", password: "pass", accessLevel: "dev", banned: false, characters: []})`
+
 ## Gradle ##
 
-This project uses Gradle as its build tool of choice. You must install Gradle on your machine in order to build the
-source code.
+This project uses Gradle as its build tool of choice.
 
-Compile and run Holocores unit tests using Gradle: `gradle test --info` (Might fail if you haven't extracted clientdata yet)
-Compile and run Holocores main code using Gradle: `gradle run`
+Compile and run Holocores unit tests using Gradle: `./gradlew test --info`
+Compile and run Holocores main code using Gradle: `./gradlew run`
 
 ## Forwarder ##
 
@@ -93,22 +102,3 @@ Holocore uses TCP for network communications, whereas SWG was programmed for UDP
 long distance communications, but requires that a little more work is done on the client side.  If you are using the
 launcher, you do not have to worry about this.  If you are not using the launcher, follow the guide
 [here](https://bitbucket.org/projectswg/forwarder).
-
-## Credentials ##
-
-Default credentials are currently created. Your username is `holocore` and your password is `password`. This user has the
-highest admin level assigned to it.
-
-## Contributing ##
-
-1. Fork this repository
-2. Clone the fork you just created, using `git clone`
-3. Get the submodules using `git submodule update --init`
-4. Find something to do in our issues list that is unassigned => https://bitbucket.org/projectswg/holocore/issues?status=new&status=open
-5. Create a new branch on your fork of holocore
-6. Write code, commit and push it to your branch
-7. Once ready, create a pull request with destination branch `quality_assurance` and source branch
-`<your_branch_name>`
-8. Your changes are reviewed and are merged, unless something is wrong
-9. Once merged, your changes will be available in future builds
-10. If you want to work on something else, go back to step 4

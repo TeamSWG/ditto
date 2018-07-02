@@ -65,8 +65,6 @@ class CreatureObjectSharedNP implements Persistable {
 	private boolean visible					= true;
 	private boolean performing				= false;
 	private CreatureDifficulty	difficulty	= CreatureDifficulty.NORMAL;
-	private boolean shownOnRadar			= true;
-	private boolean beast					= false;
 	
 	private SWGList<Integer>	attributes		= new SWGList<>(6, 14);
 	private SWGList<Integer>	maxAttributes	= new SWGList<>(6, 15);
@@ -130,10 +128,6 @@ class CreatureObjectSharedNP implements Persistable {
 	
 	public void setMoodAnimation(String moodAnimation) {
 		this.moodAnimation = moodAnimation;
-	}
-	
-	public void setBeast(boolean beast) {
-		this.beast = beast;
 	}
 	
 	public void setEquippedWeapon(WeaponObject weapon) {
@@ -226,10 +220,6 @@ class CreatureObjectSharedNP implements Persistable {
 		return moodAnimation;
 	}
 	
-	public boolean isBeast() {
-		return beast;
-	}
-	
 	public WeaponObject getEquippedWeapon() {
 		return equippedWeapon;
 	}
@@ -250,14 +240,6 @@ class CreatureObjectSharedNP implements Persistable {
 		this.performing = performing;
 	}
 	
-	public boolean isShownOnRadar() {
-		return shownOnRadar;
-	}
-
-	public void setShownOnRadar(boolean shownOnRadar) {
-		this.shownOnRadar = shownOnRadar;
-	}
-
 	public int getHealth() {
 		synchronized (attributes) {
 			return attributes.get(0);
@@ -514,8 +496,6 @@ class CreatureObjectSharedNP implements Persistable {
 		buffs = SWGMap.getSwgMap(buffer, 6, 26, CRC.class, Buff.class);
 		performing = buffer.getBoolean();
 		difficulty = CreatureDifficulty.getForDifficulty(buffer.getByte());
-		shownOnRadar = buffer.getBoolean();
-		beast = buffer.getBoolean();
 		buffer.getBoolean();
 		buffer.getLong();
 		equippedWeapon = null;
@@ -539,8 +519,6 @@ class CreatureObjectSharedNP implements Persistable {
 		stream.addByte(moodId);
 		stream.addAscii(costume);
 		stream.addBoolean(visible);
-		stream.addBoolean(shownOnRadar);
-		stream.addBoolean(beast);
 		stream.addAscii(difficulty.name());
 		stream.addBoolean(equippedWeapon != null);
 		if (equippedWeapon != null)
@@ -573,8 +551,6 @@ class CreatureObjectSharedNP implements Persistable {
 		moodId = stream.getByte();
 		costume = stream.getAscii();
 		visible = stream.getBoolean();
-		shownOnRadar = stream.getBoolean();
-		beast = stream.getBoolean();
 		difficulty = CreatureDifficulty.valueOf(stream.getAscii());
 		if (stream.getBoolean())
 			equippedWeapon = (WeaponObject) SWGObjectFactory.create(stream);
@@ -592,8 +568,6 @@ class CreatureObjectSharedNP implements Persistable {
 		moodId = stream.getByte();
 		costume = stream.getAscii();
 		visible = stream.getBoolean();
-		shownOnRadar = stream.getBoolean();
-		beast = stream.getBoolean();
 		difficulty = CreatureDifficulty.valueOf(stream.getAscii());
 		if (stream.getBoolean())
 			equippedWeapon = (WeaponObject) SWGObjectFactory.create(stream);

@@ -68,6 +68,7 @@ public class CreatureObject extends TangibleObject {
 	private long 	ownerId					= 0;
 	private int 	battleFatigue			= 0;
 	private long 	statesBitmask			= 0;
+	private SWGList<Integer>	wounds		= new SWGList<Integer>(3, 17);
 	private long	lastTransform			= 0;
 	private long	lastCombat				= 0;
 	private TradeSession tradeSession		= null;
@@ -81,6 +82,7 @@ public class CreatureObject extends TangibleObject {
 	public CreatureObject(long objectId) {
 		super(objectId, BaselineType.CREO);
 		initBaseAttributes();
+		initWounds();
 		getAwareness().setAware(AwarenessType.SELF, List.of(this));
 	}
 	
@@ -689,15 +691,6 @@ public class CreatureObject extends TangibleObject {
 		sendDelta(6, 20, performing);
 	}
 	
-	public boolean isShownOnRadar() {
-		return creo6.isShownOnRadar();
-	}
-
-	public void setShownOnRadar(boolean shownOnRadar) {
-		creo6.setShownOnRadar(shownOnRadar);
-		sendDelta(6, 30, shownOnRadar);
-	}
-
 	public int getHealth() {
 		return creo6.getHealth();
 	}
@@ -815,6 +808,17 @@ public class CreatureObject extends TangibleObject {
 		baseAttributes.add(5, 0);
 		baseAttributes.clearDeltaQueue();
 	}
+	private void initWounds() {
+		wounds.add(0, 0);	// CU only has health wounds :-)
+	}
+	
+	public void setHealthWounds(int healthWounds) {
+		wounds.set(0, healthWounds);
+	}
+	
+	public int getHealthWounds() {
+		return wounds.get(0);
+	}
 	
 	public Collection<SWGObject> getItemsByTemplate(String slotName, String template) {
 		Collection<SWGObject> items = new ArrayList<>(getContainedObjects()); // We also search the creature itself - not just the inventory.
@@ -908,8 +912,6 @@ public class CreatureObject extends TangibleObject {
 	@Override
 	public void createBaseline1(Player target, BaselineBuilder bb) {
 		super.createBaseline1(target, bb); // 0 variables
-		if (getStringId().toString().equals("@obj_n:unknown_object"))
-			return;
 		bb.addInt(bankBalance); // 0
 		bb.addInt(cashBalance); // 1
 		bb.addObject(baseAttributes); // Attributes player has without any gear on -- 2
@@ -927,8 +929,9 @@ public class CreatureObject extends TangibleObject {
 		bb.addFloat((float) height); // 16
 		bb.addInt(battleFatigue); // 17
 		bb.addLong(statesBitmask); // 18
+		bb.addObject(wounds);	// 19
 		
-		bb.incrementOperandCount(6);
+		bb.incrementOperandCount(7);
 	}
 	
 	@Override
@@ -963,6 +966,7 @@ public class CreatureObject extends TangibleObject {
 		height = buffer.getFloat();
 		battleFatigue = buffer.getInt();
 		statesBitmask = buffer.getLong();
+		wounds = SWGList.getSwgList(buffer, 3, 17, Integer.class);
 	}
 	
 	@Override
@@ -998,6 +1002,9 @@ public class CreatureObject extends TangibleObject {
 		synchronized (baseAttributes) {
 			stream.addList(baseAttributes, stream::addInt);
 		}
+		synchronized (wounds) {
+			stream.addList(wounds, stream::addInt);
+		}
 	}
 	
 	@Override
@@ -1028,6 +1035,7 @@ public class CreatureObject extends TangibleObject {
 		}
 		stream.getList((i) -> skills.add(stream.getAscii()));
 		stream.getList((i) -> baseAttributes.set(i, stream.getInt()));
+		stream.getList((i) -> wounds.set(i, stream.getInt()));
 	}
 	
 	private void readVersion1(NetBufferStream stream) {
@@ -1044,6 +1052,7 @@ public class CreatureObject extends TangibleObject {
 		factionRank = stream.getByte();
 		stream.getList((i) -> skills.add(stream.getAscii()));
 		stream.getList((i) -> baseAttributes.set(i, stream.getInt()));
+		stream.getList((i) -> wounds.set(i, stream.getInt()));
 	}
 	
 }

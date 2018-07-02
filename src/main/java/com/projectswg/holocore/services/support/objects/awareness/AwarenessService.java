@@ -121,7 +121,7 @@ public class AwarenessService extends Service {
 				if (oti.getParent() != null)
 					obj.getOwner().sendPacket(new DataTransformWithParent(obj.getObjectId(), obj.getNextUpdateCount(), oti.getParent().getObjectId(), oti.getNewLocation(), 7.3f));
 				else
-					obj.getOwner().sendPacket(new DataTransform(obj.getObjectId(), obj.getNextUpdateCount(), oti.getNewLocation(), 7.3f));
+					obj.getOwner().sendPacket(new DataTransform(obj.getObjectId(), obj.getNextUpdateCount(), oti.getNewLocation()));
 			} else {
 				handleZoneIn((CreatureObject) obj, oti.getNewLocation(), oti.getParent());
 			}
@@ -147,7 +147,7 @@ public class AwarenessService extends Service {
 	
 	@IntentHandler
 	private void processMoveObjectIntent(MoveObjectIntent moi) {
-		moveObjectWithTransform(moi.getObject(), moi.getParent(), moi.getNewLocation(), moi.getSpeed(), moi.getUpdateCounter());
+		moveObjectWithTransform(moi.getObject(), moi.getParent(), moi.getNewLocation(), moi.getSpeed());
 	}
 	
 	@IntentHandler
@@ -229,7 +229,7 @@ public class AwarenessService extends Service {
 			return;
 		}
 		Location requestedLocation = Location.builder(dt.getLocation()).setTerrain(obj.getTerrain()).build();
-		moveObjectWithTransform(obj, null, requestedLocation, dt.getSpeed(), dt.getUpdateCounter());
+		moveObjectWithTransform(obj, null, requestedLocation, dt.getSpeed());
 	}
 	
 	private void handleDataTransformWithParent(DataTransformWithParent dt) {
@@ -244,10 +244,10 @@ public class AwarenessService extends Service {
 			return;
 		}
 		Location requestedLocation = Location.builder(dt.getLocation()).setTerrain(obj.getTerrain()).build();
-		moveObjectWithTransform(obj, parent, requestedLocation, dt.getSpeed(), dt.getUpdateCounter());
+		moveObjectWithTransform(obj, parent, requestedLocation, dt.getSpeed());
 	}
 	
-	private void moveObjectWithTransform(SWGObject obj, SWGObject parent, Location requestedLocation, double speed, int update) {
+	private void moveObjectWithTransform(SWGObject obj, SWGObject parent, Location requestedLocation, double speed) {
 		if (obj instanceof CreatureObject && ((CreatureObject) obj).isStatesBitmask(CreatureState.RIDING_MOUNT)) {
 //			SWGObject vehicle = obj.getParent();
 //			assert vehicle != null : "vehicle is null";
@@ -260,9 +260,9 @@ public class AwarenessService extends Service {
 				awareness.updateObject(obj);
 			}
 			if (parent == null) {
-				dataTransformHandler.handleMove(obj, speed, update);
+				dataTransformHandler.handleMove(obj, speed);
 			} else {
-				dataTransformHandler.handleMove(obj, parent, speed, update);
+				dataTransformHandler.handleMove(obj, speed, parent);
 			}
 		}
 		if (obj instanceof CreatureObject && ((CreatureObject) obj).isLoggedInPlayer())

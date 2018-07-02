@@ -79,17 +79,16 @@ public final class AreaLoader {
 						.setId((int) set.getInt(0))
 						.setTerrain(Terrain.getTerrainFromName(set.getText(1)))
 						.setName(set.getText(2))
-						.setEvent(set.getText(3))
-						.setX1(set.getReal(4))
-						.setZ1(set.getReal(5))
-						.setX2(set.getReal(6))
-						.setZ2(set.getReal(7))
-						.setAdjustCoordinates(set.getInt(8) != 0)
+						.setX1(set.getReal(3))
+						.setZ1(set.getReal(4))
+						.setX2(set.getReal(5))
+						.setZ2(set.getReal(6))
+						.setAdjustCoordinates(set.getInt(7) != 0)
+						.setTranslationX(set.getReal(8))
 						.setTranslationX(set.getReal(9))
-						.setTranslationX(set.getReal(10))
 						.build();
 				BuildoutArea replaced = areasByName.get(area.getName());
-				if ((replaced == null && area.getEvent().isEmpty()) || (!area.getEvent().isEmpty() && events.contains(area.getEvent()))) {
+				if (replaced == null) {
 					areasByName.put(area.getName(), area);
 					areasById.put(area.getId(), area);
 					areaList.add(area);

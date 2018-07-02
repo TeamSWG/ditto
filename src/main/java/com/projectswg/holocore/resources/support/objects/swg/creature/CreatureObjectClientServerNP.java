@@ -45,13 +45,13 @@ class CreatureObjectClientServerNP implements Persistable {
 	
 	private double movementScale = 1;
 	private double movementPercent = 1;
-	private double walkSpeed = 1.549;
-	private double runSpeed = 7.3;
+	private double walkSpeed = 1.00625;
+	private double runSpeed = 5.376;
 	private double accelScale = 1;
 	private double accelPercent = 1;
 	private double turnScale = 1;
-	private double slopeModAngle = 1;
-	private double slopeModPercent = 1;
+	private double slopeModAngle = 26;
+	private double slopeModPercent = 0.0125;
 	private double waterModPercent = 0.75;
 	private long performanceListenTarget = 0;
 	

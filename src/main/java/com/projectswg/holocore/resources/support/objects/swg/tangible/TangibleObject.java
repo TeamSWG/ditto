@@ -342,25 +342,21 @@ public class TangibleObject extends SWGObject {
 	@Override
 	protected void createBaseline3(Player target, BaselineBuilder bb) {
 		super.createBaseline3(target, bb); // 4 variables - BASE3 (4)
-		bb.addInt(pvpFaction.getCrc()); // Faction - 4
-		bb.addInt(pvpStatus.getValue()); // Faction Status - 5
-		bb.addObject(appearanceData); // - 6
-		bb.addInt(0); // Component customization (Set, Integer) - 7
-			bb.addInt(0);
-		bb.addInt(optionFlags); // 8
-		bb.addInt(counter); // Generic Counter -- use count and incap timer - 9
-		bb.addInt(condition); // 10
-		bb.addInt(maxHitPoints); // maxHitPoints - 11
-		bb.addBoolean(visibleGmOnly); // isVisible - 12
+		bb.addObject(appearanceData); // - 4
+		bb.addInt(0); // Component customization (Set, Integer) - 5
+			bb.addInt(0); //updates
+		bb.addInt(optionFlags); // 6
+		bb.addInt(counter); // Generic Counter -- use count and incap timer - 7
+		bb.addInt(condition); // 8
+		bb.addInt(maxHitPoints); // maxHitPoints - 9
+		bb.addBoolean(visibleGmOnly); // isVisible - 10
 		
-		bb.incrementOperandCount(9);
+		bb.incrementOperandCount(7);
 	}
 	
 	@Override
 	protected void parseBaseline3(NetBuffer buffer) {
 		super.parseBaseline3(buffer);
-		pvpFaction = PvpFaction.getFactionForCrc(buffer.getInt());
-		pvpStatus = PvpStatus.getStatusForValue(buffer.getInt());
 		appearanceData.decode(buffer);
 		SWGSet.getSwgSet(buffer, 3, 7, Integer.class);
 		optionFlags = buffer.getInt();

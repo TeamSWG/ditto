@@ -148,17 +148,15 @@ public class CreatureObjectAwareness {
 			boolean creature = obj instanceof CreatureObject;
 			boolean owner = obj.getOwner() == target;
 			
-			if (owner && creature)
-				target.sendPacket(obj.createBaseline1(target));
-			
 			target.sendPacket(obj.createBaseline3(target));
-			
-			if (owner && creature)
-				target.sendPacket(obj.createBaseline4(target));
-			
 			target.sendPacket(obj.createBaseline6(target));
 			
 			if (owner) {
+				if (creature) {
+					target.sendPacket(obj.createBaseline1(target));
+				}
+				
+				target.sendPacket(obj.createBaseline4(target));
 				target.sendPacket(obj.createBaseline8(target));
 				target.sendPacket(obj.createBaseline9(target));
 			}

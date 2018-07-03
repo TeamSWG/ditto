@@ -143,7 +143,6 @@ public class CombatCommandService extends Service {
 		action.setWeaponId(weapon.getObjectId());
 		action.setCommandCrc(combatCommand.getCrc());
 		action.setTrail(TrailLocation.RIGHT_HAND);
-		action.setUseLocation(false);
 		
 		action.addDefender(new Defender(source.getObjectId(), source.getPosture(), false, (byte) 0, HitLocation.HIT_LOCATION_BODY, (short) 0));
 		
@@ -151,19 +150,7 @@ public class CombatCommandService extends Service {
 			action.addDefender(new Defender(creatureTarget.getObjectId(), creatureTarget.getPosture(), false, (byte) 0, HitLocation.HIT_LOCATION_BODY, (short) 0));
 		}
 		
-		CombatSpam combatSpam = new CombatSpam(source.getObjectId());
-		
-		combatSpam.setAttacker(source.getObjectId());
-		combatSpam.setAttackerPosition(source.getLocation().getPosition());
-		combatSpam.setWeapon(weapon.getObjectId());
-		combatSpam.setDefender(target.getObjectId());
-		combatSpam.setDefenderPosition(target.getLocation().getPosition());
-		combatSpam.setInfo(new AttackInfo());
-		combatSpam.setAttackName(new StringId("cmd_n", combatCommand.getName()));
-		combatSpam.setSpamType(CombatSpamFilterType.ALL);
-		// TODO doesn't look like a buff in the combat log
-		
-		source.sendObservers(action, combatSpam);
+		source.sendObservers(action);
 	}
 	
 	private void handleHeal(CreatureObject source, SWGObject target, CombatCommand combatCommand) {
@@ -336,27 +323,14 @@ public class CombatCommandService extends Service {
 		action.setWeaponId(weapon.getObjectId());
 		action.setCommandCrc(combatCommand.getCrc());
 		action.setTrail(TrailLocation.RIGHT_HAND);
-		action.setUseLocation(false);
 		
 		action.addDefender(new Defender(healed.getObjectId(), healed.getPosture(), false, (byte) 0, HitLocation.HIT_LOCATION_BODY, (short) 0));
 		
 		OutOfBandPackage oobp = new OutOfBandPackage(new ProsePackage("StringId", new StringId("healing", "heal_fly"), "DI", difference, "TO", attribName));
 		ShowFlyText flyText = new ShowFlyText(healed.getObjectId(), oobp, Scale.MEDIUM, new RGB(46, 139, 87), ShowFlyText.Flag.IS_HEAL);
 		PlayClientEffectObjectMessage effect = new PlayClientEffectObjectMessage("appearance/pt_heal.prt", "root", healed.getObjectId(), "");
-		CombatSpam combatSpam = new CombatSpam(healer.getObjectId());
 		
-		combatSpam.setAttacker(healer.getObjectId());
-		combatSpam.setAttackerPosition(healer.getLocation().getPosition());
-		combatSpam.setWeapon(weapon.getObjectId());
-		combatSpam.setWeaponName(weapon.getStringId());
-		combatSpam.setDefender(healed.getObjectId());
-		combatSpam.setDefenderPosition(healed.getLocation().getPosition());
-		combatSpam.setInfo(new AttackInfo());
-		combatSpam.setAttackName(new StringId("cmd_n", combatCommand.getName()));
-		combatSpam.setSpamType(CombatSpamFilterType.ALL);
-		// TODO doesn't look like a heal in the combat log
-		
-		healed.sendObservers(action, flyText, effect, combatSpam);
+		healed.sendObservers(action, flyText, effect);
 	}
 	
 	private void doCombatSingle(CreatureObject source, SWGObject target, AttackInfo info, WeaponObject weapon, CombatCommand command) {
@@ -404,7 +378,6 @@ public class CombatCommandService extends Service {
 		action.setClientEffectId((byte) 0);
 		action.setCommandCrc(command.getCrc());
 		action.setTrail(TrailLocation.WEAPON);
-		action.setUseLocation(false);
 		
 		for (CreatureObject target : targets) {
 			target.updateLastCombatTime();
@@ -412,46 +385,41 @@ public class CombatCommandService extends Service {
 			EnterCombatIntent.broadcast(source, target);
 			EnterCombatIntent.broadcast(target, source);
 			
-			CombatSpam combatSpam = new CombatSpam(source.getObjectId());
-			combatSpam.setAttacker(source.getObjectId());
-			combatSpam.setAttackerPosition(source.getLocation().getPosition());
-			combatSpam.setWeapon(weapon.getObjectId());
-			combatSpam.setWeaponName(weapon.getStringId());
-			combatSpam.setDefender(target.getObjectId());
-			combatSpam.setDefenderPosition(target.getLocation().getPosition());
-			combatSpam.setInfo(info);
-			combatSpam.setAttackName(new StringId("cmd_n", command.getName()));
-			combatSpam.setSpamType(CombatSpamFilterType.ALL);
-			
-			if (!info.isSuccess()) {    // Single target negate, like dodge or parry!
-				target.sendObservers(combatSpam);
-				return;
-			}
-			
 			addBuff(source, target, command.getBuffNameTarget());    // Add target buff
 			
-			int rawDamage = calculateWeaponDamage(source, weapon, command) + command.getAddedDamage();
+			int damageDealt = 0;
 			
-			info.setRawDamage(rawDamage);
-			info.setFinalDamage(rawDamage);    // Final damage will be modified by armour and defensive rolls later
-			info.setDamageType(weapon.getDamageType());
+			// Weapon damage
+			damageDealt += calculateWeaponDamage(source, weapon, command) + command.getAddedDamage();
 			
-			// TODO block roll for defenders
-			// TODO Critical hit roll for attacker
-			// TODO armour
+			// TODO mitigation rolls
+			// TODO armor mitigation
+			// TODO damage increase rolls
+			
+			/*
+			StringId logMessage = new StringId("cbt_spam", "attack_hit");	// TODO figure out
+			CombatSpam combatSpam = new CombatSpam(
+					source.getObjectId(),
+					source.getObjectId(),
+					target.getObjectId(),
+					weapon.getObjectId(),
+					damageDealt,
+					logMessage,
+					(byte) 1,	// TODO enum
+					""
+					);
 			
 			target.sendObservers(combatSpam);
+			*/
 			
-			int finalDamage = info.getFinalDamage();
+			action.addDefender(new Defender(target.getObjectId(), target.getPosture(), true, (byte) 0, HitLocation.HIT_LOCATION_BODY, (short) damageDealt));
 			
-			action.addDefender(new Defender(target.getObjectId(), target.getPosture(), true, (byte) 0, HitLocation.HIT_LOCATION_BODY, (short) finalDamage));
+			target.handleDamage(source, damageDealt);
 			
-			target.handleDamage(source, finalDamage);
-			
-			if (target.getHealth() <= finalDamage)
+			if (target.getHealth() <= damageDealt)
 				RequestCreatureDeathIntent.broadcast(target, source);
 			else
-				target.modifyHealth(-finalDamage);
+				target.modifyHealth(-damageDealt);
 		}
 		
 		source.sendObservers(action);

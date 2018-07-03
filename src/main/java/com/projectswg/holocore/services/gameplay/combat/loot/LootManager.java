@@ -4,8 +4,7 @@ import me.joshlarson.jlcommon.control.Manager;
 import me.joshlarson.jlcommon.control.ManagerStructure;
 
 @ManagerStructure(children = {
-		LootService.class,
-		RareLootService.class
+		LootService.class
 })
 public class LootManager extends Manager {
 	

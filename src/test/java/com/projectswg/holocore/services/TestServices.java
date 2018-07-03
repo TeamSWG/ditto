@@ -27,20 +27,16 @@
  ***********************************************************************************/
 package com.projectswg.holocore.services;
 
-import com.projectswg.holocore.services.gameplay.gcw.faction.TestCivilWarService;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import com.projectswg.holocore.services.other.crafting.TestCrafting;
 import com.projectswg.holocore.services.other.galaxy.TestGalaxy;
-import com.projectswg.holocore.services.gameplay.combat.loot.TestRareLootService;
 import com.projectswg.holocore.services.other.player.TestPlayer;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	TestCivilWarService.class,
-	TestRareLootService.class,
 	TestCrafting.class,
 	TestPlayer.class,
 	TestGalaxy.class

@@ -34,13 +34,14 @@ class PswgDatabaseConnectionPool {
 			return;
 		Config primary = DataManager.getConfig(ConfigFile.PRIMARY);
 		String database = primary.getString("LOCAL-DB", "ditto");
+		String host = primary.getString("DATABASE-HOST", "localhost");
 		
 		if (primary.getBoolean("LOCAL-AUTH", false)) {
 			String username = primary.getString("LOCAL-USER", "ditto");
 			String password = primary.getString("LOCAL-PASS", "pass");
-			this.client = new MongoClient(new ServerAddress(), MongoCredential.createScramSha1Credential(username, database, password.toCharArray()), createClientOptions());
+			this.client = new MongoClient(new ServerAddress(host), MongoCredential.createScramSha1Credential(username, database, password.toCharArray()), createClientOptions());
 		} else {
-			this.client = new MongoClient(new ServerAddress(), createClientOptions());
+			this.client = new MongoClient(new ServerAddress(host), createClientOptions());
 		}
 		setupMongoLogging();
 		

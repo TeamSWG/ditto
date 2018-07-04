@@ -187,7 +187,7 @@ public class ProjectSWG {
 	private static void setupGalaxy() {
 		Config c = DataManager.getConfig(ConfigFile.PRIMARY);
 		GALAXY.setId(1);
-		GALAXY.setName(c.getString("GALAXY-NAME", "Holocore"));
+		GALAXY.setName(c.getString("GALAXY-NAME", "Ditto"));
 		GALAXY.setAddress("");
 		GALAXY.setPopulation(0);
 		GALAXY.setZoneOffset(OffsetTime.now().getOffset());

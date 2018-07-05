@@ -1,13 +1,12 @@
-![Banner](https://imgur.com/V14kDE5.png)
-
 ![License](https://img.shields.io/badge/license-GPLv3-blue.svg?longCache=true&style=flat)
-![JDK](https://img.shields.io/badge/JDK-9-blue.svg?longCache=true&style=flat)
+![JDK](https://img.shields.io/badge/JDK-10-blue.svg?longCache=true&style=flat)
 ![Discord](https://img.shields.io/discord/373548910225915905.svg)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr/projectswg/holocore.svg)
 
 # Introduction #
 
-This is *the* Star Wars Galaxies server emulator for the Java Virtual Machine. The vision for this software is:
+This is a Star Wars Galaxies Combat Upgrade server emulator for the Java Virtual Machine.
+The vision for this software is:
 
 * Providing an experience that's reasonably close to the original game servers
 * Easily expandable with new functionality

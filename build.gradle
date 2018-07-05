@@ -66,6 +66,7 @@ dependencies {
 	utilityCompile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.6.3'
 	
 	integrationCompile project(':pswgcommon')
+	integrationCompile project(':client-holocore')
 	integrationCompile sourceSets.main.output
 	integrationCompile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.23.1'
 	integrationCompile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.6.3'

@@ -1,2 +1,3 @@
 rootProject.name = 'ditto'
 include ':pswgcommon'
+include ':client-holocore'

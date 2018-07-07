@@ -45,7 +45,6 @@ public class TerminalCharacterBuilderRadial implements RadialHandlerInterface {
 				listBox.addListItem("Wearables");
 				listBox.addListItem("Tools");
 				listBox.addListItem("Travel");
-				listBox.addListItem("Stack test");
 				
 				listBox.addCallback(SuiEvent.OK_PRESSED, "handleCategorySelection", (event, parameters) -> handleCategorySelection(player, parameters));
 				listBox.display(player);
@@ -63,7 +62,6 @@ public class TerminalCharacterBuilderRadial implements RadialHandlerInterface {
 			case 2: handleWearables(player); break;
 			case 3: handleTools(player); break;
 			case 4: handleTravel(player); break;
-			case 5: handleStackTest(player); break;
 		}
 	}
 	
@@ -1373,17 +1371,6 @@ public class TerminalCharacterBuilderRadial implements RadialHandlerInterface {
 	
 	private static void handleYavGeoCave(Player player) {
 		new ObjectTeleportIntent(player.getCreatureObject(), new Location(-6485d, 83d, -446d, Terrain.YAVIN4)).broadcast();
-	}
-	
-	private static void handleStackTest(Player player) {
-		TangibleObject stackObject = ObjectCreator.createObjectFromTemplate("object/tangible/dice/shared_eqp_chance_cube.iff", TangibleObject.class);
-		CreatureObject creature = player.getCreatureObject();
-		SWGObject inventory = creature.getSlottedObject("inventory");
-		
-		stackObject.setCounter(6);
-		stackObject.moveToContainer(inventory);
-		
-		ObjectCreatedIntent.broadcast(stackObject);
 	}
 	
 }

@@ -73,34 +73,6 @@ public class TangibleObject extends SWGObject {
 		super(objectId, objectType);
 	}
 	
-	@Override
-	public void moveToContainer(SWGObject newParent) {
-		// Check if object is stackable
-		if (newParent != null && counter > 0) {
-			// Scan container for matching stackable item
-			String ourTemplate = getTemplate();
-			Map<String, String> ourAttributes = getAttributes();
-			
-			for (SWGObject candidate : newParent.getContainedObjects()) {
-				String theirTemplate = candidate.getTemplate();
-				Map<String, String> theirAttributes = candidate.getAttributes();
-				
-				if (this != candidate && candidate instanceof TangibleObject && ourTemplate.equals(theirTemplate) && ourAttributes.equals(theirAttributes)) {
-					DestroyObjectIntent.broadcast(this);
-					
-					// Increase stack count on matching stackable item
-					TangibleObject tangibleMatch = (TangibleObject) candidate;
-					int theirCounter = tangibleMatch.getCounter();
-					
-					tangibleMatch.setCounter(theirCounter + counter);
-					return;	// Stackable and matching item was found
-				}
-			}
-		}
-		
-		super.moveToContainer(newParent);    // Not stackable, use default behavior
-	}
-	
 	public int getMaxHitPoints() {
 		return maxHitPoints;
 	}

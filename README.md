@@ -1,7 +1,8 @@
-![License](https://img.shields.io/badge/license-GPLv3-blue.svg?longCache=true&style=flat)
+![license](https://img.shields.io/github/license/teamswg/ditto.svg)
+![GitHub release](https://img.shields.io/github/release/teamswg/ditto.svg)
+![Github commits (since latest release)](https://img.shields.io/github/commits-since/teamswg/ditto/latest.svg)
 ![JDK](https://img.shields.io/badge/JDK-10-blue.svg?longCache=true&style=flat)
-![Discord](https://img.shields.io/discord/373548910225915905.svg)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr/projectswg/holocore.svg)
+![discord](https://img.shields.io/discord/465088685197623296.svg)
 
 # Introduction #
 
@@ -11,11 +12,9 @@ The vision for this software is:
 * Providing an experience that's reasonably close to the original game servers
 * Easily expandable with new functionality
 * Good amount of configuration options for in-game features
-* *Highly* efficient use of system resources and solid performance
+* Efficient use of system resources and solid performance
 
 The way we perform code reviews should reflect these points.
-
-You can find detailed information on the [wiki](https://bitbucket.org/projectswg/holocore/wiki/Home).
 
 # Setting up a development environment #
 
@@ -59,7 +58,7 @@ A tool such as TRE Explorer is capable of opening the files and extracting their
 
 You should end up with a structure that looks something like this:
 ```
-holocore/
+ditto/
 	clientdata/
 		abstract/
 		appearance/
@@ -84,7 +83,9 @@ The project uses submodules. Get them by running: `git submodule update --init`
 
 ## Database ##
 
-User information is read from a MongoDB database that must run on the same machine as this software.
+User information is read from a MongoDB database that can be run on any machine on your network. Default is localhost,
+meaning same machine as you're running the game server on!
+
 1. Create database: `use ditto`
 2. Create a user for Ditto: `db.createUser({user: "ditto", pwd: "pass", roles: []})`
 3. Insert your user into the users collection of your database: `db.users.insert({username: "user", password: "pass", accessLevel: "dev", banned: false, characters: []})`
@@ -98,7 +99,7 @@ Compile and run Holocores main code using Gradle: `./gradlew run`
 
 ## Forwarder ##
 
-Holocore uses TCP for network communications, whereas SWG was programmed for UDP.  This adds numerous efficiencies with
+Ditto uses TCP for network communications, whereas SWG was programmed for UDP.  This adds numerous efficiencies with
 long distance communications, but requires that a little more work is done on the client side.  If you are using the
 launcher, you do not have to worry about this.  If you are not using the launcher, follow the guide
 [here](https://bitbucket.org/projectswg/forwarder).

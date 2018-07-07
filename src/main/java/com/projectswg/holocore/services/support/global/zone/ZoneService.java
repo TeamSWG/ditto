@@ -71,7 +71,7 @@ public class ZoneService extends Service {
 	}
 	
 	private void sendVersion(Player player) {
-		player.sendPacket(new ChatSystemMessage(ChatSystemMessage.SystemChatType.CHAT_BOX, "This server runs Holocore " + ProjectSWG.VERSION));
+		player.sendPacket(new ChatSystemMessage(ChatSystemMessage.SystemChatType.CHAT_BOX, "This server runs Ditto " + ProjectSWG.VERSION));
 	}
 	
 	private void sendMessageOfTheDay(Player player) {

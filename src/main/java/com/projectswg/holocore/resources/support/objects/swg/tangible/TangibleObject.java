@@ -351,7 +351,8 @@ public class TangibleObject extends SWGObject {
 	@Override
 	public void save(NetBufferStream stream) {
 		super.save(stream);
-		stream.addByte(1);
+		stream.addByte(2);
+		stream.addInt(counter);
 		appearanceData.save(stream);
 		stream.addInt(maxHitPoints);
 		stream.addInt(components);
@@ -368,18 +369,22 @@ public class TangibleObject extends SWGObject {
 	public void read(NetBufferStream stream) {
 		super.read(stream);
 		byte version = stream.getByte();
-		appearanceData.read(stream);
-		maxHitPoints = stream.getInt();
-		components = stream.getInt();
-		if (version == 0)
-			stream.getBoolean();
-		condition = stream.getInt();
-		pvpFlags = stream.getInt();
-		pvpStatus = PvpStatus.valueOf(stream.getAscii());
-		pvpFaction = PvpFaction.valueOf(stream.getAscii());
-		visibleGmOnly = stream.getBoolean();
-		objectEffects = stream.getArray();
-		optionFlags = stream.getInt();
+		
+		switch (version) {
+			case 2:
+				counter = stream.getInt();
+			case 1:
+				appearanceData.read(stream);
+				maxHitPoints = stream.getInt();
+				components = stream.getInt();
+				condition = stream.getInt();
+				pvpFlags = stream.getInt();
+				pvpStatus = PvpStatus.valueOf(stream.getAscii());
+				pvpFaction = PvpFaction.valueOf(stream.getAscii());
+				visibleGmOnly = stream.getBoolean();
+				objectEffects = stream.getArray();
+				optionFlags = stream.getInt();
+		}
 	}
-
+	
 }

@@ -57,7 +57,7 @@ import java.util.*;
 
 public class ProjectSWG {
 	
-	public static final String VERSION = "JUN18";
+	public static final String VERSION = "v0.1.0";
 	
 	private static final Galaxy GALAXY = new Galaxy();
 	
@@ -85,7 +85,7 @@ public class ProjectSWG {
 		Log.addWrapper(new ConsoleLogWrapper(LogLevel.DATA));
 		Log.addWrapper(new FileLogWrapper(new File(logDirectory, "log.txt")));
 		
-		Log.i("Holocore version: %s", VERSION);
+		Log.i("Ditto version: %s", VERSION);
 		
 		DataManager.initialize();
 		Thread.currentThread().setPriority(10);

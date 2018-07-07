@@ -87,8 +87,8 @@ User information is read from a MongoDB database that can be run on any machine 
 meaning same machine as you're running the game server on!
 
 1. Create database: `use ditto`
-2. Create a user for Ditto: `db.createUser({user: "ditto", pwd: "pass", roles: []})`
-3. Insert your user into the users collection of your database: `db.users.insert({username: "user", password: "pass", accessLevel: "dev", banned: false, characters: []})`
+2. Create a database user for Ditto: `db.createUser({user: "ditto", pwd: "pass", roles: []})`
+3. Insert your game user into the users collection of your database: `db.users.insert({username: "user", password: "pass", accessLevel: "dev", banned: false, characters: []})`
 
 ## Gradle ##
 

@@ -40,9 +40,9 @@ test {
 }
 
 shadowJar {
-	baseName = "Holocore"
+	baseName = "ditto"
 	classifier = null
-	version = null
+	version = "v0.1.0"
 }
 
 repositories {

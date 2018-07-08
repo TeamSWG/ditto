@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="11" >
+            <task type="Go to Location" id="0" name="Go to Location" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Go to the coordinates on Rori" name="journalEntryTitle" />
+                <data value="Go to (0, 2012) on Rori and find out what happened to the missing pilot." name="journalEntryDescription" />
+                <data value="gotocrash" name="taskName" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="rori" name="Planet" />
+                <data value="0" name="LocationX(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="2012" name="LocationZ(m)" />
+                <data value="25" name="Radius(m)" />
+                <task type="Go to Location" id="1" name="Go to Location" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Search the Crash Site" name="journalEntryTitle" />
+                    <data value="Search around the crash site for some kind of information." name="journalEntryDescription" />
+                    <data value="search" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="0" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="rori" name="Planet" />
+                    <data value="-6" name="LocationX(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="1999" name="LocationZ(m)" />
+                    <data value="3" name="Radius(m)" />
+                    <task type="Reward" id="8" name="Reward" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Found Datapad" name="journalEntryTitle" />
+                        <data value="You found a locked datapad." name="journalEntryDescription" />
+                        <data value="datapad" name="taskName" />
+                        <data value="true" name="isVisible" />
+                        <data value="true" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="" name="Experience Type" />
+                        <data value="0" name="Experience Amount" />
+                        <data value="Rebel" name="Faction Name" />
+                        <data value="0" name="Faction Amount" />
+                        <data value="0" name="Bank Credits" />
+                        <data value="object/tangible/mission/quest_item/syren1_locked_data.iff" name="Item" />
+                        <task type="Wait for Signal" id="2" name="Wait for Signal" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Return to Jevan Monsul" name="journalEntryTitle" />
+                            <data value="Bring the locked datapad and the sample of spice back to Jevan Monsul." name="journalEntryDescription" />
+                            <data value="unlock" name="taskName" />
+                            <data value="true" name="isVisible" />
+                            <data value="0" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="c_story1_1_imp_unlockeddata" name="Signal Name" />
+                            <task type="Wait for Signal" id="3" name="Wait for Signal" taskOnFail="false" >
+                                <data value="" name="prerequisiteTasks" />
+                                <data value="" name="exclusionTasks" />
+                                <data value="Talk to Doctor Vang" name="journalEntryTitle" />
+                                <data value="Doctor Edvar Vang should be able to analyze the spice sample and give you information." name="journalEntryDescription" />
+                                <data value="doctor" name="taskName" />
+                                <data value="true" name="isVisible" />
+                                <data value="true" name="showSystemMessages" />
+                                <data value="0" name="allowRepeats" />
+                                <data value="" name="musicOnActivate" />
+                                <data value="" name="target" />
+                                <data value="" name="parameter" />
+                                <data value="" name="grantQuestOnComplete" />
+                                <data value="" name="grantQuestOnFail" />
+                                <data value="c_story1_1_imp_doctorinfo" name="Signal Name" />
+                                <task type="Go to Location" id="5" name="Go to Location" taskOnFail="false" >
+                                    <data value="" name="prerequisiteTasks" />
+                                    <data value="" name="exclusionTasks" />
+                                    <data value="Go talk to Moxxar Krieg" name="journalEntryTitle" />
+                                    <data value="Talk to Moxxar Krieg about the spice sample." name="journalEntryDescription" />
+                                    <data value="corpse" name="taskName" />
+                                    <data value="true" name="isVisible" />
+                                    <data value="true" name="showSystemMessages" />
+                                    <data value="0" name="allowRepeats" />
+                                    <data value="" name="musicOnActivate" />
+                                    <data value="" name="target" />
+                                    <data value="" name="parameter" />
+                                    <data value="" name="grantQuestOnComplete" />
+                                    <data value="" name="grantQuestOnFail" />
+                                    <data value="tatooine" name="Planet" />
+                                    <data value="3292" name="LocationX(m)" />
+                                    <data value="0.0" name="LocationY(m)" />
+                                    <data value="-4542" name="LocationZ(m)" />
+                                    <data value="5" name="Radius(m)" />
+                                    <task type="Reward" id="6" name="Reward" taskOnFail="false" >
+                                        <data value="" name="prerequisiteTasks" />
+                                        <data value="" name="exclusionTasks" />
+                                        <data value="Too Late" name="journalEntryTitle" />
+                                        <data value="Someone killed Moxxar Krieg before you could talk to him.  A datapad was laying on the corpse with a message addressed to you." name="journalEntryDescription" />
+                                        <data value="reward" name="taskName" />
+                                        <data value="true" name="isVisible" />
+                                        <data value="true" name="showSystemMessages" />
+                                        <data value="0" name="allowRepeats" />
+                                        <data value="" name="musicOnActivate" />
+                                        <data value="" name="target" />
+                                        <data value="" name="parameter" />
+                                        <data value="" name="grantQuestOnComplete" />
+                                        <data value="" name="grantQuestOnFail" />
+                                        <data value="" name="Experience Type" />
+                                        <data value="0" name="Experience Amount" />
+                                        <data value="Rebel" name="Faction Name" />
+                                        <data value="0" name="Faction Amount" />
+                                        <data value="0" name="Bank Credits" />
+                                        <data value="object/tangible/mission/quest_item/syren1_warning.iff" name="Item" />
+                                        <task type="Wait for Signal" id="10" name="Wait for Signal" taskOnFail="false" >
+                                            <data value="" name="prerequisiteTasks" />
+                                            <data value="" name="exclusionTasks" />
+                                            <data value="More information is needed." name="journalEntryTitle" />
+                                            <data value="You found a corpse and a datapad with a message, apparently to you.  You need more information and hopefully your contact has something for you." name="journalEntryDescription" />
+                                            <data value="cliffhanger" name="taskName" />
+                                            <data value="true" name="isVisible" />
+                                            <data value="0" name="showSystemMessages" />
+                                            <data value="0" name="allowRepeats" />
+                                            <data value="" name="musicOnActivate" />
+                                            <data value="" name="target" />
+                                            <data value="" name="parameter" />
+                                            <data value="" name="grantQuestOnComplete" />
+                                            <data value="" name="grantQuestOnFail" />
+                                            <data value="c_story1_1_imp_cliffhanger" name="Signal Name" />
+                                        </task>
+                                    </task>
+                                </task>
+                            </task>
+                        </task>
+                    </task>
+                    <task type="Reward" id="9" name="Reward" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Found Sample" name="journalEntryTitle" />
+                        <data value="You found a sample of some kind." name="journalEntryDescription" />
+                        <data value="sample" name="taskName" />
+                        <data value="true" name="isVisible" />
+                        <data value="true" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="" name="Experience Type" />
+                        <data value="0" name="Experience Amount" />
+                        <data value="Rebel" name="Faction Name" />
+                        <data value="0" name="Faction Amount" />
+                        <data value="0" name="Bank Credits" />
+                        <data value="object/tangible/mission/quest_item/syren1_spice.iff" name="Item" />
+                    </task>
+                </task>
+            </task>
+        </tasks>
+        <list>
+            <data value="Man Down!" name="journalEntryTitle" />
+            <data value="A pilot is lost.  Find out what happened and what he was transporting." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="false" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Secrets of the Syren" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

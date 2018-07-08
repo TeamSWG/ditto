@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="9" >
+            <task type="Wait for Signal" id="0" name="Wait for Signal" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Dealing with evil" name="journalEntryTitle" />
+                <data value="You have agreed to try and gather evidence that Mort's old commander is now an armsdealer selling Imperial military hardware. His name is Morkov and he resides in the Keren hotel. Maybe the best way would be to pretend that you are interested in buying weapons?" name="journalEntryDescription" />
+                <data value="talkToMorkov" name="taskName" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="sound/music_themequest_acc_criminal.snd" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="talkedToMorkov" name="Signal Name" />
+                <task type="Wait for Signal" id="1" name="Wait for Signal" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="A secluded meeting" name="journalEntryTitle" />
+                    <data value="You have set up a deal with Morkov and you're to meet his courier in an abandoned building opposite to the hotel in Dee'Ja peak on Naboo. He will be located upstairs with the blasters you 'ordered'. You have a feeling this will get violent when they figure out you have no money but hopefully you can find some good information on the courier." name="journalEntryDescription" />
+                    <data value="meetingCourier" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="talkedToCourier" name="Signal Name" />
+                    <task type="Destroy Multiple and Loot" id="2" name="Destroy Multiple and Loot" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Defend yourself" name="journalEntryTitle" />
+                        <data value="The courier and his bodyguards are attacking you! Defend yourself and see if you can find anything useful among the courier's belongings." name="journalEntryDescription" />
+                        <data value="killedCourier" name="taskName" />
+                        <data value="true" name="isVisible" />
+                        <data value="true" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="clone_relics_morkov_courier" name="CreatureType" />
+                        <data value="" name="Social Group" />
+                        <data value="" name="requiredRegion" />
+                        <data value="Courier log book" name="LootItemName" />
+                        <data value="1" name="NumberItemsRequired" />
+                        <data value="100" name="LootDropPercent" />
+                        <data value="0" name="RewardCredits" />
+                        <task type="Wait for Signal" id="3" name="Wait for Signal" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Dangerous logs" name="journalEntryTitle" />
+                            <data value="The courier had on him logs of all his and Morkov's transactions for the last year. This should be what Mort need. Return to him in the Dearic cantina on Talus." name="journalEntryDescription" />
+                            <data value="logsRecovered" name="taskName" />
+                            <data value="true" name="isVisible" />
+                            <data value="true" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="showedMortLog" name="Signal Name" />
+                            <task type="Immediately Complete Quest" id="8" name="Immediately Complete Quest" taskOnFail="false" >
+                                <data value="" name="prerequisiteTasks" />
+                                <data value="" name="exclusionTasks" />
+                                <data value="" name="journalEntryTitle" />
+                                <data value="" name="journalEntryDescription" />
+                                <data value="" name="taskName" />
+                                <data value="false" name="isVisible" />
+                                <data value="0" name="showSystemMessages" />
+                                <data value="0" name="allowRepeats" />
+                                <data value="" name="musicOnActivate" />
+                                <data value="" name="target" />
+                                <data value="" name="parameter" />
+                                <data value="" name="grantQuestOnComplete" />
+                                <data value="" name="grantQuestOnFail" />
+                            </task>
+                            <data value="" name="waypointName" />
+                            <data value="0.0" name="LocationZ(m)" />
+                            <data value="0.0" name="LocationY(m)" />
+                            <data value="0.0" name="LocationX(m)" />
+                            <data value="tatooine" name="Planet" />
+                            <data value="0" name="createWaypoint" />
+                        </task>
+                        <data value="" name="waypointName" />
+                        <data value="0.0" name="LocationZ(m)" />
+                        <data value="0.0" name="LocationY(m)" />
+                        <data value="0.0" name="LocationX(m)" />
+                        <data value="tatooine" name="Planet" />
+                        <data value="0" name="createWaypoint" />
+                    </task>
+                    <task type="Encounter" id="7" name="Encounter" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="" name="journalEntryTitle" />
+                        <data value="" name="journalEntryDescription" />
+                        <data value="" name="taskName" />
+                        <data value="false" name="isVisible" />
+                        <data value="0" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="clone_relics_morkov_courier_bodyguard" name="Creature Type" />
+                        <data value="2" name="Count" />
+                        <data value="5" name="Min Distance" />
+                        <data value="10" name="Max Distance" />
+                        <data value="Any" name="Direction" />
+                        <data value="" name="waypointName" />
+                        <data value="0.0" name="LocationZ(m)" />
+                        <data value="0.0" name="LocationY(m)" />
+                        <data value="0.0" name="LocationX(m)" />
+                        <data value="tatooine" name="Planet" />
+                        <data value="0" name="createWaypoint" />
+                        <data value="0.0" name="Spawn Offset Location Z(m)" />
+                        <data value="0.0" name="Spawn Offset Location X(m)" />
+                    </task>
+                </task>
+                <data value="" name="waypointName" />
+                <data value="0.0" name="LocationZ(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="0.0" name="LocationX(m)" />
+                <data value="tatooine" name="Planet" />
+                <data value="0" name="createWaypoint" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Avenging Mort, phase I" name="journalEntryTitle" />
+            <data value="One of the troopers of the Clone Wars wants revenge for being left to die by his old commander, now a corrupt armsdealer selling imperial military material." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="The Clone Relics, A fallen hero" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

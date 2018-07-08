@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="1" >
+            <task type="Wait for Signal" id="0" name="Wait for Signal" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Report to Hssissk Bloodscale" name="journalEntryTitle" />
+                <data value="Orooroo told you about a commando operation that Hssissk Bloodscale, the leader of the Zssik clan, is putting together. You are to report to Hssissk to find out what your next assignment is going to be." name="journalEntryDescription" />
+                <data value="reportToHssissk" name="taskName" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="musicOnComplete" />
+                <data value="" name="musicOnFail" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="0" name="createWaypoint" />
+                <data value="tatooine" name="Planet" />
+                <data value="0.0" name="LocationX(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="0.0" name="LocationZ(m)" />
+                <data value="" name="waypointName" />
+                <data value="readyForHssissk" name="Signal Name" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Report to Hssissk" name="journalEntryTitle" />
+            <data value="Find Hssissk for your next assignment." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Zssik Clan" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

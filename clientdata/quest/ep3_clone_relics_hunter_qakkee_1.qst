@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="3" >
+            <task type="Destroy Multiple and Loot" id="0" name="Destroy Multiple and Loot" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Hunt the Dewbacks" name="journalEntryTitle" />
+                <data value="Find 10 cannibal Dewbacks, kill them and remove their jaws as evidence for Qakkee." name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="sound/mus_rodian_quest_accept.snd" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="dewback_cannibal" name="CreatureType" />
+                <data value="Bloody Dewback Jaw" name="LootItemName" />
+                <data value="10" name="NumberItemsRequired" />
+                <data value="100" name="LootDropPercent" />
+                <data value="0" name="RewardCredits" />
+                <data value="killDewbacks" name="taskName" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="" name="Social Group" />
+                <data value="" name="requiredRegion" />
+                <task type="Wait for Signal" id="2" name="Wait for Signal" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Return to Qakkee" name="journalEntryTitle" />
+                    <data value="Bring the Dewback jaws back to Qakkee and, if you feel like it, laugh at him." name="journalEntryDescription" />
+                    <data value="dewbacksDead" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="doneWithDewbacks" name="Signal Name" />
+                    <data value="" name="waypointName" />
+                    <data value="0.0" name="LocationZ(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="0.0" name="LocationX(m)" />
+                    <data value="tatooine" name="Planet" />
+                    <data value="0" name="createWaypoint" />
+                </task>
+                <data value="" name="waypointName" />
+                <data value="0.0" name="LocationZ(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="0.0" name="LocationX(m)" />
+                <data value="tatooine" name="Planet" />
+                <data value="0" name="createWaypoint" />
+            </task>
+        </tasks>
+        <list>
+            <data value="The great hunter, phase I" name="journalEntryTitle" />
+            <data value="Qakkee believes he's the greatest hunter in the galaxy. Prove that you are his equal!" name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="The Clone Relics, hunter quests" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

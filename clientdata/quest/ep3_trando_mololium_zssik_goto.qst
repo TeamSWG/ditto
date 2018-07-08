@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="1" >
+            <task type="Wait for Signal" id="0" name="Wait for Signal" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Speak with Mosolium" name="journalEntryTitle" />
+                <data value="Find and speak with Mosolium for your next assignment." name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="0" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="sound/mus_trandoshan_quest_accept.snd" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="readyForMosoliumMission" name="Signal Name" />
+                <data value="" name="taskName" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="" name="waypointName" />
+                <data value="0.0" name="LocationZ(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="0.0" name="LocationX(m)" />
+                <data value="tatooine" name="Planet" />
+                <data value="0" name="createWaypoint" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Speak with Mosolium" name="journalEntryTitle" />
+            <data value="Now that you have disrupted the Blackscale slaving operation, it is time to begin your direct operations against the Blackscale clan. Speak with Mosolium to discover what it is you need to do next." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Zssik Clan" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

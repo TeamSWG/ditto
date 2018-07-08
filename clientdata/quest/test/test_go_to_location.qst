@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="4" >
+            <task type="Go to Location" id="0" name="Go to Location" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Test go_to_location quest" name="journalEntryTitle" />
+                <data value="Get within 10 meters of  (-1200, -3600) on tatooine." name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="tatooine" name="Planet" />
+                <data value="-1200" name="LocationX(m)" />
+                <data value="0" name="LocationY(m)" />
+                <data value="-3600" name="LocationZ(m)" />
+                <data value="10.0" name="Radius(m)" />
+                <data value="" name="taskName" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="true" name="createWaypoint" />
+                <data value="HelloWorld" name="waypointName" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Testing" name="journalEntryTitle" />
+            <data value="Go To Location Test" name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Testing" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

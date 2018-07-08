@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="8" >
+            <task type="Destroy Multiple" id="0" name="Destroy Multiple" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Kill the Worrts" name="journalEntryTitle" />
+                <data value="Kill 10 worrts and return to Gerak Vurtimis in Bestine." name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="worrt" name="Target Server Template" />
+                <data value="10" name="Count" />
+                <data value="250" name="RewardCredits" />
+                <task type="Wait for Signal" id="7" name="Wait for Signal" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Return to Gerak Vurtimis" name="journalEntryTitle" />
+                    <data value="The hunt was successful.  Return to Gerak Vurtimis." name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="0" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="" name="Signal Name" />
+                </task>
+            </task>
+        </tasks>
+        <list>
+            <data value="Safety Measures" name="journalEntryTitle" />
+            <data value="Kill 10 worrts and return to Gerak Vurtimis in Bestine." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="false" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Ground Quest" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

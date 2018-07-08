@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="14" >
+            <task type="Reward" id="0" name="Reward" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Speak to C-3TC" name="journalEntryTitle" />
+                <data value="C-3TC told you that his master is missing." name="journalEntryDescription" />
+                <data value="false" name="isVisible" />
+                <data value="false" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="" name="Experience Type" />
+                <data value="0" name="Experience Amount" />
+                <data value="Rebel" name="Faction Name" />
+                <data value="0" name="Faction Amount" />
+                <data value="0" name="Bank Credits" />
+                <data value="" name="Item" />
+                <task type="Go to Location" id="1" name="Go to Location" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Go to Moenia Starport" name="journalEntryTitle" />
+                    <data value="Go to Moenia Starport and see if someone knows what happened to Valance Serth." name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="naboo" name="Planet" />
+                    <data value="4796" name="LocationX(m)" />
+                    <data value="4" name="LocationY(m)" />
+                    <data value="-4698" name="LocationZ(m)" />
+                    <data value="20" name="Radius(m)" />
+                    <task type="Wait for Signal" id="2" name="Wait for Signal" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Talk to Selan Ellison" name="journalEntryTitle" />
+                        <data value="Find Selan Ellison and talk to her.  She knows someone who may help you." name="journalEntryDescription" />
+                        <data value="true" name="isVisible" />
+                        <data value="true" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="c_darndroid1_selan" name="Signal Name" />
+                        <task type="Wait for Signal" id="3" name="Wait for Signal" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Speak to Amarent Loren" name="journalEntryTitle" />
+                            <data value="Go to Tyrena on Corellia and speak with Amarent Loren, who should be in the spaceport.  One way or another, get him to tell you what happened to Valance Serth's ship." name="journalEntryDescription" />
+                            <data value="true" name="isVisible" />
+                            <data value="true" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="c_darndroid1_amarent" name="Signal Name" />
+                            <task type="Go to Location" id="4" name="Go to Location" taskOnFail="false" >
+                                <data value="" name="prerequisiteTasks" />
+                                <data value="" name="exclusionTasks" />
+                                <data value="Find the crashed ship." name="journalEntryTitle" />
+                                <data value="Go to Talus and find the crashed ship.  It is near the Imperial Outpost." name="journalEntryDescription" />
+                                <data value="true" name="isVisible" />
+                                <data value="true" name="showSystemMessages" />
+                                <data value="0" name="allowRepeats" />
+                                <data value="" name="musicOnActivate" />
+                                <data value="" name="target" />
+                                <data value="" name="parameter" />
+                                <data value="" name="grantQuestOnComplete" />
+                                <data value="" name="grantQuestOnFail" />
+                                <data value="talus" name="Planet" />
+                                <data value="-2380" name="LocationX(m)" />
+                                <data value="0" name="LocationY(m)" />
+                                <data value="2031" name="LocationZ(m)" />
+                                <data value="25" name="Radius(m)" />
+                                <task type="Wait for Signal" id="6" name="Wait for Signal" taskOnFail="false" >
+                                    <data value="" name="prerequisiteTasks" />
+                                    <data value="" name="exclusionTasks" />
+                                    <data value="Talk to Valance Serth" name="journalEntryTitle" />
+                                    <data value="Kill the Black Sun thugs that are threatening Valance Serth and then talk to him." name="journalEntryDescription" />
+                                    <data value="true" name="isVisible" />
+                                    <data value="true" name="showSystemMessages" />
+                                    <data value="0" name="allowRepeats" />
+                                    <data value="" name="musicOnActivate" />
+                                    <data value="" name="target" />
+                                    <data value="" name="parameter" />
+                                    <data value="" name="grantQuestOnComplete" />
+                                    <data value="" name="grantQuestOnFail" />
+                                    <data value="c_darndroid1_valance" name="Signal Name" />
+                                    <task type="Reward" id="7" name="Reward" taskOnFail="false" >
+                                        <data value="" name="prerequisiteTasks" />
+                                        <data value="" name="exclusionTasks" />
+                                        <data value="Valance's Reward" name="journalEntryTitle" />
+                                        <data value="Valance Serth rewards you for saving his life." name="journalEntryDescription" />
+                                        <data value="true" name="isVisible" />
+                                        <data value="false" name="showSystemMessages" />
+                                        <data value="0" name="allowRepeats" />
+                                        <data value="" name="musicOnActivate" />
+                                        <data value="" name="target" />
+                                        <data value="" name="parameter" />
+                                        <data value="" name="grantQuestOnComplete" />
+                                        <data value="" name="grantQuestOnFail" />
+                                        <data value="combat_general" name="Experience Type" />
+                                        <data value="1000" name="Experience Amount" />
+                                        <data value="townsperson" name="Faction Name" />
+                                        <data value="50" name="Faction Amount" />
+                                        <data value="3000" name="Bank Credits" />
+                                        <data value="object/tangible/loot/collectible/collectible_parts/blue_rug_adhesive.iff" name="Item" />
+                                        <data value="reward" name="taskName" />
+                                        <task type="Immediately Complete Quest" id="13" name="Immediately Complete Quest" taskOnFail="false" >
+                                            <data value="" name="prerequisiteTasks" />
+                                            <data value="" name="exclusionTasks" />
+                                            <data value="Mission Accomplished" name="journalEntryTitle" />
+                                            <data value="Accomplished mission." name="journalEntryDescription" />
+                                            <data value="complete" name="taskName" />
+                                            <data value="false" name="isVisible" />
+                                            <data value="true" name="showSystemMessages" />
+                                            <data value="0" name="allowRepeats" />
+                                            <data value="" name="musicOnActivate" />
+                                            <data value="" name="target" />
+                                            <data value="" name="parameter" />
+                                            <data value="" name="grantQuestOnComplete" />
+                                            <data value="" name="grantQuestOnFail" />
+                                        </task>
+                                    </task>
+                                    <data value="talkserth" name="taskName" />
+                                </task>
+                                <data value="findship" name="taskName" />
+                            </task>
+                            <data value="amarentinfo" name="taskName" />
+                        </task>
+                        <task type="Wait for Signal" id="8" name="Wait for Signal" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Speak to Amarent Loren" name="journalEntryTitle" />
+                            <data value="Speak to Amarent Loren.  Functionaries like him are underpaid.  A well-placed bribe would loosen his tongue." name="journalEntryDescription" />
+                            <data value="false" name="isVisible" />
+                            <data value="0" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="c_darndroid1_bribe" name="Signal Name" />
+                            <task type="Reward" id="12" name="Reward" taskOnFail="false" >
+                                <data value="" name="prerequisiteTasks" />
+                                <data value="" name="exclusionTasks" />
+                                <data value="Bribed Amarent Loren" name="journalEntryTitle" />
+                                <data value="You bribed Amarent Loren for his information." name="journalEntryDescription" />
+                                <data value="true" name="isVisible" />
+                                <data value="0" name="showSystemMessages" />
+                                <data value="0" name="allowRepeats" />
+                                <data value="" name="musicOnActivate" />
+                                <data value="" name="target" />
+                                <data value="" name="parameter" />
+                                <data value="" name="grantQuestOnComplete" />
+                                <data value="" name="grantQuestOnFail" />
+                                <data value="" name="Experience Type" />
+                                <data value="0" name="Experience Amount" />
+                                <data value="Rebel" name="Faction Name" />
+                                <data value="0" name="Faction Amount" />
+                                <data value="-1000" name="Bank Credits" />
+                                <data value="" name="Item" />
+                                <data value="" name="taskName" />
+                            </task>
+                            <data value="canbribe" name="taskName" />
+                        </task>
+                        <task type="Wait for Signal" id="10" name="Wait for Signal" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Speak to Amarent Loren" name="journalEntryTitle" />
+                            <data value="Speak to Amarent Loren in Tyrena.  He can probably be bullied into giving you information." name="journalEntryDescription" />
+                            <data value="false" name="isVisible" />
+                            <data value="0" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="c_darndroid1_intimidate" name="Signal Name" />
+                            <task type="Reward" id="11" name="Reward" taskOnFail="false" >
+                                <data value="" name="prerequisiteTasks" />
+                                <data value="" name="exclusionTasks" />
+                                <data value="Intimidated Amarent Loren" name="journalEntryTitle" />
+                                <data value="You intimidated Amarent Loren.  He gave you the information that you need, but I'm sure he reported you to his superiors." name="journalEntryDescription" />
+                                <data value="true" name="isVisible" />
+                                <data value="0" name="showSystemMessages" />
+                                <data value="0" name="allowRepeats" />
+                                <data value="" name="musicOnActivate" />
+                                <data value="" name="target" />
+                                <data value="" name="parameter" />
+                                <data value="" name="grantQuestOnComplete" />
+                                <data value="" name="grantQuestOnFail" />
+                                <data value="" name="Experience Type" />
+                                <data value="0" name="Experience Amount" />
+                                <data value="Imperial" name="Faction Name" />
+                                <data value="-50" name="Faction Amount" />
+                                <data value="0" name="Bank Credits" />
+                                <data value="" name="Item" />
+                                <data value="" name="taskName" />
+                            </task>
+                            <data value="canintimidate" name="taskName" />
+                        </task>
+                        <data value="selan" name="taskName" />
+                    </task>
+                    <data value="gostar" name="taskName" />
+                </task>
+                <data value="worthlessreward" name="taskName" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Shuttle Crash" name="journalEntryTitle" />
+            <data value="Valance Serth is missing.  His ship never landed in Moenia.  Find out what happened and save him." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="false" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Ground Quest" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

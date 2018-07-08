@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="1" >
+            <task type="Destroy Multiple and Loot" id="0" name="Destroy Multiple and Loot" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Collect the liver" name="journalEntryTitle" />
+                <data value="You will need to kill Wrhisch and collect his liver for further study.  When finished take it to Dr. Cheyerooto for study." name="journalEntryDescription" />
+                <data value="1" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="true" name="allowRepeats" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="ep3_qst_wrhisch" name="CreatureType" />
+                <data value="Wrhisch's Liver" name="LootItemName" />
+                <data value="1" name="NumberItemsRequired" />
+                <data value="100" name="LootDropPercent" />
+                <data value="0" name="RewardCredits" />
+                <data value="" name="musicOnActivate" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Madness End" name="journalEntryTitle" />
+            <data value="Put poor Wrhisch out of his misery and take his liver to Dr. Cheyerooto." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Sera Jossi" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

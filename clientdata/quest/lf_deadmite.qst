@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="9" >
+            <task type="Go to Location" id="0" name="Go to Location" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Go to Cave" name="journalEntryTitle" />
+                <data value="Go to the Giant Bark Mite Cave" name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="rori" name="Planet" />
+                <data value="3572" name="LocationX(m)" />
+                <data value="91" name="LocationY(m)" />
+                <data value="5424" name="LocationZ(m)" />
+                <data value="10.0" name="Radius(m)" />
+                <task type="Destroy Multiple and Loot" id="1" name="Destroy Multiple and Loot" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Collect Queen Sample" name="journalEntryTitle" />
+                    <data value="Collect 1 Mutant Bark Mite Queen Sample" name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="mutant_bark_mite_queen" name="CreatureType" />
+                    <data value="Mutant Bark Mite Queen Sample" name="LootItemName" />
+                    <data value="1" name="NumberItemsRequired" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="2000" name="RewardCredits" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="" name="Social Group" />
+                    <data value="" name="requiredRegion" />
+                </task>
+                <task type="Destroy Multiple and Loot" id="2" name="Destroy Multiple and Loot" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Collect Soldier Samples" name="journalEntryTitle" />
+                    <data value="Collect 1 Mutant Bark Mite Soldier Sample" name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="mutant_bark_mite_soldier" name="CreatureType" />
+                    <data value="Mutant Bark Mite Soldier Sample" name="LootItemName" />
+                    <data value="1" name="NumberItemsRequired" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="2000" name="RewardCredits" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="" name="Social Group" />
+                    <data value="" name="requiredRegion" />
+                </task>
+                <task type="Destroy Multiple and Loot" id="3" name="Destroy Multiple and Loot" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Collect Mutant Samples" name="journalEntryTitle" />
+                    <data value="Collect Giant Bark Mite Samples" name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="mutant_bark_mite_giant" name="CreatureType" />
+                    <data value="Giantt Bark Mite Sample" name="LootItemName" />
+                    <data value="3" name="NumberItemsRequired" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="1500" name="RewardCredits" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="" name="Social Group" />
+                    <data value="" name="requiredRegion" />
+                </task>
+                <task type="Destroy Multiple and Loot" id="4" name="Destroy Multiple and Loot" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Collect Worker Sample" name="journalEntryTitle" />
+                    <data value="Collect 3 Mutant Bark Mite Worker Samples" name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="mutant_bark_mite_worker" name="CreatureType" />
+                    <data value="Mutant Bark Mite Worker Sample" name="LootItemName" />
+                    <data value="3" name="NumberItemsRequired" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="1200" name="RewardCredits" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="" name="Social Group" />
+                    <data value="" name="requiredRegion" />
+                </task>
+                <task type="Destroy Multiple and Loot" id="6" name="Destroy Multiple and Loot" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Collect Hatchling Samples" name="journalEntryTitle" />
+                    <data value="Collect 5 Bark Mite Hatchling Samples" name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="mutant_bark_mite_hatchling" name="CreatureType" />
+                    <data value="Mutant Bark Mite Hatchling Sample" name="LootItemName" />
+                    <data value="5" name="NumberItemsRequired" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="1000" name="RewardCredits" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="" name="Social Group" />
+                    <data value="" name="requiredRegion" />
+                </task>
+                <task type="Wait for Signal" id="8" name="Wait for Signal" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Return to Risha Sinan" name="journalEntryTitle" />
+                    <data value="When all the samples are collected, return to Risha Sinan in Restuss" name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="0" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="" name="Signal Name" />
+                </task>
+            </task>
+        </tasks>
+        <list>
+            <data value="Bark Mite Samples" name="journalEntryTitle" />
+            <data value="Risha Sinan needs samples of Bark Mites.  Travel to the Giant Bark Mite cave and collect them for her.  Return to her when done." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="false" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Ground Quest" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

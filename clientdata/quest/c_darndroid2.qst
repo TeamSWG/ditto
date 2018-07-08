@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="9" >
+            <task type="Go to Location" id="0" name="Go to Location" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Find the Black Sun staging area." name="journalEntryTitle" />
+                <data value="Go to the Black Sun staging camp and scout the camp." name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="talus" name="Planet" />
+                <data value="5353.0" name="LocationX(m)" />
+                <data value="131" name="LocationY(m)" />
+                <data value="5632" name="LocationZ(m)" />
+                <data value="10.0" name="Radius(m)" />
+                <task type="Destroy Multiple" id="1" name="Destroy Multiple" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Kill a Black Sun Minion" name="journalEntryTitle" />
+                    <data value="Kill 1 Black Sun Minion." name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="black_sun_minion" name="Target Server Template" />
+                    <data value="" name="Social Group" />
+                    <data value="" name="requiredRegion" />
+                    <data value="1" name="Count" />
+                    <data value="2000" name="RewardCredits" />
+                    <data value="" name="taskName" />
+                </task>
+                <task type="Destroy Multiple" id="2" name="Destroy Multiple" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Kill Black Sun Smugglers" name="journalEntryTitle" />
+                    <data value="Kill 5 Black Sun Smugglers." name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="black_sun_smuggler" name="Target Server Template" />
+                    <data value="" name="Social Group" />
+                    <data value="" name="requiredRegion" />
+                    <data value="5" name="Count" />
+                    <data value="1500" name="RewardCredits" />
+                    <data value="" name="taskName" />
+                </task>
+                <task type="Destroy Multiple" id="3" name="Destroy Multiple" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Kill Black Sun Initiates" name="journalEntryTitle" />
+                    <data value="Kill 8 Black Sun Initiates." name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="black_sun_initiate" name="Target Server Template" />
+                    <data value="" name="Social Group" />
+                    <data value="" name="requiredRegion" />
+                    <data value="8" name="Count" />
+                    <data value="1000" name="RewardCredits" />
+                    <data value="" name="taskName" />
+                </task>
+                <task type="Wait for Signal" id="4" name="Wait for Signal" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Return to Valance Serth" name="journalEntryTitle" />
+                    <data value="Once you have killed 8 Black Sun Initiates, 5 Black Sun Smugglers, and 1 Black Sun Minion, return to Valance Serth." name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="c_darndroid2_campdead" name="Signal Name" />
+                    <task type="Wait for Signal" id="5" name="Wait for Signal" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Talk to Valance once the space transport is dead." name="journalEntryTitle" />
+                        <data value="Eliminate the Black Sun's space transport and return to Valance Serth" name="journalEntryDescription" />
+                        <data value="true" name="isVisible" />
+                        <data value="true" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="c_darndroid2_spacedone" name="Signal Name" />
+                        <task type="Wait for Signal" id="7" name="Wait for Signal" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Wipe C-3TC's memory." name="journalEntryTitle" />
+                            <data value="C-3TC has caused his master too much trouble.  He needs a memory wipe." name="journalEntryDescription" />
+                            <data value="true" name="isVisible" />
+                            <data value="true" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="c_darndroid2_memwipe" name="Signal Name" />
+                            <task type="Reward" id="6" name="Reward" taskOnFail="false" >
+                                <data value="" name="prerequisiteTasks" />
+                                <data value="" name="exclusionTasks" />
+                                <data value="" name="journalEntryTitle" />
+                                <data value="" name="journalEntryDescription" />
+                                <data value="true" name="isVisible" />
+                                <data value="0" name="showSystemMessages" />
+                                <data value="0" name="allowRepeats" />
+                                <data value="" name="musicOnActivate" />
+                                <data value="" name="target" />
+                                <data value="" name="parameter" />
+                                <data value="" name="grantQuestOnComplete" />
+                                <data value="" name="grantQuestOnFail" />
+                                <data value="combat_general" name="Experience Type" />
+                                <data value="1000" name="Experience Amount" />
+                                <data value="townsperson" name="Faction Name" />
+                                <data value="50" name="Faction Amount" />
+                                <data value="1000" name="Bank Credits" />
+                                <data value="object/tangible/loot/loot_schematic/droid_head_schematic.iff" name="Item" />
+                                <data value="" name="taskName" />
+                                <task type="Immediately Complete Quest" id="8" name="Immediately Complete Quest" taskOnFail="false" >
+                                    <data value="" name="prerequisiteTasks" />
+                                    <data value="" name="exclusionTasks" />
+                                    <data value="Mission complete" name="journalEntryTitle" />
+                                    <data value="You have completed the mission." name="journalEntryDescription" />
+                                    <data value="" name="taskName" />
+                                    <data value="true" name="isVisible" />
+                                    <data value="0" name="showSystemMessages" />
+                                    <data value="0" name="allowRepeats" />
+                                    <data value="" name="musicOnActivate" />
+                                    <data value="" name="target" />
+                                    <data value="" name="parameter" />
+                                    <data value="" name="grantQuestOnComplete" />
+                                    <data value="" name="grantQuestOnFail" />
+                                </task>
+                            </task>
+                        </task>
+                    </task>
+                </task>
+            </task>
+        </tasks>
+        <list>
+            <data value="Black Sun Plots" name="journalEntryTitle" />
+            <data value="Help Valance stop the Black Sun from sending tainted medicinal spice into the galaxy." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="false" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Ground Quest" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

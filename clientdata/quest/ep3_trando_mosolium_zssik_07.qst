@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="11" >
+            <task type="Wait for Signal" id="6" name="Wait for Signal" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Breach Bunker Defenses" name="journalEntryTitle" />
+                <data value="Gain entry into the command bunker located in the center of the Blackscale stronghold. The access codes can be found inside the locked room on the second floor." name="journalEntryDescription" />
+                <data value="trandoBreachEntry" name="taskName" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="trandoBunkerEntryBreach" name="Signal Name" />
+                <task type="Destroy Multiple and Loot" id="7" name="Destroy Multiple and Loot" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Kill Captain Beshk" name="journalEntryTitle" />
+                    <data value="In order to gain entry into the power room, you will need to get the access codes that only Captain Beshk has. Kill him and get his passcode." name="journalEntryDescription" />
+                    <data value="" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="ep3_qst_blackscale_captain_beshk" name="CreatureType" />
+                    <data value="" name="Social Group" />
+                    <data value="" name="requiredRegion" />
+                    <data value="Command Key Code" name="LootItemName" />
+                    <data value="1" name="NumberItemsRequired" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="0" name="RewardCredits" />
+                    <task type="Wait for Signal" id="8" name="Wait for Signal" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Turn off the Power" name="journalEntryTitle" />
+                        <data value="Enter the power core and turn off the power to the bunker. This will disable the lock on the command center." name="journalEntryDescription" />
+                        <data value="trandoFlipPowerSwitch" name="taskName" />
+                        <data value="true" name="isVisible" />
+                        <data value="true" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="trandoPowerFlipped" name="Signal Name" />
+                        <task type="Retrieve Item" id="9" name="Retrieve Item" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Retrieve the Avatar Access Codes" name="journalEntryTitle" />
+                            <data value="Enter the bunkers command center and steal the access codes from its central computer system." name="journalEntryDescription" />
+                            <data value="" name="taskName" />
+                            <data value="true" name="isVisible" />
+                            <data value="true" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="object/tangible/quest/computer_console.iff" name="Server Object Template" />
+                            <data value="1" name="Count" />
+                            <data value="Avatar Access Codes" name="ItemName" />
+                            <data value="100" name="LootDropPercent" />
+                            <task type="Wait for Signal" id="10" name="Wait for Signal" taskOnFail="false" >
+                                <data value="" name="prerequisiteTasks" />
+                                <data value="" name="exclusionTasks" />
+                                <data value="Return to Mosolium" name="journalEntryTitle" />
+                                <data value="Now that you have recovered all the required pieces to gain access to the Avatar Space Platform, return to Mosolium." name="journalEntryDescription" />
+                                <data value="" name="taskName" />
+                                <data value="true" name="isVisible" />
+                                <data value="true" name="showSystemMessages" />
+                                <data value="0" name="allowRepeats" />
+                                <data value="" name="musicOnActivate" />
+                                <data value="" name="target" />
+                                <data value="" name="parameter" />
+                                <data value="" name="grantQuestOnComplete" />
+                                <data value="" name="grantQuestOnFail" />
+                                <data value="rewardMosolium02" name="Signal Name" />
+                            </task>
+                        </task>
+                    </task>
+                </task>
+            </task>
+        </tasks>
+        <list>
+            <data value="Assault on the Blackscale" name="journalEntryTitle" />
+            <data value="Enter the Blackscale Slave Camp, gain acess to the control center, and gain the Avatar Platform access codes." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="false" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Zssik Clan" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

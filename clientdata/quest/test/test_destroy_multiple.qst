@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="1" >
+            <task type="Destroy Multiple" id="0" name="Destroy Multiple" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Kill some womprats" name="journalEntryTitle" />
+                <data value="Go find and kill a bunch of womprats." name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="0" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="systemMessageOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="womprat" name="Target Server Template" />
+                <data value="3" name="Count" />
+                <data value="500" name="RewardCredits" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="" name="Social Group" />
+                <data value="" name="requiredRegion" />
+                <data value="" name="taskName" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Test Destroy Multiple" name="journalEntryTitle" />
+            <data value="Test quest to kill 3 womprats." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Test" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

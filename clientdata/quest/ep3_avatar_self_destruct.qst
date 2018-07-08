@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="8" >
+            <task type="Wait for Signal" id="0" name="Wait for Signal" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Deactivate Magnetic Shielding" name="journalEntryTitle" />
+                <data value="In order to remove the safeties from the power core, you will have to turn off the magnetic shielding that surrounds each of the safeties. In order to do this, access the safety override terminal and turn off the shielding." name="journalEntryDescription" />
+                <data value="safetyShield" name="taskName" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="sound/mus_trandoshan_quest_accept.snd" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="magneticShieldOff" name="Signal Name" />
+                <task type="Retrieve Item" id="3" name="Retrieve Item" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Remove Power Fluctuation Safety" name="journalEntryTitle" />
+                    <data value="The power fluctuation safety is located on the upper level of the power core room. Manually remove this safety in order to allow the power flow to erractically shift." name="journalEntryDescription" />
+                    <data value="powerFluctuation" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="object/tangible/quest/avatar_safety_01.iff" name="Server Object Template" />
+                    <data value="1" name="Count" />
+                    <data value="Power Fluctuation Safety" name="ItemName" />
+                    <data value="100" name="LootDropPercent" />
+                    <task type="Retrieve Item" id="4" name="Retrieve Item" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Remove Power Limiter Safety" name="journalEntryTitle" />
+                        <data value="The power limiter safety is located on the lower level of the power core. Removing this safety will allow the power core to be pushed beyond its designed capacity." name="journalEntryDescription" />
+                        <data value="powerLimiter" name="taskName" />
+                        <data value="true" name="isVisible" />
+                        <data value="true" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="object/tangible/quest/avatar_safety_02.iff" name="Server Object Template" />
+                        <data value="1" name="Count" />
+                        <data value="Power Limiter Safety" name="ItemName" />
+                        <data value="100" name="LootDropPercent" />
+                        <task type="Wait for Signal" id="5" name="Wait for Signal" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Overload the Power Core" name="journalEntryTitle" />
+                            <data value="Without the proper safeties in the core it is a simple matter of overloading the core. Use the power core master terminal to push it beyond its capacity and cause an overload." name="journalEntryDescription" />
+                            <data value="overloadCore" name="taskName" />
+                            <data value="true" name="isVisible" />
+                            <data value="true" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="coreOverloaded" name="Signal Name" />
+                            <task type="Destroy Multiple and Loot" id="7" name="Destroy Multiple and Loot" taskOnFail="false" >
+                                <data value="" name="prerequisiteTasks" />
+                                <data value="" name="exclusionTasks" />
+                                <data value="Get Destruct Code" name="journalEntryTitle" />
+                                <data value="In order to initiate the destruct sequence, the correct code will have to be entered. The watch commander will be the only active personnel who has this destruct code." name="journalEntryDescription" />
+                                <data value="" name="taskName" />
+                                <data value="true" name="isVisible" />
+                                <data value="true" name="showSystemMessages" />
+                                <data value="0" name="allowRepeats" />
+                                <data value="" name="musicOnActivate" />
+                                <data value="" name="target" />
+                                <data value="" name="parameter" />
+                                <data value="" name="grantQuestOnComplete" />
+                                <data value="" name="grantQuestOnFail" />
+                                <data value="ep3_avatar_blackscale_watch_cmd" name="CreatureType" />
+                                <data value="" name="Social Group" />
+                                <data value="" name="requiredRegion" />
+                                <data value="DESTRUCT CODE: 1 2 3 4 5" name="LootItemName" />
+                                <data value="1" name="NumberItemsRequired" />
+                                <data value="100" name="LootDropPercent" />
+                                <data value="0" name="RewardCredits" />
+                                <task type="Wait for Signal" id="6" name="Wait for Signal" taskOnFail="false" >
+                                    <data value="" name="prerequisiteTasks" />
+                                    <data value="" name="exclusionTasks" />
+                                    <data value="Begin Destruct Sequence" name="journalEntryTitle" />
+                                    <data value="Now that the core is overloaded it is a simple matter to initate a destruct sequence on the station. Use the station's master control console to enter the destruct sequence 12345 which will release the overloaded core energy into the stations subsystems. This will cause a chain reaction resulting in the destruction of the station. After this sequence is activated the station will self destruct in five minutes. " name="journalEntryDescription" />
+                                    <data value="selfDestruct" name="taskName" />
+                                    <data value="true" name="isVisible" />
+                                    <data value="true" name="showSystemMessages" />
+                                    <data value="0" name="allowRepeats" />
+                                    <data value="" name="musicOnActivate" />
+                                    <data value="" name="target" />
+                                    <data value="" name="parameter" />
+                                    <data value="" name="grantQuestOnComplete" />
+                                    <data value="" name="grantQuestOnFail" />
+                                    <data value="destructSequenceStarted" name="Signal Name" />
+                                    <data value="" name="waypointName" />
+                                    <data value="0.0" name="LocationZ(m)" />
+                                    <data value="0.0" name="LocationY(m)" />
+                                    <data value="0.0" name="LocationX(m)" />
+                                    <data value="tatooine" name="Planet" />
+                                    <data value="0" name="createWaypoint" />
+                                    <data value="sound/mus_trandoshan_quest_sucess.snd" name="musicOnComplete" />
+                                    <data value="" name="musicOnFail" />
+                                </task>
+                                <data value="" name="waypointName" />
+                                <data value="0.0" name="LocationZ(m)" />
+                                <data value="0.0" name="LocationY(m)" />
+                                <data value="0.0" name="LocationX(m)" />
+                                <data value="tatooine" name="Planet" />
+                                <data value="0" name="createWaypoint" />
+                            </task>
+                        </task>
+                        <data value="" name="musicOnComplete" />
+                        <data value="" name="musicOnFail" />
+                        <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                        <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                        <data value="" name="waypointName" />
+                        <data value="0.0" name="LocationZ(m)" />
+                        <data value="0.0" name="LocationY(m)" />
+                        <data value="0.0" name="LocationX(m)" />
+                        <data value="tatooine" name="Planet" />
+                        <data value="0" name="createWaypoint" />
+                        <data value="Remove Safety" name="retrieveMenuText" />
+                    </task>
+                    <data value="" name="musicOnComplete" />
+                    <data value="" name="musicOnFail" />
+                    <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                    <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                    <data value="" name="waypointName" />
+                    <data value="0.0" name="LocationZ(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="0.0" name="LocationX(m)" />
+                    <data value="tatooine" name="Planet" />
+                    <data value="0" name="createWaypoint" />
+                    <data value="Remove Safety" name="retrieveMenuText" />
+                </task>
+                <data value="" name="waypointName" />
+                <data value="0.0" name="LocationZ(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="0.0" name="LocationX(m)" />
+                <data value="tatooine" name="Planet" />
+                <data value="0" name="createWaypoint" />
+                <data value="" name="musicOnComplete" />
+                <data value="" name="musicOnFail" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Destroy the Avatar Space Platform" name="journalEntryTitle" />
+            <data value="There are several steps that need to take place in order for the destruction of the Avatar Space Platform. The first step is to release the magnetic shielding on the core safeties. Then the safeties must be manually removed from the core. Once this occurs the core can be overloaded. The final step is to release the overloaded energy into the stations subsystems from the master control console. This will result in the stations destruction in roughly five minutes." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Avatar Space Platform" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

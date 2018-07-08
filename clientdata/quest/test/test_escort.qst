@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="1" >
+            <task type="Escort" id="0" name="Escort" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="" name="journalEntryTitle" />
+                <data value="" name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="0" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="imperial_cadet" name="Escort Creature Type" />
+                <data value="city2" name="Destination Path Node Name" />
+                <data value="Walk" name="Movement Type" />
+            </task>
+        </tasks>
+        <list>
+            <data value="" name="journalEntryTitle" />
+            <data value="" name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

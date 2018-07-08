@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="9" >
+            <task type="Destroy Multiple and Loot" id="6" name="Destroy Multiple and Loot" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Find Main Brigand Camp" name="journalEntryTitle" />
+                <data value="One of these brigands must have information about their main camp.  Kill them until you find a datapad with the waypoint." name="journalEntryDescription" />
+                <data value="false" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="brigand" name="CreatureType" />
+                <data value="Encrypted Datapad" name="LootItemName" />
+                <data value="1" name="NumberItemsRequired" />
+                <data value="20" name="LootDropPercent" />
+                <data value="500" name="RewardCredits" />
+                <task type="Wait for Signal" id="8" name="Wait for Signal" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Return to Gerak Vertimis" name="journalEntryTitle" />
+                    <data value="Now that you have the datapad, return to Gerak Vertimis so he can decipher its contents." name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="0" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="" name="Signal Name" />
+                </task>
+            </task>
+        </tasks>
+        <list>
+            <data value="Safety Measures Part 4" name="journalEntryTitle" />
+            <data value="Kill brigands until you find a datapad.  Return it to Gerak in Bestine." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="false" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Ground Quest" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

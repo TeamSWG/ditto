@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="10" >
+            <task type="Destroy Multiple" id="7" name="Destroy Multiple" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Kill the Brigand Leader" name="journalEntryTitle" />
+                <data value="You now know the location of the main brigand camp.  Kill the leader." name="journalEntryDescription" />
+                <data value="false" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="brigand_leader" name="Target Server Template" />
+                <data value="1" name="Count" />
+                <data value="2000" name="RewardCredits" />
+                <task type="Wait for Signal" id="9" name="Wait for Signal" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Return to Gerak Vertimis" name="journalEntryTitle" />
+                    <data value="Return to Bestine and tell Gerak Vertimis that you eliminated the brigand leader." name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="0" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="" name="Signal Name" />
+                </task>
+            </task>
+        </tasks>
+        <list>
+            <data value="Safety Measures Part 5" name="journalEntryTitle" />
+            <data value="You now know the location of the main brigand camp.  Kill the leader and return to Bestine for your reward." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="false" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Ground Quest" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

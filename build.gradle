@@ -42,7 +42,7 @@ test {
 shadowJar {
 	baseName = "ditto"
 	classifier = null
-	version = "v0.1.0"
+	version = null
 }
 
 repositories {

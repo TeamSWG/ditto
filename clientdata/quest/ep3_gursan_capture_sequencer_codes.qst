@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="5" >
+            <task type="Wait for Signal" id="0" name="Wait for Signal" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Infiltrate the Bunker" name="journalEntryTitle" />
+                <data value="Gain entry to the command bunker at the Trandoshan camp.  The codes will be in a room on the second floor." name="journalEntryDescription" />
+                <data value="gursanBreachEntry" name="taskName" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="gursanBunkerEntryBreach" name="Signal Name" />
+                <task type="Destroy Multiple and Loot" id="1" name="Destroy Multiple and Loot" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Captain Beshk" name="journalEntryTitle" />
+                    <data value="To gain entry to the sequencer room you must disable the power.  Captain Beshk has the command codes needed to gain entry to the power room." name="journalEntryDescription" />
+                    <data value="" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="ep3_qst_blackscale_captain_beshk" name="CreatureType" />
+                    <data value="" name="Social Group" />
+                    <data value="" name="requiredRegion" />
+                    <data value="Command Key Code" name="LootItemName" />
+                    <data value="1" name="NumberItemsRequired" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="0" name="RewardCredits" />
+                    <task type="Wait for Signal" id="2" name="Wait for Signal" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Kill Power" name="journalEntryTitle" />
+                        <data value="Now that you have the key codes gain access to the power room and shut it down." name="journalEntryDescription" />
+                        <data value="gursanFlipPowerSwitch" name="taskName" />
+                        <data value="true" name="isVisible" />
+                        <data value="true" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="gursanPowerFlipped" name="Signal Name" />
+                        <task type="Retrieve Item" id="3" name="Retrieve Item" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Retrieve the Sequencer Codes" name="journalEntryTitle" />
+                            <data value="Head back upstairs and obtain the sequencer codes from the central computer." name="journalEntryDescription" />
+                            <data value="" name="taskName" />
+                            <data value="true" name="isVisible" />
+                            <data value="true" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="object/tangible/quest/computer_console.iff" name="Server Object Template" />
+                            <data value="1" name="Count" />
+                            <data value="Sequencer Codes" name="ItemName" />
+                            <data value="100" name="LootDropPercent" />
+                            <task type="Wait for Signal" id="4" name="Wait for Signal" taskOnFail="false" >
+                                <data value="" name="prerequisiteTasks" />
+                                <data value="" name="exclusionTasks" />
+                                <data value="Return to Gursan" name="journalEntryTitle" />
+                                <data value="Take your encoded Sequencer back to Gursan Bryes to prepare for the assault on the Avatar Platform." name="journalEntryDescription" />
+                                <data value="gursanTakeToGursan" name="taskName" />
+                                <data value="true" name="isVisible" />
+                                <data value="true" name="showSystemMessages" />
+                                <data value="0" name="allowRepeats" />
+                                <data value="" name="musicOnActivate" />
+                                <data value="" name="target" />
+                                <data value="" name="parameter" />
+                                <data value="" name="grantQuestOnComplete" />
+                                <data value="" name="grantQuestOnFail" />
+                                <data value="gursanSequencerEndSignal" name="Signal Name" />
+                            </task>
+                        </task>
+                    </task>
+                </task>
+            </task>
+        </tasks>
+        <list>
+            <data value="Code Sequencer" name="journalEntryTitle" />
+            <data value="Break into the slave camp control center and get the sychronize the code sequencer with the one at the base." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Gursan Bryes" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

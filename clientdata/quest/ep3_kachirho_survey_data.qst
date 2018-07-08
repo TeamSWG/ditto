@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="9" >
+            <task type="Nothing" id="0" name="Nothing" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="" name="journalEntryTitle" />
+                <data value="" name="journalEntryDescription" />
+                <data value="" name="taskName" />
+                <data value="false" name="isVisible" />
+                <data value="0" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="musicOnComplete" />
+                <data value="" name="musicOnFail" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="0" name="createWaypoint" />
+                <data value="tatooine" name="Planet" />
+                <data value="0.0" name="LocationX(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="0.0" name="LocationZ(m)" />
+                <data value="" name="waypointName" />
+                <task type="Retrieve Item" id="1" name="Retrieve Item" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Collect Bolotaur Beach Data" name="journalEntryTitle" />
+                    <data value="The final survey device is located on Bolotaur beach. This area lies to the west of the Rryatt gate. Use extreme caution in collecting this data since the Bolotaur are known to attack anything that moves." name="journalEntryDescription" />
+                    <data value="beachData" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="musicOnComplete" />
+                    <data value="" name="musicOnFail" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="0" name="createWaypoint" />
+                    <data value="tatooine" name="Planet" />
+                    <data value="0.0" name="LocationX(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="0.0" name="LocationZ(m)" />
+                    <data value="" name="waypointName" />
+                    <data value="object/tangible/quest/survey_data_05.iff" name="Server Object Template" />
+                    <data value="1" name="Count" />
+                    <data value="Bolotaur Beach Data" name="ItemName" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                    <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                    <data value="Retrieve Data" name="retrieveMenuText" />
+                </task>
+                <task type="Retrieve Item" id="2" name="Retrieve Item" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Collect Rryatt Trail Gate Data" name="journalEntryTitle" />
+                    <data value="The next survey device is located in the vicinity of the Rryatt Trail gate. This gate can be found to the northwest of the slaver camps." name="journalEntryDescription" />
+                    <data value="rryattData" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="musicOnComplete" />
+                    <data value="" name="musicOnFail" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="0" name="createWaypoint" />
+                    <data value="tatooine" name="Planet" />
+                    <data value="0.0" name="LocationX(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="0.0" name="LocationZ(m)" />
+                    <data value="" name="waypointName" />
+                    <data value="object/tangible/quest/survey_data_04.iff" name="Server Object Template" />
+                    <data value="1" name="Count" />
+                    <data value="Rryatt Trail Gate Data" name="ItemName" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                    <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                    <data value="Retrieve Data" name="retrieveMenuText" />
+                </task>
+                <task type="Retrieve Item" id="3" name="Retrieve Item" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Collect Slaver Camp Data" name="journalEntryTitle" />
+                    <data value="The next survey device that you need to collect data from is near the Trandoshan slaver camps. These camps are located to the north of the Etyyy gate." name="journalEntryDescription" />
+                    <data value="slaverData" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="musicOnComplete" />
+                    <data value="" name="musicOnFail" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="0" name="createWaypoint" />
+                    <data value="tatooine" name="Planet" />
+                    <data value="0.0" name="LocationX(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="0.0" name="LocationZ(m)" />
+                    <data value="" name="waypointName" />
+                    <data value="object/tangible/quest/survey_data_03.iff" name="Server Object Template" />
+                    <data value="1" name="Count" />
+                    <data value="Slaver Camp Data" name="ItemName" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                    <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                    <data value="Retrieve Data" name="retrieveMenuText" />
+                </task>
+                <task type="Retrieve Item" id="4" name="Retrieve Item" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Collect Etyyy Gate Data" name="journalEntryTitle" />
+                    <data value="The second survey device was set up near the Etyyy gate.  This survey device is located to the southeast of Kachirho." name="journalEntryDescription" />
+                    <data value="etyyyData" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="musicOnComplete" />
+                    <data value="" name="musicOnFail" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="0" name="createWaypoint" />
+                    <data value="tatooine" name="Planet" />
+                    <data value="0.0" name="LocationX(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="0.0" name="LocationZ(m)" />
+                    <data value="" name="waypointName" />
+                    <data value="object/tangible/quest/survey_data_02.iff" name="Server Object Template" />
+                    <data value="1" name="Count" />
+                    <data value="Eyttt Gate Data" name="ItemName" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                    <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                    <data value="Retrieve Data" name="retrieveMenuText" />
+                </task>
+                <task type="Retrieve Item" id="5" name="Retrieve Item" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Collect Kkowir Gate Data" name="journalEntryTitle" />
+                    <data value="The first survey device was set up near the Kkowir forest gate. The device is located to the west of Kachirho, across the bridge." name="journalEntryDescription" />
+                    <data value="kkowirData" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="musicOnComplete" />
+                    <data value="" name="musicOnFail" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="0" name="createWaypoint" />
+                    <data value="tatooine" name="Planet" />
+                    <data value="0.0" name="LocationX(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="0.0" name="LocationZ(m)" />
+                    <data value="" name="waypointName" />
+                    <data value="object/tangible/quest/survey_data.iff" name="Server Object Template" />
+                    <data value="1" name="Count" />
+                    <data value="Kkowir Gate Data" name="ItemName" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                    <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                    <data value="Retrieve Data" name="retrieveMenuText" />
+                </task>
+                <task type="Wait for Tasks" id="6" name="Wait for Tasks" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Collect All the Data" name="journalEntryTitle" />
+                    <data value="Gather up all of the survey data from the five different locations given to you by Dr. Farnsworth." name="journalEntryDescription" />
+                    <data value="" name="taskName" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="sound/music_themequest_acc_general.snd" name="musicOnActivate" />
+                    <data value="" name="musicOnComplete" />
+                    <data value="" name="musicOnFail" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="0" name="createWaypoint" />
+                    <data value="tatooine" name="Planet" />
+                    <data value="0.0" name="LocationX(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="0.0" name="LocationZ(m)" />
+                    <data value="" name="waypointName" />
+                    <data value="quest/ep3_kachirho_survey_data" name="Task1 Quest Filename" />
+                    <data value="kkowirData" name="Task1 taskName" />
+                    <data value="Collected data from the Kkowir forest gate." name="Task1 Display String" />
+                    <data value="quest/ep3_kachirho_survey_data" name="Task2 Quest Filename" />
+                    <data value="etyyyData" name="Task2 taskName" />
+                    <data value="Collected data from the Etyyy gate." name="Task2 Display String" />
+                    <data value="quest/ep3_kachirho_survey_data" name="Task3 Quest Filename" />
+                    <data value="slaverData" name="Task3 taskName" />
+                    <data value="Collected data from the slaver camps." name="Task3 Display String" />
+                    <data value="quest/ep3_kachirho_survey_data" name="Task4 Quest Filename" />
+                    <data value="rryattData" name="Task4 taskName" />
+                    <data value="Collected data from the Rryatt trail gate." name="Task4 Display String" />
+                    <data value="quest/ep3_kachirho_survey_data" name="Task5 Quest Filename" />
+                    <data value="beachData" name="Task5 taskName" />
+                    <data value="Collected data from the bolotaur beach." name="Task5 Display String" />
+                    <data value="" name="Task6 Quest Filename" />
+                    <data value="" name="Task6 taskName" />
+                    <data value="" name="Task6 Display String" />
+                    <task type="Wait for Signal" id="7" name="Wait for Signal" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Return to Dr. Farnsworth" name="journalEntryTitle" />
+                        <data value="Bring all of the collected data back to Dr. Farnsworth in Kachirho." name="journalEntryDescription" />
+                        <data value="dataCollected" name="taskName" />
+                        <data value="true" name="isVisible" />
+                        <data value="true" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="sound/music_themequest_acc_general.snd" name="musicOnComplete" />
+                        <data value="" name="musicOnFail" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="0" name="createWaypoint" />
+                        <data value="tatooine" name="Planet" />
+                        <data value="0.0" name="LocationX(m)" />
+                        <data value="0.0" name="LocationY(m)" />
+                        <data value="0.0" name="LocationZ(m)" />
+                        <data value="" name="waypointName" />
+                        <data value="dataReward" name="Signal Name" />
+                        <task type="Reward" id="8" name="Reward" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Reward Issued" name="journalEntryTitle" />
+                            <data value="" name="journalEntryDescription" />
+                            <data value="" name="taskName" />
+                            <data value="false" name="isVisible" />
+                            <data value="true" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="musicOnComplete" />
+                            <data value="" name="musicOnFail" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="0" name="createWaypoint" />
+                            <data value="tatooine" name="Planet" />
+                            <data value="0.0" name="LocationX(m)" />
+                            <data value="0.0" name="LocationY(m)" />
+                            <data value="0.0" name="LocationZ(m)" />
+                            <data value="" name="waypointName" />
+                            <data value="" name="Experience Type" />
+                            <data value="0" name="Experience Amount" />
+                            <data value="Rebel" name="Faction Name" />
+                            <data value="0" name="Faction Amount" />
+                            <data value="10000" name="Bank Credits" />
+                            <data value="object/tangible/painting/painting_clone_trooper_01.iff" name="Item" />
+                            <data value="1" name="Count" />
+                            <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                            <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                            <data value="1" name="CountItem" />
+                            <data value="0.1" name="Elemental Value" />
+                            <data value="0.1" name="Efficiency" />
+                            <data value="0.1" name="Damage" />
+                            <data value="0.1" name="Speed" />
+                            <data value="1" name="CountWeapon" />
+                            <data value="" name="Weapon" />
+                            <data value="0.1" name="Quality" />
+                            <data value="1" name="CountArmor" />
+                            <data value="" name="Armor" />
+                        </task>
+                        <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                        <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                    </task>
+                    <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                    <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                </task>
+            </task>
+        </tasks>
+        <list>
+            <data value="Collecting Survey Data" name="journalEntryTitle" />
+            <data value="Dr. Farnsworth has set up survey devices in the areas surrounding Kachirho. These devices are used to measure everything from rainfall to the number of passing fauna. Due to atmospheric conditions they have been unable to relay their data back to the doctor. He needs you to travel to the locations of each of the five survey devices and manually retrieve the data for him." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Kachirho" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

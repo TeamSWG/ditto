@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="11" >
+            <task type="Show Message Box" id="7" taskOnFail="false" >
+                <data value="-1" name="messageBoxLocationY" />
+                <data value="-1" name="messageBoxLocationX" />
+                <data value="-1" name="messageBoxSizeHeight" />
+                <data value="-1" name="messageBoxSizeWidth" />
+                <data value="" name="messageBoxSound" />
+                <data value="According to Dren's datapad he was attempting to slice into the White Horse payroll computer. It apprears he was not happy with his pay. He didn't appear to be successful, but he did get as far as the security systems database. Maybe you can find something of value using his slice technique." name="messageBoxText" />
+                <data value="Dren's Datapad" name="messageBoxTitle" />
+                <data value="" name="waypointName" />
+                <data value="0.0" name="LocationZ(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="0.0" name="LocationX(m)" />
+                <data value="tatooine" name="Planet" />
+                <data value="0" name="createWaypoint" />
+                <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="parameter" />
+                <data value="" name="target" />
+                <data value="" name="musicOnFail" />
+                <data value="" name="musicOnComplete" />
+                <data value="" name="musicOnActivate" />
+                <data value="0" name="showSystemMessages" />
+                <data value="tat_eisley_answers_e1" name="taskName" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="exclusionTasks" />
+                <data value="" name="prerequisiteTasks" />
+                <data value="true" name="isVisible" />
+                <data value="According to Dren's datapad he was attempting to slice into the White Horse payroll computer. It apprears he was not happy with his pay. He didn't appear to be successful, but he did get as far as the security systems database. Maybe you can find something of value using his slice technique." name="journalEntryDescription" />
+                <data value="Dren's Datapad" name="journalEntryTitle" />
+                <task type="Retrieve Item" id="0" taskOnFail="false" >
+                    <data value="Download Data" name="retrieveMenuText" />
+                    <data value="100" name="LootDropPercent" />
+                    <data value="Payroll Computer" name="ItemName" />
+                    <data value="1" name="Count" />
+                    <data value="" name="Server Object Template" />
+                    <data value="" name="waypointName" />
+                    <data value="0.0" name="LocationZ(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="0.0" name="LocationX(m)" />
+                    <data value="tatooine" name="Planet" />
+                    <data value="0" name="createWaypoint" />
+                    <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="parameter" />
+                    <data value="" name="target" />
+                    <data value="" name="musicOnFail" />
+                    <data value="" name="musicOnComplete" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="tat_eisley_answers_e2" name="taskName" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="true" name="isVisible" />
+                    <data value="Head to the base's front offices and use Dren's slice technique on the payroll computer." name="journalEntryDescription" />
+                    <data value="Slice the Payroll Computer" name="journalEntryTitle" />
+                    <task type="Show Message Box" id="10" taskOnFail="false" >
+                        <data value="-1" name="messageBoxLocationY" />
+                        <data value="-1" name="messageBoxLocationX" />
+                        <data value="-1" name="messageBoxSizeHeight" />
+                        <data value="-1" name="messageBoxSizeWidth" />
+                        <data value="" name="messageBoxSound" />
+                        <data value="Slicing the payroll computer is simple using Dren's technique. You search the database and notice the security captain used the same password on the last three password updates. You might try that password on the bases security computer. You also take note of an untapped escrow account you can check later to see if it's still active. I'm sure Dren won't miss the creds." name="messageBoxText" />
+                        <data value="Payroll Computer" name="messageBoxTitle" />
+                        <data value="" name="waypointName" />
+                        <data value="0.0" name="LocationZ(m)" />
+                        <data value="0.0" name="LocationY(m)" />
+                        <data value="0.0" name="LocationX(m)" />
+                        <data value="tatooine" name="Planet" />
+                        <data value="0" name="createWaypoint" />
+                        <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="parameter" />
+                        <data value="" name="target" />
+                        <data value="" name="musicOnFail" />
+                        <data value="" name="musicOnComplete" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="0" name="showSystemMessages" />
+                        <data value="tat_eisley_answers_e3" name="taskName" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="true" name="isVisible" />
+                        <data value="Slicing the payroll computer is simple using Dren's technique. You search the database and notice the security captain used the same password on the last three password updates. You might try that password on the bases security computer. You also take note of an untapped escrow account you can check later to see if it's still active. I'm sure Dren won't miss the creds." name="journalEntryDescription" />
+                        <data value="Disgruntled Employee" name="journalEntryTitle" />
+                        <task type="Retrieve Item" id="1" taskOnFail="false" >
+                            <data value="Slicing the Security Computer" name="journalEntryTitle" />
+                            <data value="Go to the security station and use the captain's password." name="journalEntryDescription" />
+                            <data value="true" name="isVisible" />
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="tat_eisley_answers_e4" name="taskName" />
+                            <data value="true" name="showSystemMessages" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="musicOnComplete" />
+                            <data value="" name="musicOnFail" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                            <data value="0" name="createWaypoint" />
+                            <data value="tatooine" name="Planet" />
+                            <data value="0.0" name="LocationX(m)" />
+                            <data value="0.0" name="LocationY(m)" />
+                            <data value="0.0" name="LocationZ(m)" />
+                            <data value="" name="waypointName" />
+                            <data value="" name="Server Object Template" />
+                            <data value="1" name="Count" />
+                            <data value="Base Security Terminal" name="ItemName" />
+                            <data value="100" name="LootDropPercent" />
+                            <data value="Download Data" name="retrieveMenuText" />
+                            <task type="Show Message Box" id="8" taskOnFail="false" >
+                                <data value="Security Insecurity" name="journalEntryTitle" />
+                                <data value="The captain's over-used password worked. As you scan the system's records you notice a file on Dren. It lists his personal passwords, and it also has a strange note attached to his file put there by the security captain. For some reason the captain was ordered to issue a disciplinary reprimand against Dren by someone of higher authority. This seems to indicate Dren was not the ultimate authority in this base. The reprimand was given for accessing an unmentioned file. It's possible this file can be found in Dren's personal computer." name="journalEntryDescription" />
+                                <data value="true" name="isVisible" />
+                                <data value="" name="prerequisiteTasks" />
+                                <data value="" name="exclusionTasks" />
+                                <data value="0" name="allowRepeats" />
+                                <data value="tat_eisley_answers_e5" name="taskName" />
+                                <data value="0" name="showSystemMessages" />
+                                <data value="" name="musicOnActivate" />
+                                <data value="" name="musicOnComplete" />
+                                <data value="" name="musicOnFail" />
+                                <data value="" name="target" />
+                                <data value="" name="parameter" />
+                                <data value="" name="grantQuestOnComplete" />
+                                <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                                <data value="" name="grantQuestOnFail" />
+                                <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                                <data value="0" name="createWaypoint" />
+                                <data value="tatooine" name="Planet" />
+                                <data value="0.0" name="LocationX(m)" />
+                                <data value="0.0" name="LocationY(m)" />
+                                <data value="0.0" name="LocationZ(m)" />
+                                <data value="" name="waypointName" />
+                                <data value="Security Computer" name="messageBoxTitle" />
+                                <data value="The captain's over used password worked. As you scan the system's records you notice a file on Dren. It lists his personal passwords, and it also has a strange note attached to his file put there by the security captain. For some reason the captain was ordered to issue a disciplinary reprimand against Dren by someone of higher authority. This seems to indicate Dren was not the ultimate authority in this base. The reprimand was given for accessing an unmentioned file. It's possible this file can be found in Dren's personal computer." name="messageBoxText" />
+                                <data value="" name="messageBoxSound" />
+                                <data value="-1" name="messageBoxSizeWidth" />
+                                <data value="-1" name="messageBoxSizeHeight" />
+                                <data value="-1" name="messageBoxLocationX" />
+                                <data value="-1" name="messageBoxLocationY" />
+                                <task type="Retrieve Item" id="2" taskOnFail="false" >
+                                    <data value="Download Data" name="retrieveMenuText" />
+                                    <data value="100" name="LootDropPercent" />
+                                    <data value="Dren's Personal Terminal" name="ItemName" />
+                                    <data value="1" name="Count" />
+                                    <data value="" name="Server Object Template" />
+                                    <data value="" name="waypointName" />
+                                    <data value="0.0" name="LocationZ(m)" />
+                                    <data value="0.0" name="LocationY(m)" />
+                                    <data value="0.0" name="LocationX(m)" />
+                                    <data value="tatooine" name="Planet" />
+                                    <data value="0" name="createWaypoint" />
+                                    <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                                    <data value="" name="grantQuestOnFail" />
+                                    <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                                    <data value="" name="grantQuestOnComplete" />
+                                    <data value="" name="parameter" />
+                                    <data value="" name="target" />
+                                    <data value="" name="musicOnFail" />
+                                    <data value="" name="musicOnComplete" />
+                                    <data value="" name="musicOnActivate" />
+                                    <data value="true" name="showSystemMessages" />
+                                    <data value="tat_eisley_answers_e6" name="taskName" />
+                                    <data value="0" name="allowRepeats" />
+                                    <data value="" name="exclusionTasks" />
+                                    <data value="" name="prerequisiteTasks" />
+                                    <data value="true" name="isVisible" />
+                                    <data value="Go to the dormitory and use the password you got from the security computer on Dren's personal computer terminal." name="journalEntryDescription" />
+                                    <data value="Slicing Dren's Computer" name="journalEntryTitle" />
+                                    <task type="Show Message Box" id="9" taskOnFail="false" >
+                                        <data value="Dren's Journal" name="journalEntryTitle" />
+                                        <data value="Using Dren's password from the security computer gives you full access to Dren's files. The first thing you notice is that Dren answered to a man named Brok Ziamzun. This is the final target for the activities going on in the infirmary. You also happen to notice that Dren was keeping track of Brok's activities for someone. Someone Dren obviously feared greatly. The last thing you recover is the password for Brok's personal computer. It appears Dren was quite a capable slicer." name="journalEntryDescription" />
+                                        <data value="true" name="isVisible" />
+                                        <data value="" name="prerequisiteTasks" />
+                                        <data value="" name="exclusionTasks" />
+                                        <data value="0" name="allowRepeats" />
+                                        <data value="tat_eisley_answers_e7" name="taskName" />
+                                        <data value="0" name="showSystemMessages" />
+                                        <data value="" name="musicOnActivate" />
+                                        <data value="" name="musicOnComplete" />
+                                        <data value="" name="musicOnFail" />
+                                        <data value="" name="target" />
+                                        <data value="" name="parameter" />
+                                        <data value="" name="grantQuestOnComplete" />
+                                        <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                                        <data value="" name="grantQuestOnFail" />
+                                        <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                                        <data value="0" name="createWaypoint" />
+                                        <data value="tatooine" name="Planet" />
+                                        <data value="0.0" name="LocationX(m)" />
+                                        <data value="0.0" name="LocationY(m)" />
+                                        <data value="0.0" name="LocationZ(m)" />
+                                        <data value="" name="waypointName" />
+                                        <data value="Dren's Personal Computer" name="messageBoxTitle" />
+                                        <data value="Using Dren's password from the security computer gives you full access to Dren's files. The first thing you notice is that Dren answered to a man named Brok Ziamzun. This is the final target for the activities going on in the infirmary. You also happen to notice that Dren was keeping track of Brok's activities for someone. Someone Dren obviously feared greatly. The last thing you recover is the password for Brok's personal computer. It appears Dren was quite a capable slicer." name="messageBoxText" />
+                                        <data value="" name="messageBoxSound" />
+                                        <data value="-1" name="messageBoxSizeWidth" />
+                                        <data value="-1" name="messageBoxSizeHeight" />
+                                        <data value="-1" name="messageBoxLocationX" />
+                                        <data value="-1" name="messageBoxLocationY" />
+                                        <task type="Retrieve Item" id="3" taskOnFail="false" >
+                                            <data value="Slicing Brok's Computer" name="journalEntryTitle" />
+                                            <data value="Slice Brok's personal computer in the dormitory." name="journalEntryDescription" />
+                                            <data value="true" name="isVisible" />
+                                            <data value="" name="prerequisiteTasks" />
+                                            <data value="" name="exclusionTasks" />
+                                            <data value="0" name="allowRepeats" />
+                                            <data value="tat_eisley_answers_e8" name="taskName" />
+                                            <data value="true" name="showSystemMessages" />
+                                            <data value="" name="musicOnActivate" />
+                                            <data value="" name="musicOnComplete" />
+                                            <data value="" name="musicOnFail" />
+                                            <data value="" name="target" />
+                                            <data value="" name="parameter" />
+                                            <data value="" name="grantQuestOnComplete" />
+                                            <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                                            <data value="" name="grantQuestOnFail" />
+                                            <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                                            <data value="0" name="createWaypoint" />
+                                            <data value="tatooine" name="Planet" />
+                                            <data value="0.0" name="LocationX(m)" />
+                                            <data value="0.0" name="LocationY(m)" />
+                                            <data value="0.0" name="LocationZ(m)" />
+                                            <data value="" name="waypointName" />
+                                            <data value="" name="Server Object Template" />
+                                            <data value="1" name="Count" />
+                                            <data value="Brok's Personal Terminal" name="ItemName" />
+                                            <data value="100" name="LootDropPercent" />
+                                            <data value="Download Data" name="retrieveMenuText" />
+                                            <task type="Show Message Box" id="4" taskOnFail="false" >
+                                                <data value="Brok's Journal" name="journalEntryTitle" />
+                                                <data value="You access Brok's computer with the password stolen from Dren's files. Brok was indeed working for someone else that financed the entire operation. Brok only lists him as JH, and it's apparent Brok feared him at least as much as Dren did. You also notice that Brok was tracking the same salvage cargo that you were on board the space station. There appears to be more here than what first meets the eye. It looks like the only way you'll find the true answers to this mystery is to take out Brok and see if he knows anything more." name="journalEntryDescription" />
+                                                <data value="true" name="isVisible" />
+                                                <data value="" name="prerequisiteTasks" />
+                                                <data value="" name="exclusionTasks" />
+                                                <data value="0" name="allowRepeats" />
+                                                <data value="tat_eisley_answers_e9" name="taskName" />
+                                                <data value="0" name="showSystemMessages" />
+                                                <data value="" name="musicOnActivate" />
+                                                <data value="" name="musicOnComplete" />
+                                                <data value="" name="musicOnFail" />
+                                                <data value="" name="target" />
+                                                <data value="" name="parameter" />
+                                                <data value="" name="grantQuestOnComplete" />
+                                                <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                                                <data value="" name="grantQuestOnFail" />
+                                                <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                                                <data value="0" name="createWaypoint" />
+                                                <data value="tatooine" name="Planet" />
+                                                <data value="0.0" name="LocationX(m)" />
+                                                <data value="0.0" name="LocationY(m)" />
+                                                <data value="0.0" name="LocationZ(m)" />
+                                                <data value="" name="waypointName" />
+                                                <data value="Brok's Personal Computer" name="messageBoxTitle" />
+                                                <data value="You access Brok's computer with the password stolen from Dren's files. Brok was indeed working for someone else that financed the entire operation. Brok only lists him as JH, and it's apparent Brok feared him at least as much as Dren did. You also notice that Brok was tracking the same salvage cargo that you were on board the space station. There appears to be more here than what first meets the eye. It looks like the only way you'll find the true answers to this mystery is to take out Brok and see if he knows anything more." name="messageBoxText" />
+                                                <data value="" name="messageBoxSound" />
+                                                <data value="-1" name="messageBoxSizeWidth" />
+                                                <data value="-1" name="messageBoxSizeHeight" />
+                                                <data value="-1" name="messageBoxLocationX" />
+                                                <data value="-1" name="messageBoxLocationY" />
+                                                <task type="Reward" id="5" taskOnFail="false" >
+                                                    <data value="Answers" name="journalEntryTitle" />
+                                                    <data value="Reward" name="journalEntryDescription" />
+                                                    <data value="true" name="isVisible" />
+                                                    <data value="" name="prerequisiteTasks" />
+                                                    <data value="" name="exclusionTasks" />
+                                                    <data value="0" name="allowRepeats" />
+                                                    <data value="tat_eisley_answers_e10" name="taskName" />
+                                                    <data value="true" name="showSystemMessages" />
+                                                    <data value="" name="musicOnActivate" />
+                                                    <data value="" name="musicOnComplete" />
+                                                    <data value="" name="musicOnFail" />
+                                                    <data value="" name="target" />
+                                                    <data value="" name="parameter" />
+                                                    <data value="" name="grantQuestOnComplete" />
+                                                    <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                                                    <data value="" name="grantQuestOnFail" />
+                                                    <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                                                    <data value="0" name="createWaypoint" />
+                                                    <data value="tatooine" name="Planet" />
+                                                    <data value="0.0" name="LocationX(m)" />
+                                                    <data value="0.0" name="LocationY(m)" />
+                                                    <data value="0.0" name="LocationZ(m)" />
+                                                    <data value="" name="waypointName" />
+                                                    <data value="" name="Experience Type" />
+                                                    <data value="0" name="Experience Amount" />
+                                                    <data value="Rebel" name="Faction Name" />
+                                                    <data value="0" name="Faction Amount" />
+                                                    <data value="1000" name="Bank Credits" />
+                                                    <data value="" name="Item" />
+                                                    <data value="1" name="CountItem" />
+                                                    <data value="" name="Weapon" />
+                                                    <data value="1" name="CountWeapon" />
+                                                    <data value="0.1" name="Speed" />
+                                                    <data value="0.1" name="Damage" />
+                                                    <data value="0.1" name="Efficiency" />
+                                                    <data value="0.1" name="Elemental Value" />
+                                                    <data value="" name="Armor" />
+                                                    <data value="1" name="CountArmor" />
+                                                    <data value="0.1" name="Quality" />
+                                                    <task type="Immediately Complete Quest" id="6" taskOnFail="false" >
+                                                        <data value="Answers" name="journalEntryTitle" />
+                                                        <data value="Complete" name="journalEntryDescription" />
+                                                        <data value="true" name="isVisible" />
+                                                        <data value="" name="prerequisiteTasks" />
+                                                        <data value="" name="exclusionTasks" />
+                                                        <data value="0" name="allowRepeats" />
+                                                        <data value="tat_eisley_answers_e11" name="taskName" />
+                                                        <data value="0" name="showSystemMessages" />
+                                                        <data value="" name="musicOnActivate" />
+                                                        <data value="" name="musicOnComplete" />
+                                                        <data value="" name="musicOnFail" />
+                                                        <data value="" name="target" />
+                                                        <data value="" name="parameter" />
+                                                        <data value="tatooine_eisley_faceevil" name="grantQuestOnComplete" />
+                                                        <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                                                        <data value="" name="grantQuestOnFail" />
+                                                        <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                                                        <data value="0" name="createWaypoint" />
+                                                        <data value="tatooine" name="Planet" />
+                                                        <data value="0.0" name="LocationX(m)" />
+                                                        <data value="0.0" name="LocationY(m)" />
+                                                        <data value="0.0" name="LocationZ(m)" />
+                                                        <data value="" name="waypointName" />
+                                                    </task>
+                                                </task>
+                                            </task>
+                                        </task>
+                                    </task>
+                                </task>
+                            </task>
+                        </task>
+                    </task>
+                </task>
+            </task>
+        </tasks>
+        <list>
+            <data value="Answers" name="journalEntryTitle" />
+            <data value="Getting to the bottom of it all." name="journalEntryDescription" />
+            <data value="Legacy" name="category" />
+            <data value="true" name="journalVisible" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

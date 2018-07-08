@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="11" >
+            <task type="Wait for Signal" id="3" name="Wait for Signal" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Tracking Wogo" name="journalEntryTitle" />
+                <data value="The bartender in the labor outpost on Yavin 4 said that Wogo was going to Nashal on Talus. Cantina's have worked so far, check if he's at the Nashal one." name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="talkedToBartender" name="Signal Name" />
+                <task type="Wait for Signal" id="7" name="Wait for Signal" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Target acquired" name="journalEntryTitle" />
+                    <data value="Apparently Uff Worgo is in the back room of the cantina. Time to finish the job." name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="talkedToDurge" name="Signal Name" />
+                    <data value="talkedDurge" name="taskName" />
+                    <task type="Retrieve Item" id="5" name="Retrieve Item" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Wogo in a box" name="journalEntryTitle" />
+                        <data value="The bounty hunter Durge has already killed Wogo. He's allowed you to take the gun out of the box he stuffed him in, if you deliver a message to Fett." name="journalEntryDescription" />
+                        <data value="true" name="isVisible" />
+                        <data value="true" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="object/tangible/quest/clone_relics_box_large.iff" name="Server Object Template" />
+                        <data value="1" name="Count" />
+                        <data value="Alliance Needler Carbine" name="ItemName" />
+                        <data value="100" name="LootDropPercent" />
+                        <data value="" name="taskName" />
+                        <task type="Wait for Signal" id="8" name="Wait for Signal" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Return to Fett" name="journalEntryTitle" />
+                            <data value="You should return to Boba Fett with the gun and explain to him what happened." name="journalEntryDescription" />
+                            <data value="true" name="isVisible" />
+                            <data value="true" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="talkedToFett" name="Signal Name" />
+                            <task type="Reward" id="9" name="Reward" taskOnFail="false" >
+                                <data value="" name="prerequisiteTasks" />
+                                <data value="" name="exclusionTasks" />
+                                <data value="" name="journalEntryTitle" />
+                                <data value="" name="journalEntryDescription" />
+                                <data value="false" name="isVisible" />
+                                <data value="0" name="showSystemMessages" />
+                                <data value="0" name="allowRepeats" />
+                                <data value="sound/mus_trandoshan_quest_sucess.snd" name="musicOnActivate" />
+                                <data value="" name="target" />
+                                <data value="" name="parameter" />
+                                <data value="" name="grantQuestOnComplete" />
+                                <data value="" name="grantQuestOnFail" />
+                                <data value="" name="Experience Type" />
+                                <data value="0" name="Experience Amount" />
+                                <data value="Rebel" name="Faction Name" />
+                                <data value="0" name="Faction Amount" />
+                                <data value="30000" name="Bank Credits" />
+                                <data value="" name="Item" />
+                                <data value="" name="taskName" />
+                                <task type="Immediately Complete Quest" id="10" name="Immediately Complete Quest" taskOnFail="false" >
+                                    <data value="" name="prerequisiteTasks" />
+                                    <data value="" name="exclusionTasks" />
+                                    <data value="" name="journalEntryTitle" />
+                                    <data value="" name="journalEntryDescription" />
+                                    <data value="" name="taskName" />
+                                    <data value="false" name="isVisible" />
+                                    <data value="0" name="showSystemMessages" />
+                                    <data value="0" name="allowRepeats" />
+                                    <data value="" name="musicOnActivate" />
+                                    <data value="" name="target" />
+                                    <data value="" name="parameter" />
+                                    <data value="" name="grantQuestOnComplete" />
+                                    <data value="" name="grantQuestOnFail" />
+                                </task>
+                                <data value="" name="waypointName" />
+                                <data value="0.0" name="LocationZ(m)" />
+                                <data value="0.0" name="LocationY(m)" />
+                                <data value="0.0" name="LocationX(m)" />
+                                <data value="tatooine" name="Planet" />
+                                <data value="0" name="createWaypoint" />
+                                <data value="" name="musicOnComplete" />
+                                <data value="" name="musicOnFail" />
+                                <data value="1" name="CountItem" />
+                                <data value="1" name="Elemental Value" />
+                                <data value="0.699999988079071" name="Efficiency" />
+                                <data value="0.800000011920929" name="Damage" />
+                                <data value="1.10000002384186" name="Speed" />
+                                <data value="1" name="CountWeapon" />
+                                <data value="object/weapon/ranged/carbine/carbine_alliance_needler.iff" name="Weapon" />
+                                <data value="0.1" name="Quality" />
+                                <data value="1" name="CountArmor" />
+                                <data value="" name="Armor" />
+                            </task>
+                            <data value="haveGun" name="taskName" />
+                            <data value="" name="waypointName" />
+                            <data value="0.0" name="LocationZ(m)" />
+                            <data value="0.0" name="LocationY(m)" />
+                            <data value="0.0" name="LocationX(m)" />
+                            <data value="tatooine" name="Planet" />
+                            <data value="0" name="createWaypoint" />
+                        </task>
+                        <data value="" name="waypointName" />
+                        <data value="0.0" name="LocationZ(m)" />
+                        <data value="0.0" name="LocationY(m)" />
+                        <data value="0.0" name="LocationX(m)" />
+                        <data value="tatooine" name="Planet" />
+                        <data value="0" name="createWaypoint" />
+                    </task>
+                </task>
+                <data value="" name="taskName" />
+                <data value="" name="waypointName" />
+                <data value="0.0" name="LocationZ(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="0.0" name="LocationX(m)" />
+                <data value="tatooine" name="Planet" />
+                <data value="0" name="createWaypoint" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Working for Boba Fett, phase II" name="journalEntryTitle" />
+            <data value="Boba Fett has employed you. It's usually a good idea to do what he suggests. People that don't play their cards right against Fett has a habit of catching a case of death." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="The Clone Relics, Boba Fett" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

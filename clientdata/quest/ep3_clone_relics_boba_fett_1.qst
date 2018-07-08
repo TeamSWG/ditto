@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="1" >
+            <task type="Wait for Signal" id="0" name="Wait for Signal" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="A gruesome delivery" name="journalEntryTitle" />
+                <data value="The package Fett wants you to deliver to his contact in the Restuss star port is a piece of cloth that has a ring inside, with a finger still attached to it." name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="sound/music_themequest_acc_criminal.snd" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="deliveredPackage" name="Signal Name" />
+                <data value="" name="taskName" />
+                <data value="" name="waypointName" />
+                <data value="0.0" name="LocationZ(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="0.0" name="LocationX(m)" />
+                <data value="tatooine" name="Planet" />
+                <data value="0" name="createWaypoint" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Working for Boba Fett, phase I" name="journalEntryTitle" />
+            <data value="Boba Fett has employed you. It's usually a good idea to do what he suggests. People that don't play their cards right against Fett has a habit of catching a case of death." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="The Clone Relics, Boba Fett" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

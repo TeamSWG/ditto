@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="1" >
+            <task type="Comm Player" id="0" name="Comm Player" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Listen to Message" name="journalEntryTitle" />
+                <data value="Takook recorded his dieing message on a recording device. Listen to the recording." name="journalEntryDescription" />
+                <data value="" name="taskName" />
+                <data value="true" name="isVisible" />
+                <data value="0" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="*message start* ...I do not have much time left. Lobarorr...he attacked me... He wanted my father's spear...so he took it from me. Please...who ever finds this message, grant my dieing request. Recover my father's spear from Lobarror and let my honor come back to me. ...Lobarror always told me of a hiding spot on the Rryatt trail...I think he will go there. ...My time is short now. I hope Chawook forgives me for leaving him...*message end*" name="Comm Message Text" />
+                <data value="object/mobile/ep3/ep3_kachirho_takook.iff" name="NPC Appearance Server Template" />
+                <data value="" name="waypointName" />
+                <data value="0.0" name="LocationZ(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="0.0" name="LocationX(m)" />
+                <data value="tatooine" name="Planet" />
+                <data value="0" name="createWaypoint" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Takook's Last Message" name="journalEntryTitle" />
+            <data value="You found a recording device near Takook's body. It appears to have a message recorded on it from a short time ago." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Kachirho" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

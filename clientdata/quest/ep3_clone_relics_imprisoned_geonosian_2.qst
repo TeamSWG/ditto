@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="8" >
+            <task type="Go to Location" id="0" name="Go to Location" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Find Wookie elder Ovarra" name="journalEntryTitle" />
+                <data value="Go to the great tree in Kachiro and talk to the Wookie elder Ovarra." name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="kashyyyk_main" name="Planet" />
+                <data value="-426" name="LocationX(m)" />
+                <data value="179" name="LocationY(m)" />
+                <data value="-89" name="LocationZ(m)" />
+                <data value="10.0" name="Radius(m)" />
+                <task type="Wait for Signal" id="5" name="Wait for Signal" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Explain the situation to Ovarra" name="journalEntryTitle" />
+                    <data value="Talk to elder Ovarra and show her the documents you retrieved from the Trandoshans." name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="talkedToOvarra" name="Signal Name" />
+                    <task type="Go to Location" id="6" name="Go to Location" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Return to Ikvizi" name="journalEntryTitle" />
+                        <data value="Return to the Geonosian with the good news." name="journalEntryDescription" />
+                        <data value="true" name="isVisible" />
+                        <data value="true" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="sound/mus_wookiee_quest_sucess.snd" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="kashyyyk_main" name="Planet" />
+                        <data value="-513" name="LocationX(m)" />
+                        <data value="19" name="LocationY(m)" />
+                        <data value="-112" name="LocationZ(m)" />
+                        <data value="10.0" name="Radius(m)" />
+                        <data value="" name="taskName" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                        <data value="" name="waypointName" />
+                        <data value="0" name="createWaypoint" />
+                    </task>
+                    <data value="" name="taskName" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="" name="waypointName" />
+                    <data value="0.0" name="LocationZ(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="0.0" name="LocationX(m)" />
+                    <data value="tatooine" name="Planet" />
+                    <data value="0" name="createWaypoint" />
+                </task>
+                <data value="" name="taskName" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="" name="waypointName" />
+                <data value="0" name="createWaypoint" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Help the imprisoned Geonosian, phase II" name="journalEntryTitle" />
+            <data value="After finding the documents describing the Trandoshans evil plans, you need to use them to clear Ikvizi's name." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="true" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="The Clone Relics, Quest of the Geonosian" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

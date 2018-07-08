@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="8" >
+            <task type="Go to Location" id="4" name="Go to Location" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Travel to Etyyy" name="journalEntryTitle" />
+                <data value="A large herd of uller can be found in Etyyy. The only problem is that the Rodian nobles guard this hunting area jealously and in order to gain access you will have to gain their permission." name="journalEntryDescription" />
+                <data value="true" name="isVisible" />
+                <data value="0" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="kashyyyk_hunting" name="Planet" />
+                <data value="650" name="LocationX(m)" />
+                <data value="8" name="LocationY(m)" />
+                <data value="664" name="LocationZ(m)" />
+                <data value="25" name="Radius(m)" />
+                <task type="Destroy Multiple and Loot" id="5" name="Destroy Multiple and Loot" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="Hunting the Uller" name="journalEntryTitle" />
+                    <data value="You will need to kill uller until you have gathered ten undamaged livers. Occasionally livers become damaged during a kill but this is generally a rare occurance." name="journalEntryDescription" />
+                    <data value="true" name="isVisible" />
+                    <data value="true" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="ep3_etyyy_uller" name="CreatureType" />
+                    <data value="Undamaged Liver" name="LootItemName" />
+                    <data value="10" name="NumberItemsRequired" />
+                    <data value="75" name="LootDropPercent" />
+                    <data value="0" name="RewardCredits" />
+                    <task type="Wait for Signal" id="6" name="Wait for Signal" taskOnFail="false" >
+                        <data value="" name="prerequisiteTasks" />
+                        <data value="" name="exclusionTasks" />
+                        <data value="Return to Olima Grunc" name="journalEntryTitle" />
+                        <data value="Bring the undamaged livers back to Olima Grunc." name="journalEntryDescription" />
+                        <data value="true" name="isVisible" />
+                        <data value="0" name="showSystemMessages" />
+                        <data value="0" name="allowRepeats" />
+                        <data value="" name="musicOnActivate" />
+                        <data value="" name="target" />
+                        <data value="" name="parameter" />
+                        <data value="rewardOlima" name="Signal Name" />
+                        <task type="Reward" id="7" name="Reward" taskOnFail="false" >
+                            <data value="" name="prerequisiteTasks" />
+                            <data value="" name="exclusionTasks" />
+                            <data value="Reward Issued" name="journalEntryTitle" />
+                            <data value="" name="journalEntryDescription" />
+                            <data value="false" name="isVisible" />
+                            <data value="true" name="showSystemMessages" />
+                            <data value="0" name="allowRepeats" />
+                            <data value="" name="musicOnActivate" />
+                            <data value="" name="target" />
+                            <data value="" name="parameter" />
+                            <data value="" name="Experience Type" />
+                            <data value="0" name="Experience Amount" />
+                            <data value="Rebel" name="Faction Name" />
+                            <data value="0" name="Faction Amount" />
+                            <data value="10000" name="Bank Credits" />
+                            <data value="" name="Item" />
+                            <data value="" name="grantQuestOnComplete" />
+                            <data value="" name="grantQuestOnFail" />
+                            <data value="" name="taskName" />
+                        </task>
+                        <data value="killedUller" name="taskName" />
+                        <data value="" name="grantQuestOnComplete" />
+                        <data value="" name="grantQuestOnFail" />
+                    </task>
+                    <data value="" name="taskName" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="uller_etyyy" name="Social Group" />
+                    <data value="" name="requiredRegion" />
+                </task>
+                <data value="" name="taskName" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Treat for the Trandoshans" name="journalEntryTitle" />
+            <data value="Olima Grunc has hired you to gather ten undamaged livers from an uller. He has informed you that a good place to hunt for the uller is in Etyyy." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="false" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Kachirho" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+        </list>
+    </quest>

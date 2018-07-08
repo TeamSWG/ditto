@@ -33,49 +33,8 @@ In order to compile the source code, you need a JDK installation on your machine
 should point to the directory of the JDK! It should be version 10 as minimum. You can see your installed Java version
 by running `java -version`.
 
-## Clientdata ##
-
-This application reads a lot of information from the original game files. An installation of the game is therefore
-required. Create a folder called `clientdata` in the root project directory. Extract the following folders of every
-sku#_client.toc file to the `clientdata` folder:
-
-* abstract
-* appearance
-* creation
-* customization
-* datatables
-* footprint
-* interiorlayout
-* misc
-* object
-* quest
-* snapshot
-* string
-* terrain
-
-Note that every TOC file won't necessarily have all of these folders! If they're present, extract them.
-A tool such as TRE Explorer is capable of opening the files and extracting their contents.
-
-You should end up with a structure that looks something like this:
-```
-ditto/
-	clientdata/
-		abstract/
-		appearance/
-		creation/
-		customization/
-		datatables/
-		footprint/
-		...
-	gradle/
-	res/
-	serverdata/
-	src/
-	.gitignore
-	.gitmodules
-	LICENSE.txt
-	...
-```
+## Docker ##
+Docker images can be built of the code.
 
 ## Submodules ##
 

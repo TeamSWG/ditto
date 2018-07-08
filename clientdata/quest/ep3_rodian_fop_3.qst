@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="1" >
+            <task type="Go to Location" id="0" name="Go to Location" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Visit the Wookiee Prisoners" name="journalEntryTitle" />
+                <data value="The Fop has several Wookiee business partners that are now ex-partners. Go ensure that they are still alive at the Trandoshan camp." name="journalEntryDescription" />
+                <data value="1" name="isVisible" />
+                <data value="0" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="kashyyyk" name="Planet" />
+                <data value="-516" name="LocationX(m)" />
+                <data value="4" name="LocationY(m)" />
+                <data value="383" name="LocationZ(m)" />
+                <data value="10.0" name="Radius(m)" />
+            </task>
+        </tasks>
+        <list>
+            <data value="" name="journalEntryTitle" />
+            <data value="" name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="0" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="" name="category" />
+        </list>
+    </quest>

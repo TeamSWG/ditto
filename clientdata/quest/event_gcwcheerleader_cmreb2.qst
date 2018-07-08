@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+    <quest version="1.0" >
+        <tasks availableId="2" >
+            <task type="Destroy Multiple" id="0" name="Destroy Multiple" taskOnFail="false" >
+                <data value="" name="prerequisiteTasks" />
+                <data value="" name="exclusionTasks" />
+                <data value="Destroy Elite Imperial Stormtroopers" name="journalEntryTitle" />
+                <data value="Destroy 25 Elite Imperial Stormtroopers in a contested city." name="journalEntryDescription" />
+                <data value="killStormtroopers" name="taskName" />
+                <data value="true" name="isVisible" />
+                <data value="true" name="showSystemMessages" />
+                <data value="0" name="allowRepeats" />
+                <data value="" name="musicOnActivate" />
+                <data value="" name="target" />
+                <data value="" name="parameter" />
+                <data value="" name="grantQuestOnComplete" />
+                <data value="" name="grantQuestOnFail" />
+                <data value="0" name="createWaypoint" />
+                <data value="tatooine" name="Planet" />
+                <data value="0.0" name="LocationX(m)" />
+                <data value="0.0" name="LocationY(m)" />
+                <data value="0.0" name="LocationZ(m)" />
+                <data value="" name="waypointName" />
+                <data value="crackdown_stormtrooper_hard" name="Target Server Template" />
+                <data value="" name="Social Group" />
+                <data value="" name="requiredRegion" />
+                <data value="25" name="Count" />
+                <data value="0" name="RewardCredits" />
+                <task type="Reward" id="1" name="Reward" taskOnFail="false" >
+                    <data value="" name="prerequisiteTasks" />
+                    <data value="" name="exclusionTasks" />
+                    <data value="reward" name="journalEntryTitle" />
+                    <data value="reward" name="journalEntryDescription" />
+                    <data value="reward" name="taskName" />
+                    <data value="false" name="isVisible" />
+                    <data value="0" name="showSystemMessages" />
+                    <data value="0" name="allowRepeats" />
+                    <data value="" name="musicOnActivate" />
+                    <data value="" name="target" />
+                    <data value="" name="parameter" />
+                    <data value="" name="grantQuestOnComplete" />
+                    <data value="" name="grantQuestOnFail" />
+                    <data value="0" name="createWaypoint" />
+                    <data value="tatooine" name="Planet" />
+                    <data value="0.0" name="LocationX(m)" />
+                    <data value="0.0" name="LocationY(m)" />
+                    <data value="0.0" name="LocationZ(m)" />
+                    <data value="" name="waypointName" />
+                    <data value="" name="Experience Type" />
+                    <data value="0" name="Experience Amount" />
+                    <data value="Rebel" name="Faction Name" />
+                    <data value="500" name="Faction Amount" />
+                    <data value="25000" name="Bank Credits" />
+                    <data value="" name="Item" />
+                    <data value="" name="musicOnFail" />
+                    <data value="" name="musicOnComplete" />
+                    <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                    <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+                    <data value="1" name="CountItem" />
+                    <data value="0.1" name="Elemental Value" />
+                    <data value="0.1" name="Efficiency" />
+                    <data value="0.1" name="Damage" />
+                    <data value="0.1" name="Speed" />
+                    <data value="1" name="CountWeapon" />
+                    <data value="" name="Weapon" />
+                    <data value="0.1" name="Quality" />
+                    <data value="1" name="CountArmor" />
+                    <data value="" name="Armor" />
+                </task>
+                <data value="" name="musicOnFail" />
+                <data value="" name="musicOnComplete" />
+                <data value="true" name="grantQuestOnFailShowSystemMessage" />
+                <data value="true" name="grantQuestOnCompleteShowSystemMessage" />
+            </task>
+        </tasks>
+        <list>
+            <data value="Operation Free Will" name="journalEntryTitle" />
+            <data value="The Empire is using Stormtroopers to inspire fear and force citizens into compliance. I need to show the locals they have nothing to fear from them." name="journalEntryDescription" />
+            <data value="" name="prerequisiteQuests" />
+            <data value="" name="exclusionQuests" />
+            <data value="false" name="allowRepeats" />
+            <data value="" name="target" />
+            <data value="" name="parameter" />
+            <data value="Rebel Combatant" name="category" />
+            <data value="true" name="completeWhenTasksComplete" />
+            <data value="true" name="journalVisible" />
+        </list>
+    </quest>

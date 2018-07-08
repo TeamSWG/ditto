@@ -34,7 +34,11 @@ should point to the directory of the JDK! It should be version 10 as minimum. Yo
 by running `java -version`.
 
 ## Docker ##
-Docker images can be built of the code.
+If you want to host a Combat Upgrade game server, you'll want to use our Docker image. You'll need to install Docker
+on the machine you'll be using. A container using the image can then be run like so:
+`docker run -i -t --network="host" teamswg/latest`
+
+For developers, Docker images can be built of the code: `docker build -t teamswg/ditto:v0.1.0`
 
 ## Submodules ##
 

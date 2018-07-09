@@ -113,15 +113,17 @@ public class AwarenessService extends Service {
 	private void processObjectTeleportIntent(ObjectTeleportIntent oti) {
 		SWGObject obj = oti.getObject();
 		if (obj instanceof CreatureObject && ((CreatureObject) obj).isLoggedInPlayer()) {
-			if (oti.getNewLocation().getTerrain() == obj.getTerrain() && oti.getNewLocation().distanceTo(obj.getLocation()) <= 1024) {
+			Location newLocation = oti.getNewLocation();
+			// If we're on the same terrain and within the minimum terrain load range (1024m), or we're aware of the parent we're about to go to
+			if ((newLocation.getTerrain() == obj.getTerrain() && oti.getParent() == null && newLocation.distanceTo(obj.getWorldLocation()) <= 1024) || (oti.getParent() != null && obj.getAware().contains(oti.getParent()))) {
 				synchronized (obj.getAwarenessLock()) {
-					obj.systemMove(oti.getParent(), oti.getNewLocation());
+					obj.systemMove(oti.getParent(), newLocation);
 					awareness.updateObject(obj);
 				}
 				if (oti.getParent() != null)
-					obj.getOwner().sendPacket(new DataTransformWithParent(obj.getObjectId(), obj.getNextUpdateCount(), oti.getParent().getObjectId(), oti.getNewLocation(), 7.3f));
+					obj.sendObservers(new DataTransformWithParent(obj.getObjectId(), obj.getNextUpdateCount(), oti.getParent().getObjectId(), newLocation, 0));
 				else
-					obj.getOwner().sendPacket(new DataTransform(obj.getObjectId(), obj.getNextUpdateCount(), oti.getNewLocation()));
+					obj.sendObservers(new DataTransform(obj.getObjectId(), obj.getNextUpdateCount(), newLocation));
 			} else {
 				handleZoneIn((CreatureObject) obj, oti.getNewLocation(), oti.getParent());
 			}
@@ -130,6 +132,10 @@ public class AwarenessService extends Service {
 				obj.systemMove(oti.getParent(), oti.getNewLocation());
 				awareness.updateObject(obj);
 			}
+			if (oti.getParent() != null)
+				obj.sendObservers(new DataTransformWithParent(obj.getObjectId(), obj.getNextUpdateCount(), oti.getParent().getObjectId(), oti.getNewLocation(), 0));
+			else
+				obj.sendObservers(new DataTransform(obj.getObjectId(), obj.getNextUpdateCount(), oti.getNewLocation()));
 		}
 	}
 	

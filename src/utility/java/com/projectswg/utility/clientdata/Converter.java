@@ -1,6 +1,6 @@
 package com.projectswg.utility.clientdata;
 
-import com.projectswg.utility.SdbGenerator;
+import com.projectswg.holocore.utilities.SdbGenerator;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +15,6 @@ interface Converter {
 	default void convertFile(SdbGenerator sdb, File file) throws IOException {}
 	
 	static void traverseFiles(Converter converter, File directory, SdbGenerator sdb, Predicate<File> filter) {
-		System.out.println(directory);
 		File [] children = directory.listFiles();
 		assert children != null;
 		for (File child : children) {

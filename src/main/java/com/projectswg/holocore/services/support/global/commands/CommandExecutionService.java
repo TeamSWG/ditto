@@ -16,6 +16,7 @@ import com.projectswg.holocore.resources.support.global.commands.callbacks.comba
 import com.projectswg.holocore.resources.support.global.commands.callbacks.flags.*;
 import com.projectswg.holocore.resources.support.global.commands.callbacks.generic.*;
 import com.projectswg.holocore.resources.support.global.commands.callbacks.group.*;
+import com.projectswg.holocore.resources.support.global.commands.callbacks.loot.CmdLoot;
 import com.projectswg.holocore.resources.support.global.commands.callbacks.survey.CmdRequestCoreSample;
 import com.projectswg.holocore.resources.support.global.commands.callbacks.survey.CmdRequestSurvey;
 import me.joshlarson.jlcommon.control.IntentHandler;
@@ -88,6 +89,7 @@ public class CommandExecutionService extends Service {
 		addAdminScripts();
 		addChatScripts();
 		addCombatScripts();
+		addLootScripts();
 		addFlagScripts();
 		addGenericScripts();
 		addGroupScripts();
@@ -131,6 +133,10 @@ public class CommandExecutionService extends Service {
 		registerCallback("duel", CmdDuel::new);
 		registerCallback("endDuel", CmdEndDuel::new);
 		registerCallback("pvp", CmdPVP::new);
+	}
+	
+	private void addLootScripts() {
+		registerCallback("loot", CmdLoot::new);
 	}
 	
 	private void addFlagScripts() {

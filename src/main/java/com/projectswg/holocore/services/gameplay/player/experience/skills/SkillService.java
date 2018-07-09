@@ -73,14 +73,12 @@ public class SkillService extends Service {
 		String parentSkillName = skillData.getParentSkill();
 		
 		if (gsi.isGrantRequiredSkills()) {
-			grantParentSkills(skillData, parentSkillName, target);
-			grantRequiredSkills(skillData, target);
+			recursivelyGrantSkills(skillData, skillName, target);
 		} else if (!target.hasSkill(parentSkillName) || !hasRequiredSkills(skillData, target)) {
 			Log.i("%s lacks required skill %s before being granted skill %s", target, parentSkillName, skillName);
-			return;
+		} else {
+			grantSkill(skillData, skillName, target);
 		}
-		
-		grantSkill(skillData, skillName, target);
 	}
 	
 	@IntentHandler
@@ -102,6 +100,37 @@ public class SkillService extends Service {
 		sti.getRequester().setTitle(title);
 	}
 	
+	private void recursivelyGrantSkills(SkillData skillData, String skillName, CreatureObject target) {
+		if (skillData == null || skillName == null || target == null) {
+			return;
+		}
+		
+		grantSkill(skillData, skillName, target);	// Grant them that skill
+		
+		String[] requiredSkills = skillData.getRequiredSkills();
+		String parentSkillName = skillData.getParentSkill();
+		
+		if (parentSkillName != null && !target.hasSkill(parentSkillName)) {
+			// Grant parent skill, if there is one and they don't have it
+			SkillData parentSkillData = skillDataMap.get(parentSkillName);
+			
+			recursivelyGrantSkills(parentSkillData, parentSkillName, target);	// Grant parent skill and any required
+		}
+		
+		for (String requiredSkillName : requiredSkills) {
+			if (!target.hasSkill(requiredSkillName)) {
+				SkillData requiredSkillData = skillDataMap.get(requiredSkillName);
+				
+				if (requiredSkillData == null) {
+					Log.e("Missing SkillData for required skill name: %s", requiredSkillName);
+					return;
+				}
+				
+				recursivelyGrantSkills(requiredSkillData, requiredSkillName, target);
+			}
+		}
+	}
+	
 	private boolean hasRequiredSkills(SkillData skillData, CreatureObject creatureObject) {
 		String[] requiredSkills = skillData.getRequiredSkills();
 		if (requiredSkills == null)
@@ -112,24 +141,6 @@ public class SkillService extends Service {
 				return false;
 		}
 		return true;
-	}
-	
-	private void grantParentSkills(SkillData skillData, String parentSkill, CreatureObject target) {
-		if (skillData == null || parentSkill.isEmpty() || target.hasSkill(parentSkill)) {
-			return;
-		}
-		
-		grantSkill(skillData, parentSkill, target);
-		String grandParentSkill = skillData.getParentSkill();
-		grantParentSkills(skillDataMap.get(grandParentSkill), grandParentSkill, target);
-	}
-	
-	private void grantRequiredSkills(SkillData skillData, CreatureObject target) {
-		String[] requiredSkills = skillData.getRequiredSkills();
-		if (requiredSkills == null)
-			return;
-		
-		target.addSkill(requiredSkills);
 	}
 	
 	private void grantSkill(SkillData skillData, String skillName, CreatureObject target) {

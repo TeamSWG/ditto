@@ -128,14 +128,7 @@ INTEGER PRIMARY KEY	TEXT	TEXT	TEXT	REAL	REAL	REAL	REAL	TEXT	INTEGER	REAL	BOOLEAN
 126	LOK	object/tangible/collection/shared_ore_collectible.iff		-1.30	-64.10	-238.00	172	lok_imperial_gas_mine	7	128	TRUE	
 127	LOK	object/tangible/collection/shared_ore_collectible.iff		-84.40	-99.80	-92.20	-1	lok_imperial_gas_mine	11	128	TRUE	
 128	TATOOINE	object/tangible/collection/shared_rare_pistol_white_thranta.iff		-2.88	7.79	-8.04	75	tat_moseisley_lucky_despot	2	128	TRUE	
-129	NABOO	object/tangible/container/drum/shared_large_plain_crate_s01.iff		29.71	-36.00	172.03	-179	nab_borvos_vault	40	128	TRUE	
-130	NABOO	object/tangible/container/drum/shared_large_plain_crate_s01.iff		54.52	-36.00	182.33	-91	nab_borvos_vault	21	128	TRUE	
-131	NABOO	object/tangible/container/drum/shared_large_plain_crate_s02.iff		18.55	-36.00	200.98	178	nab_borvos_vault	18	128	TRUE	
-132	NABOO	object/tangible/container/drum/shared_large_plain_crate_s03.iff		11.82	-36.00	189.18	-177	nab_borvos_vault	18	128	TRUE	
-133	NABOO	object/tangible/container/drum/shared_large_plain_crate_s03.iff		-17.39	-36.00	241.06	-12	nab_borvos_vault	15	128	TRUE	
-134	NABOO	object/tangible/container/drum/shared_large_plain_crate_s04.iff		44.90	-36.00	127.12	86	nab_borvos_vault	6	128	TRUE	
-135	NABOO	object/tangible/container/drum/shared_large_plain_crate_s04.iff		-52.71	-36.00	50.18	179	nab_borvos_vault	11	128	TRUE	
-136	ENDOR	object/tangible/container/general/shared_tech_bookcase.iff		48.07	-32.00	-47.80	0	end_dwb	27	128	TRUE	
+136	ENDOR	object/tangible/container/general/shared_tech_bookcase.iff		48.07	-32.00	-47.80	0	end_dwb	27	128	TRUE
 137	ENDOR	object/tangible/container/general/shared_tech_chest.iff		-3.14	-12.00	36.50	180	end_dwb	4	128	TRUE	
 138	LOK	object/tangible/container/loot/shared_astromech_container.iff		-65.32	-65.98	-177.78	0	lok_evil_droid_eng_cave	28	128	TRUE	
 139	LOK	object/tangible/container/loot/shared_computer_container.iff		-60.60	-20.00	48.26	270	lok_ntp_mercenary_bunker	7	128	TRUE	
@@ -192,11 +185,8 @@ INTEGER PRIMARY KEY	TEXT	TEXT	TEXT	REAL	REAL	REAL	REAL	TEXT	INTEGER	REAL	BOOLEAN
 190	CORELLIA	object/tangible/gcw/static_base/shared_control_terminal.iff		4801.50	95.00	-5207.00	-45	cor_world	0	256	TRUE	Control Terminal
 191	CORELLIA	object/tangible/gcw/static_base/shared_control_terminal.iff		4816.02	95.00	-5231.13	90	cor_world	0	256	TRUE	Control Terminal
 192	CORELLIA	object/tangible/gcw/static_base/shared_control_terminal.iff		4736.00	95.00	-5259.90	55	cor_world	0	256	TRUE	Control Terminal
-193	CORELLIA	object/tangible/gcw/static_base/shared_control_terminal.iff		-2.40	-13.80	-18.00	0	cor_gcw_base_warehouse	9	256	TRUE	Control Terminal
 194	NABOO	object/tangible/gcw/static_base/shared_control_terminal.iff		996.70	298.00	-1521.08	-90	nab_world	0	256	TRUE	Control Terminal
 195	NABOO	object/tangible/gcw/static_base/shared_control_terminal.iff		962.12	298.00	-1497.05	-180	nab_world	0	256	TRUE	Control Terminal
-196	NABOO	object/tangible/gcw/static_base/shared_control_terminal.iff		60.00	-12.00	59.02	-90	nab_gcw_base	9	256	TRUE	Control Terminal
-197	NABOO	object/tangible/gcw/static_base/shared_control_terminal.iff		54.08	-20.00	158.71	-180	nab_gcw_base	21	256	TRUE	Control Terminal
 198	TALUS	object/tangible/gcw/static_base/shared_control_terminal.iff		-4948.06	66.00	-3149.07	-92	cor_world	0	256	TRUE	Control Terminal
 199	TALUS	object/tangible/gcw/static_base/shared_control_terminal.iff		-4957.30	66.00	-3104.74	-90	cor_world	0	256	TRUE	Control Terminal
 200	TALUS	object/tangible/gcw/static_base/shared_control_terminal.iff		-4905.68	66.00	-3106.47	-90	cor_world	0	256	TRUE	Control Terminal
@@ -231,43 +221,9 @@ INTEGER PRIMARY KEY	TEXT	TEXT	TEXT	REAL	REAL	REAL	REAL	TEXT	INTEGER	REAL	BOOLEAN
 229	YAVIN4	object/tangible/quest/shared_clone_relics_box_magseal.iff		-39.70	-18.00	-36.90	0	yav_geonosian_cave	5	128	TRUE	
 230	DATHOMIR	object/tangible/quest/shared_clone_relics_skeleton_human.iff		-87.70	-70.00	-115.40	-128	dat_ns_rancor_cave	8	128	TRUE	
 231	TATOOINE	object/tangible/quest/shared_clone_relics_starmap_box.iff		4.20	8.30	-22.10	1	tat_fort_tusken	5	128	TRUE	
-232	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		8.09	-12.00	54.40	-171	nab_mauler_stronghold	5	128	TRUE	
-233	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		-3.86	-12.00	51.87	84	nab_mauler_stronghold	5	128	TRUE	
-234	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		3.59	-16.00	115.25	180	nab_mauler_stronghold	10	128	TRUE	
-235	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		9.00	-16.00	120.38	91	nab_mauler_stronghold	10	128	TRUE	
-236	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		27.00	-16.00	121.06	-93	nab_mauler_stronghold	10	128	TRUE	
-237	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		3.43	-16.00	126.50	-1	nab_mauler_stronghold	10	128	TRUE	
-238	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		-2.00	-16.00	121.76	-88	nab_mauler_stronghold	10	128	TRUE	
-239	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		-34.70	-12.00	166.63	88	nab_mauler_stronghold	12	128	TRUE	
-240	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		-18.30	-12.00	167.43	-90	nab_mauler_stronghold	12	128	TRUE	
-241	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		-160.26	-44.00	68.80	0	nab_mauler_stronghold	29	128	TRUE	
-242	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		-144.99	-44.00	68.80	1	nab_mauler_stronghold	29	128	TRUE	
-243	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		-102.70	-44.00	-17.42	98	nab_mauler_stronghold	32	128	TRUE	
-244	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		-94.13	-44.00	-25.02	3	nab_mauler_stronghold	32	128	TRUE	
-245	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		-78.29	-44.00	-24.89	-7	nab_mauler_stronghold	32	128	TRUE	
-246	NABOO	object/tangible/quest/shared_mauler_stronghold_terminal.iff		-62.70	-44.00	-25.20	5	nab_mauler_stronghold	32	128	TRUE	
-247	LOK	object/tangible/quest/shared_nym_grenade_container.iff		-7.00	-20.00	78.40	180	lok_ntp_mercenary_bunker	21	128	TRUE	
+247	LOK	object/tangible/quest/shared_nym_grenade_container.iff		-7.00	-20.00	78.40	180	lok_ntp_mercenary_bunker	21	128	TRUE
 248	NABOO	object/tangible/quest/shared_rsf_computer.iff		38.60	12.00	44.90	0	nab_theed_palace	8	128	TRUE	
-249	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-96.90	-28.00	127.20	-179	tat_sennex_camp	17	128	TRUE	
-250	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		3.59	-16.00	115.25	180	tat_sennex_camp	10	128	TRUE	
-251	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		9.00	-16.00	120.38	91	tat_sennex_camp	10	128	TRUE	
-252	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		27.00	-16.00	121.06	-93	tat_sennex_camp	10	128	TRUE	
-253	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		3.43	-16.00	126.50	-1	tat_sennex_camp	10	128	TRUE	
-254	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-20.00	-16.00	121.75	90	tat_sennex_camp	10	128	TRUE	
-255	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-2.00	-16.00	121.76	-88	tat_sennex_camp	10	128	TRUE	
-256	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		8.10	-12.00	54.40	-171	tat_sennex_camp	5	128	TRUE	
-257	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-168.70	-44.00	77.20	82	tat_sennex_camp	29	128	TRUE	
-258	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-160.26	-44.00	68.80	0	tat_sennex_camp	29	128	TRUE	
-259	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-144.99	-44.00	68.80	2	tat_sennex_camp	29	128	TRUE	
-260	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-102.70	-44.00	-17.42	98	tat_sennex_camp	32	128	TRUE	
-261	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-94.13	-44.00	-25.02	3	tat_sennex_camp	32	128	TRUE	
-262	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-78.29	-44.00	-24.89	0	tat_sennex_camp	32	128	TRUE	
-263	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-62.70	-44.00	-25.20	6	tat_sennex_camp	32	128	TRUE	
-264	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-26.24	-12.00	175.20	179	tat_sennex_camp	12	128	TRUE	
-265	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-34.70	-12.00	166.63	88	tat_sennex_camp	12	128	TRUE	
-266	TATOOINE	object/tangible/quest/shared_sennex_hq_computer_terminal.iff		-18.30	-12.00	167.43	-90	tat_sennex_camp	12	128	TRUE	
-267	TATOOINE	object/tangible/quest/shared_sennex_hq_databank.iff		-80.70	-28.00	52.90	0	tat_sennex_camp	26	128	TRUE	
-268	TALUS	object/tangible/quest/shared_talus_grave_robbers_box_magseal.iff		56.00	-0.50	33.70	77	tal_nashal_starport	7	128	TRUE	
+268	TALUS	object/tangible/quest/shared_talus_grave_robbers_box_magseal.iff		56.00	-0.50	33.70	77	tal_nashal_starport	7	128	TRUE
 269	NABOO	object/tangible/quest/shared_typho_mauler_weapons_cache.iff		-20.00	-16.00	121.75	90	nab_mauler_stronghold	10	128	TRUE	
 270	NABOO	object/tangible/quest/shared_typho_mauler_weapons_cache.iff		-26.24	-12.00	175.20	179	nab_mauler_stronghold	12	128	TRUE	
 271	NABOO	object/tangible/quest/shared_typho_mauler_weapons_cache.iff		-96.90	-28.00	127.20	-179	nab_mauler_stronghold	17	128	TRUE	
@@ -277,8 +233,6 @@ INTEGER PRIMARY KEY	TEXT	TEXT	TEXT	REAL	REAL	REAL	REAL	TEXT	INTEGER	REAL	BOOLEAN
 275	DATHOMIR	object/tangible/quest/township/shared_rohak_figurine_spawner.iff		5382.48	98.24	-4065.40	0	dat_world	0	64	TRUE	Figurine 2
 276	DATHOMIR	object/tangible/quest/township/shared_rohak_figurine_spawner.iff		5116.33	78.39	-3957.83	0	dat_world	0	64	TRUE	Figurine 3
 277	DATHOMIR	object/tangible/quest/township/shared_rohak_figurine_spawner.iff		5408.06	78.87	-4189.11	0	dat_world	0	64	TRUE	Figurine 4
-278	DATHOMIR	object/tangible/quest/township/shared_rohak_figurine_spawner.iff		-3.87	0.56	-0.35	0	dat_aurilia_prisoner_hut1	1	64	TRUE	Figurine 5
-279	DATHOMIR	object/tangible/quest/township/shared_rohak_figurine_spawner.iff		9.39	1.75	-2.12	0	dat_aurilia_adv_gh	10	64	TRUE	Figurine 6
 280	DATHOMIR	object/tangible/quest/township/shared_rohak_figurine_spawner.iff		5312.49	78.50	-4159.19	0	dat_world	0	64	TRUE	Figurine 1
 281	ENDOR	object/tangible/space/content_infrastructure/shared_generic_egg_small.iff		-6500.00	-0.92	-7000.00	0	end_world	0	8	TRUE	PvP Battlefield
 282	YAVIN4	object/tangible/space/content_infrastructure/shared_generic_egg_small.iff		1015.00	68.68	425.00	0	yav_world	0	8	FALSE	PvP Battlefield
@@ -310,25 +264,8 @@ INTEGER PRIMARY KEY	TEXT	TEXT	TEXT	REAL	REAL	REAL	REAL	TEXT	INTEGER	REAL	BOOLEAN
 308	LOK	object/tangible/terminal/shared_systems_control_terminal.iff		-9.10	-20.00	-0.30	-90	lok_ntp_mercenary_bunker	16	128	TRUE	
 309	LOK	object/tangible/terminal/shared_systems_control_terminal.iff		-34.50	-20.00	93.60	0	lok_ntp_mercenary_bunker	19	128	TRUE	
 310	LOK	object/tangible/terminal/shared_systems_control_terminal.iff		74.60	-12.00	51.60	0	lok_ntp_mercenary_bunker	12	128	TRUE	
-311	LOK	object/tangible/terminal/shared_systems_control_terminal.iff		24.20	-20.00	115.60	0	lok_ntp_mercenary_bunker	13	128	TRUE	
-312	NABOO	object/tangible/terminal/shared_terminal_borvo_ai_controller.iff		71.30	-36.00	148.90	0	nab_borvos_vault	34	128	TRUE	
-313	NABOO	object/tangible/terminal/shared_terminal_borvo_security_scanner.iff		10.20	-35.00	214.34	270	nab_borvos_vault	14	128	TRUE	
-314	NABOO	object/tangible/terminal/shared_terminal_borvo_security_scanner.iff		0.80	-35.00	227.70	90	nab_borvos_vault	14	128	TRUE	
-315	NABOO	object/tangible/terminal/shared_terminal_borvo_security_scanner.iff		-13.80	-35.00	214.34	-90	nab_borvos_vault	14	128	TRUE	
-316	NABOO	object/tangible/terminal/shared_terminal_borvo_security_scanner.iff		-25.80	-35.00	227.65	90	nab_borvos_vault	14	128	TRUE	
-317	NABOO	object/tangible/terminal/shared_terminal_borvo_security_scanner.iff		-76.70	-35.00	223.00	180	nab_borvos_vault	13	128	TRUE	
-318	NABOO	object/tangible/terminal/shared_terminal_borvo_security_scanner.iff		-92.25	-35.00	223.00	0	nab_borvos_vault	13	128	TRUE	
-319	NABOO	object/tangible/terminal/shared_terminal_borvos_vault.iff		24.25	-36.00	238.11	90	nab_borvos_vault	19	128	TRUE	
-320	NABOO	object/tangible/terminal/shared_terminal_borvos_vault.iff		-47.70	-36.00	242.79	90	nab_borvos_vault	15	128	TRUE	
-321	NABOO	object/tangible/terminal/shared_terminal_borvos_vault.iff		-73.22	-36.00	224.75	270	nab_borvos_vault	36	128	TRUE	
-322	NABOO	object/tangible/terminal/shared_terminal_borvos_vault.iff		-95.74	-36.00	224.96	90	nab_borvos_vault	35	128	TRUE	
-323	NABOO	object/tangible/terminal/shared_terminal_borvos_vault.iff		-12.80	-28.00	170.08	180	nab_borvos_vault	26	128	TRUE	
-324	NABOO	object/tangible/terminal/shared_terminal_borvos_vault.iff		25.90	-36.00	79.20	90	nab_borvos_vault	4	128	TRUE	
-325	NABOO	object/tangible/terminal/shared_terminal_borvos_vault.iff		86.67	-36.00	118.30	180	nab_borvos_vault	1	128	TRUE	
-326	NABOO	object/tangible/terminal/shared_terminal_borvos_vault.iff		-75.84	-36.00	105.95	90	nab_borvos_vault	10	128	TRUE	
-327	NABOO	object/tangible/terminal/shared_terminal_borvos_vault.iff		-11.65	-36.00	169.99	-135	nab_borvos_vault	26	128	TRUE	
-328	NABOO	object/tangible/terminal/shared_terminal_borvos_vault.iff		91.60	-36.00	103.60	0	nab_borvos_vault	1	128	TRUE	
-329	YAVIN4	object/tangible/terminal/shared_terminal_geo_bunker.iff		-34.00	-18.00	-30.96	90	yav_geonosian_cave	4	128	TRUE	
+311	LOK	object/tangible/terminal/shared_systems_control_terminal.iff		24.20	-20.00	115.60	0	lok_ntp_mercenary_bunker	13	128	TRUE
+329	YAVIN4	object/tangible/terminal/shared_terminal_geo_bunker.iff		-34.00	-18.00	-30.96	90	yav_geonosian_cave	4	128	TRUE
 330	YAVIN4	object/tangible/terminal/shared_terminal_geo_bunker.iff		-49.70	-18.00	-55.70	0	yav_geonosian_cave	5	128	TRUE	
 331	YAVIN4	object/tangible/terminal/shared_terminal_geo_bunker.iff		-105.30	-18.00	-64.00	180	yav_geonosian_cave	9	128	TRUE	
 332	YAVIN4	object/tangible/terminal/shared_terminal_geo_bunker.iff		-79.03	-22.00	-146.00	0	yav_geonosian_cave	24	128	TRUE	

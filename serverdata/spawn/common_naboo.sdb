@@ -1473,53 +1473,6 @@ INTEGER PRIMARY KEY	TEXT	TEXT REFERENCES buildings	TEXT	INTEGER	REAL	REAL	REAL	I
 601473	NABOO	nab_world	AREA	0	-1753.92	7.66	-5239.26	0	1	an Ultragungan flawed battle droid	ultragungan_battle_droid_flawed_29_d_agg_n	Outback	Ultragungan Ruins Sacred Place	1	LOITER	2	0		idle	0	0	0	600
 601474	NABOO	nab_world	AREA	0	-1746.62	7.05	-5268.31	0	1	an Ultragungan flawed battle droid	ultragungan_battle_droid_flawed_29_d_agg_n	Outback	Ultragungan Ruins Sacred Place	1	LOITER	2	0		idle	0	0	0	600
 601475	NABOO	nab_world	AREA	0	-1735.24	7.55	-5249.01	0	1	an Ultragungan flawed battle droid	ultragungan_battle_droid_flawed_29_d_agg_n	Outback	Ultragungan Ruins Sacred Place	1	LOITER	2	0		idle	0	0	0	600
-601476	NABOO	nab_borvos_vault	AREA	1	70.47	-36.00	111.96	0	1	an Assassin Droid	assassin_droid_25_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601477	NABOO	nab_borvos_vault	AREA	10	-66.36	-36.00	110.97	0	1	a mutant Kahmurra	kahmurra_mutant_23_c_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601478	NABOO	nab_borvos_vault	AREA	10	-24.52	-28.00	111.24	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601479	NABOO	nab_borvos_vault	AREA	10	-43.13	-36.00	110.70	0	1	an Assassin Droid	assassin_droid_25_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601480	NABOO	nab_borvos_vault	AREA	11	-71.60	-36.00	77.35	0	1	a mutant Kahmurra	kahmurra_mutant_23_c_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601481	NABOO	nab_borvos_vault	AREA	11	-52.08	-36.00	76.02	0	1	a mutant Kahmurra	kahmurra_mutant_23_c_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601482	NABOO	nab_borvos_vault	AREA	11	-53.12	-36.00	56.22	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601483	NABOO	nab_borvos_vault	AREA	12	-108.85	-36.00	171.12	0	1	an enraged Acklay	acklay_enraged_25_c_agg_e	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601484	NABOO	nab_borvos_vault	AREA	12	-59.56	-36.00	192.03	0	1	a rancor	rancor_24_c_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601485	NABOO	nab_borvos_vault	AREA	15	-24.00	-36.00	237.63	0	1	a Battle Droid	imp_restuss_dark_trooper_urban_assault_85_d_att_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601486	NABOO	nab_borvos_vault	AREA	16	-1.86	-36.00	252.30	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601487	NABOO	nab_borvos_vault	AREA	16	-1.01	-36.00	239.27	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601488	NABOO	nab_borvos_vault	AREA	17	-7.81	-36.00	202.44	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601489	NABOO	nab_borvos_vault	AREA	17	-16.96	-36.00	183.90	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601490	NABOO	nab_borvos_vault	AREA	17	-15.65	-36.00	201.55	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601491	NABOO	nab_borvos_vault	AREA	18	15.98	-36.00	203.58	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601492	NABOO	nab_borvos_vault	AREA	18	10.82	-36.00	196.81	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601493	NABOO	nab_borvos_vault	AREA	18	11.95	-36.00	190.39	0	1	a Battle Droid	imp_restuss_dark_trooper_urban_assault_85_d_att_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601494	NABOO	nab_borvos_vault	AREA	19	49.87	-36.00	239.75	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601495	NABOO	nab_borvos_vault	AREA	19	29.97	-36.00	240.81	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601496	NABOO	nab_borvos_vault	AREA	19	39.26	-36.00	223.55	0	1	an Assassin Droid	assassin_droid_25_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601497	NABOO	nab_borvos_vault	AREA	2	105.18	-36.00	95.30	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601498	NABOO	nab_borvos_vault	AREA	21	47.66	-36.00	174.74	0	1	a Battle Droid	imp_restuss_dark_trooper_urban_assault_85_d_att_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601499	NABOO	nab_borvos_vault	AREA	23	88.08	-36.00	224.83	0	1	an Assassin Droid	assassin_droid_25_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601500	NABOO	nab_borvos_vault	AREA	23	82.20	-36.00	217.06	0	1	an Assassin Droid	assassin_droid_25_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601501	NABOO	nab_borvos_vault	AREA	25	104.63	-36.00	178.43	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601502	NABOO	nab_borvos_vault	AREA	25	102.00	-36.00	158.75	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601503	NABOO	nab_borvos_vault	AREA	25	83.35	-36.00	170.44	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601504	NABOO	nab_borvos_vault	AREA	25	80.29	-36.00	177.02	0	1	an Assassin Droid	assassin_droid_25_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601505	NABOO	nab_borvos_vault	AREA	25	78.43	-36.00	167.34	0	1	a Battle Droid	imp_restuss_dark_trooper_urban_assault_85_d_att_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601506	NABOO	nab_borvos_vault	AREA	3	93.88	-36.00	68.50	0	1	a mutant Kahmurra	kahmurra_mutant_23_c_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601507	NABOO	nab_borvos_vault	AREA	3	76.04	-36.00	64.72	0	1	an Assassin Droid	assassin_droid_25_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601508	NABOO	nab_borvos_vault	AREA	4	34.12	-36.00	80.01	0	1	a Battle Droid	imp_restuss_dark_trooper_urban_assault_85_d_att_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601509	NABOO	nab_borvos_vault	AREA	45	27.44	-28.00	140.82	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601510	NABOO	nab_borvos_vault	AREA	45	25.43	-28.00	148.64	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601511	NABOO	nab_borvos_vault	AREA	45	20.98	-28.00	136.97	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601512	NABOO	nab_borvos_vault	AREA	45	4.22	-28.00	155.28	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601513	NABOO	nab_borvos_vault	AREA	45	2.20	-28.00	110.50	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601514	NABOO	nab_borvos_vault	AREA	45	-7.74	-28.00	94.78	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601515	NABOO	nab_borvos_vault	AREA	45	-10.00	-28.00	132.44	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601516	NABOO	nab_borvos_vault	AREA	45	-13.59	-28.00	73.80	0	1	an Assassin Droid	assassin_droid_25_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601517	NABOO	nab_borvos_vault	AREA	46	3.62	-12.00	25.53	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601518	NABOO	nab_borvos_vault	AREA	5	22.36	-36.00	111.75	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601519	NABOO	nab_borvos_vault	AREA	5	22.00	-36.00	142.20	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601520	NABOO	nab_borvos_vault	AREA	7	-0.24	-36.00	142.93	0	1	Blastromech	blastromech_borvo_22_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601521	NABOO	nab_borvos_vault	AREA	8	-6.76	-36.00	158.33	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
-601522	NABOO	nab_borvos_vault	AREA	8	-13.17	-36.00	161.79	0	1	a Battle Droid	battle_droid_borvo_23_d_agg_n	POI	Borvos Vault	1	TURN	0	0		idle	0	0	0	600
 601523	NABOO	nab_world	AREA	0	4316.03	4.61	-4784.66	0	1	Borvo's guard	borvo_guard_22_h_att_n	POI	Borvos Vault	1	LOITER	2	0		idle	0	0	0	600
 601524	NABOO	nab_emperors_retreat	AREA	1	1.84	0.20	-13.70	-6	1	Kaja Or'Zee	kaja_orzee_100_h_inv_n	POI	Emperor's Retreat	1	IDLE	0	0		idle	0	0	0	600
 601525	NABOO	nab_emperors_retreat	AREA	1	21.63	0.20	-12.90	-170	1	an Imperial scout trooper	syren_5_imperial_scout_trooper_hard_85_h_agg_e	POI	Emperor's Retreat	1	IDLE	0	0		sad	0	0	0	600
@@ -1591,62 +1544,6 @@ INTEGER PRIMARY KEY	TEXT	TEXT REFERENCES buildings	TEXT	INTEGER	REAL	REAL	REAL	I
 601591	NABOO	nab_world	AREA	0	4797.05	11.95	-3838.08	179	1	a Swamp Trooper	swamp_trooper_33_h_att_n	POI	Imperial vs Gungan Battle	1	IDLE	0	0		idle	0	0	0	600
 601592	NABOO	nab_world	AREA	0	4787.19	9.63	-3854.98	179	1	a Swamp Trooper	swamp_trooper_33_h_att_n	POI	Imperial vs Gungan Battle	1	IDLE	0	0		idle	0	0	0	600
 601593	NABOO	nab_world	AREA	0	4750.34	13.57	-3903.67	0	1	Montrus	borvo_montrus_27_h_att_n	POI	Imperial vs Gungun Battle	1	LOITER	0	0		idle	0	0	0	600
-601594	NABOO	nab_mauler_stronghold	AREA	10	9.76	-16.00	135.33	0	1	a Mauler	mauler_21_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601595	NABOO	nab_mauler_stronghold	AREA	10	9.15	-16.00	108.36	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601596	NABOO	nab_mauler_stronghold	AREA	10	19.21	-16.00	116.13	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601597	NABOO	nab_mauler_stronghold	AREA	10	17.99	-16.00	124.21	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601598	NABOO	nab_mauler_stronghold	AREA	10	-2.68	-16.00	135.39	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601599	NABOO	nab_mauler_stronghold	AREA	10	-2.26	-16.00	107.44	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601600	NABOO	nab_mauler_stronghold	AREA	12	-26.86	-12.00	162.97	0	1	a Mauler	mauler_21_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601601	NABOO	nab_mauler_stronghold	AREA	12	-23.70	-12.00	145.50	0	1	a Mauler	mauler_21_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601602	NABOO	nab_mauler_stronghold	PATROL	13	-45.94	-15.70	151.70	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601603	NABOO	nab_mauler_stronghold	PATROL	16	-80.89	-28.00	129.34	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601604	NABOO	nab_mauler_stronghold	AREA	17	-99.20	-28.00	102.39	24	1	a Mauler veermok	veermok_mauler_23_c_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601605	NABOO	nab_mauler_stronghold	AREA	17	-100.45	-28.00	117.18	-30	1	a Mauler veermok	veermok_mauler_23_c_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601606	NABOO	nab_mauler_stronghold	AREA	17	-101.58	-28.00	119.58	113	1	a Mauler Beastmaster	mauler_beastmaster_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601607	NABOO	nab_mauler_stronghold	AREA	17	-101.09	-28.00	107.10	121	1	a Mauler Beastmaster	mauler_beastmaster_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601608	NABOO	nab_mauler_stronghold	PATROL	17	-81.35	-28.00	102.96	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601609	NABOO	nab_mauler_stronghold	AREA	18	-18.70	-12.00	94.00	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601610	NABOO	nab_mauler_stronghold	AREA	18	-11.30	-12.00	87.10	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601611	NABOO	nab_mauler_stronghold	AREA	2	-3.57	0.25	-0.48	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601612	NABOO	nab_mauler_stronghold	AREA	20	-30.63	-12.00	113.32	-157	1	Xylan Kee'choap	legacy_naboo_typho_xylan_keechoap_25_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601613	NABOO	nab_mauler_stronghold	AREA	20	-40.11	-12.00	91.97	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601614	NABOO	nab_mauler_stronghold	AREA	20	-36.49	-12.00	121.31	-179	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601615	NABOO	nab_mauler_stronghold	PATROL	20	-36.90	-12.00	106.30	0	1	Xylan Kee'choap's Henchman	mauler_xylan_assistant_24_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601616	NABOO	nab_mauler_stronghold	AREA	21	-31.95	-12.00	134.79	-159	1	Sache	legacy_sache_100_h_inv_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601617	NABOO	nab_mauler_stronghold	PATROL	23	-42.09	-24.00	63.64	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601618	NABOO	nab_mauler_stronghold	PATROL	24	-63.16	-28.00	64.38	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601619	NABOO	nab_mauler_stronghold	AREA	26	-87.90	-28.00	66.50	87	1	Yarick Tempol	legacy_naboo_typho_yarick_tempol_25_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601620	NABOO	nab_mauler_stronghold	AREA	26	-74.60	-28.00	56.10	-37	1	Yarick Tempol's Assistant	mauler_yarick_assistant_24_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601621	NABOO	nab_mauler_stronghold	PATROL	28	-95.91	-29.48	76.82	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601622	NABOO	nab_mauler_stronghold	AREA	29	-150.92	-44.00	98.41	0	1	a Mauler lord	mauler_lord_27_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601623	NABOO	nab_mauler_stronghold	AREA	29	-160.73	-44.00	97.69	0	1	a Mauler master	mauler_master_24_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601624	NABOO	nab_mauler_stronghold	AREA	29	-143.66	-44.00	76.97	0	1	a Mauler master	mauler_master_24_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601625	NABOO	nab_mauler_stronghold	AREA	29	-163.79	-44.00	88.23	0	1	a Mauler Strongman	mauler_strongman_23_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601626	NABOO	nab_mauler_stronghold	AREA	29	-139.67	-44.00	94.43	0	1	a Mauler Strongman	mauler_strongman_23_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601627	NABOO	nab_mauler_stronghold	PATROL	3	3.31	0.25	-2.17	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601628	NABOO	nab_mauler_stronghold	AREA	30	-94.59	-28.00	60.15	77	1	a Mauler Strongman	mauler_strongman_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601629	NABOO	nab_mauler_stronghold	PATROL	31	-93.80	-34.20	38.99	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601630	NABOO	nab_mauler_stronghold	AREA	32	-62.20	-44.00	3.20	-40	1	a Mauler veermok	veermok_mauler_23_c_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601631	NABOO	nab_mauler_stronghold	PATROL	32	-93.53	-44.00	-2.68	0	1	Walus Mutin	legacy_naboo_typho_walus_mutin_25_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601632	NABOO	nab_mauler_stronghold	AREA	32	-63.25	-44.00	4.63	134	1	a Mauler Beastmaster	mauler_beastmaster_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601633	NABOO	nab_mauler_stronghold	AREA	32	-92.57	-44.00	-16.74	0	1	a Mauler lord	mauler_lord_27_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601634	NABOO	nab_mauler_stronghold	AREA	32	-73.80	-44.00	-9.50	0	1	a Mauler lord	mauler_lord_27_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601635	NABOO	nab_mauler_stronghold	AREA	32	-60.21	-44.00	-12.62	0	1	a Mauler Usurper	mauler_usurper_25_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601636	NABOO	nab_mauler_stronghold	PATROL	32	-81.90	-44.00	-21.40	0	1	Walus Mutin's Pupil	mauler_walus_assistant_24_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601637	NABOO	nab_mauler_stronghold	PATROL	33	-127.42	-41.60	77.63	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601638	NABOO	nab_mauler_stronghold	PATROL	34	-94.91	-36.81	24.83	0	1	a Mauler	mauler_21_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601639	NABOO	nab_mauler_stronghold	AREA	5	3.40	-12.00	51.60	179	1	Zolo Sartain	legacy_naboo_typho_zolo_sartain_25_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601640	NABOO	nab_mauler_stronghold	AREA	5	7.23	-12.00	23.90	-29	1	a Mauler Shadow Stalker	mauler_shadowstalker_24_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601641	NABOO	nab_mauler_stronghold	AREA	5	3.50	-12.00	44.80	0	1	Zolo Sartain's Bodyguard	mauler_zolo_assistant_24_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601642	NABOO	nab_mauler_stronghold	PATROL	6	17.56	-13.23	59.73	0	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	PATROL	0	0	column	idle	0	0	0	600
-601643	NABOO	nab_mauler_stronghold	AREA	7	13.79	-16.00	79.61	0	1	a Mauler apprentice	mauler_apprentice_20_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601644	NABOO	nab_mauler_stronghold	AREA	7	20.65	-16.00	75.84	0	1	a Mauler apprentice	mauler_apprentice_20_h_agg_n	POI	Mauler Stronghold	1	TURN	0	0		idle	0	0	0	600
-601645	NABOO	nab_mauler_stronghold_house	AREA	3	4.99	0.70	-6.90	-17	1	a Mauler veermok	veermok_mauler_23_c_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601646	NABOO	nab_mauler_stronghold_house	AREA	3	4.28	0.70	-3.80	175	1	a Mauler Beastmaster	mauler_beastmaster_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601647	NABOO	nab_mauler_stronghold_house	AREA	4	-4.98	0.70	0.41	152	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601648	NABOO	nab_mauler_stronghold_house	AREA	4	-5.98	0.70	-2.96	77	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
-601649	NABOO	nab_mauler_stronghold_house	AREA	4	-1.42	0.70	-0.54	-119	1	a Mauler Guard	mauler_guard_23_h_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
 601650	NABOO	nab_world	AREA	0	2931.64	94.00	1129.07	-101	1	a Mauler veermok	veermok_mauler_23_c_agg_n	POI	Mauler Stronghold	1	IDLE	0	0		idle	0	0	0	600
 601651	NABOO	nab_world	AREA	0	2912.67	94.00	1128.35	0	1	a Mauler	mauler_21_h_agg_n	POI	Mauler Stronghold	3	LOITER	6	0		idle	0	0	0	600
 601652	NABOO	nab_world	AREA	0	2894.83	94.01	1110.40	0	1	a Mauler	mauler_21_h_agg_n	POI	Mauler Stronghold	2	LOITER	4	0		idle	0	0	0	600

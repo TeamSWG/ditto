@@ -10,7 +10,6 @@ INTEGER PRIMARY KEY	TEXT	TEXT REFERENCES buildings	TEXT	INTEGER	REAL	REAL	REAL	I
 300010	DATHOMIR	dat_aurilia_adv_gh	AREA	11	8.60	1.80	-22.10	0	1	Tusken Fanatic	nexus_tusken_starter_100_h_inv_n	City	Aurilia	1	IDLE	0	0	-	idle	0	0	0	600
 300011	DATHOMIR	dat_aurilia_adv_gh	AREA	8	-21.00	2.30	11.50	72	1	Nym's Envoy	nexus_ig88_starter_100_h_inv_n	City	Aurilia	1	IDLE	0	0	-	idle	0	0	0	600
 300012	DATHOMIR	dat_aurilia_kakirks_collections	AREA	1	0.10	1.20	-1.60	0	1	Kakirk (Nexus Collector)	nexus_collector_100_h_inv_n	City	Aurilia	1	IDLE	0	0	-	idle	0	0	0	600
-300013	DATHOMIR	dat_aurilia_prisoner_hut1	AREA	1	0.40	0.60	-1.60	0	1	a Nightsister prisoner	township_nightsister_prisoner_100_h_inv_n	City	Aurilia	1	IDLE	0	0	-	idle	0	0	0	600
 300014	DATHOMIR	dat_aurilia_prisoner_hut2	AREA	1	-0.10	0.60	-0.90	0	1	Mellichae	mellichae_100_h_inv_n	City	Aurilia	1	IDLE	0	0	-	idle	0	0	0	600
 300015	DATHOMIR	dat_aurilia_pyramid_hut1	AREA	1	2.10	1.20	-2.20	0	1	Rohak (Town Elder)	fs_villager_elder_100_h_inv_n	City	Aurilia	1	IDLE	0	0	-	idle	0	0	0	600
 300016	DATHOMIR	dat_aurilia_pyramid_hut4	AREA	1	-1.20	1.20	-1.50	0	1	Dageerin	fs_villager_sad1_100_h_inv_n	City	Aurilia	1	IDLE	0	0	-	idle	0	0	0	600

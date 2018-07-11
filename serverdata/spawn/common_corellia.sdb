@@ -40,7 +40,6 @@ INTEGER PRIMARY KEY	TEXT	TEXT REFERENCES buildings	TEXT	INTEGER	REAL	REAL	REAL	I
 100040	CORELLIA	cor_world	AREA	0	6718.6	327.4	-5864.4	0	1	a victory class dark trooper	crackdown_dark_trooper_victory_32_d_att_n	City	Bela Vistal	1	IDLE	0	0	-	idle	0	0	0	600
 100041	CORELLIA	cor_world	AREA	0	6709.6	328.4	-5867.8	179	1	a victory class dark trooper	crackdown_dark_trooper_victory_32_d_att_n	City	Bela Vistal	1	IDLE	0	0	-	idle	0	0	0	600
 100042	CORELLIA	cor_world	AREA	0	6749.1	315.0	-5684.4	-134	1	a victory class dark trooper	crackdown_dark_trooper_victory_32_d_att_n	City	Bela Vistal	1	IDLE	0	0	-	idle	0	0	0	600
-100043	CORELLIA	cor_world	PATROL	0	6740.5	315.0	-5634.6	0	1	a CorSec trooper	corsec_trooper_32_h_att_n	City	Bela Vistal	1	PATROL	0	1011100	column	idle	0	0	0	600
 100044	CORELLIA	cor_world	AREA	0	6739.6	315.0	-5813.5	0	1	a CorSec trooper	corsec_trooper_32_h_att_n	City	Bela Vistal	1	LOITER	3	0	-	idle	0	0	0	600
 100045	CORELLIA	cor_world	AREA	0	6741.5	315.0	-5817.2	0	1	a CorSec trooper	corsec_trooper_32_h_att_n	City	Bela Vistal	1	LOITER	3	0	-	idle	0	0	0	600
 100046	CORELLIA	cor_world	AREA	0	6715.1	315.0	-5565.0	0	1	a CorSec trooper	corsec_trooper_32_h_att_n	City	Bela Vistal	1	LOITER	3	0	-	idle	0	0	0	600

@@ -16,6 +16,7 @@ import com.projectswg.common.network.packets.swg.zone.object_controller.combat.C
 import com.projectswg.holocore.intents.gameplay.combat.EnterCombatIntent;
 import com.projectswg.holocore.intents.gameplay.combat.RequestCreatureDeathIntent;
 import com.projectswg.holocore.intents.gameplay.combat.buffs.BuffIntent;
+import com.projectswg.holocore.intents.gameplay.player.experience.ExperienceIntent;
 import com.projectswg.holocore.intents.support.global.command.ExecuteCommandIntent;
 import com.projectswg.holocore.intents.support.objects.swg.DestroyObjectIntent;
 import com.projectswg.holocore.intents.support.objects.swg.ObjectCreatedIntent;
@@ -155,17 +156,19 @@ public class CombatCommandService extends Service {
 	
 	private void handleHeal(CreatureObject source, SWGObject target, CombatCommand combatCommand) {
 		int healAmount = combatCommand.getAddedDamage();
-		int healingPotency = source.getSkillModValue("expertise_healing_all");
+		int healingPotency = source.getSkillModValue("healing_efficiency");
+		int targetsHealed = 0;
+		int actualHealAmount = 0;
 		
 		if (healingPotency > 0) {
-			healAmount *= healingPotency;
+			healAmount += healAmount * (healingPotency/100);
 		}
 		
 		switch (combatCommand.getAttackType()) {
 			case SINGLE_TARGET: {
 				switch (combatCommand.getTargetType()) {
 					case NONE: {    // No target used, always heals self
-						doHeal(source, source, healAmount, combatCommand);
+						actualHealAmount += doHeal(source, source, healAmount, combatCommand);
 						break;
 					}
 					case REQUIRED: {    // Target is always used
@@ -185,17 +188,19 @@ public class CombatCommandService extends Service {
 							CreatureObject creatureTarget = (CreatureObject) target;
 							
 							if (source.isEnemyOf(creatureTarget)) {
-								doHeal(source, source, healAmount, combatCommand);
+								actualHealAmount +=doHeal(source, source, healAmount, combatCommand);
 							} else {
-								doHeal(source, creatureTarget, healAmount, combatCommand);
+								actualHealAmount += doHeal(source, creatureTarget, healAmount, combatCommand);
 							}
 						} else {
-							doHeal(source, source, healAmount, combatCommand);
+							actualHealAmount += doHeal(source, source, healAmount, combatCommand);
 						}
 						
 						break;
 					}
 				}
+				
+				targetsHealed += 1;
 				break;
 			}
 			
@@ -218,12 +223,15 @@ public class CombatCommandService extends Service {
 						}
 						
 						// Heal nearby friendly
-						doHeal(source, nearbyCreature, healAmount, combatCommand);
+						actualHealAmount += doHeal(source, nearbyCreature, healAmount, combatCommand);
+						targetsHealed += 1;
 					}
 				}
 				
 				break;
 			}
+			
+			new ExperienceIntent(source, "medical", actualHealAmount);
 		}
 	}
 	
@@ -288,7 +296,7 @@ public class CombatCommandService extends Service {
 		}
 	}
 	
-	private void doHeal(CreatureObject healer, CreatureObject healed, int healAmount, CombatCommand combatCommand) {
+	private int doHeal(CreatureObject healer, CreatureObject healed, int healAmount, CombatCommand combatCommand) {
 		String attribName;
 		int difference;
 		
@@ -310,7 +318,7 @@ public class CombatCommandService extends Service {
 			}
 			
 			default:
-				return;
+				return 0;
 		}
 		
 		CombatAction action = new CombatAction(healer.getObjectId());
@@ -331,6 +339,8 @@ public class CombatCommandService extends Service {
 		PlayClientEffectObjectMessage effect = new PlayClientEffectObjectMessage("appearance/pt_heal.prt", "root", healed.getObjectId(), "");
 		
 		healed.sendObservers(action, flyText, effect);
+		
+		return difference;
 	}
 	
 	private void doCombatSingle(CreatureObject source, SWGObject target, AttackInfo info, WeaponObject weapon, CombatCommand command) {

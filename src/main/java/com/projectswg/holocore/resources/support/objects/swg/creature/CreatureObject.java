@@ -764,8 +764,8 @@ public class CreatureObject extends TangibleObject {
 		creo4.addAbility(this, abilities);
 	}
 	
-	public void removeAbility(String abilityName) {
-		creo4.removeAbility(abilityName);
+	public void removeAbility(String ... abilityName) {
+		creo4.removeAbility(this, abilityName);
 	}
 	
 	public boolean hasAbility(String abilityName) {

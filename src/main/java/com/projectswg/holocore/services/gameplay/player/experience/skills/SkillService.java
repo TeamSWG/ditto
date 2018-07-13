@@ -183,7 +183,11 @@ public class SkillService extends Service {
 			return;
 		}
 		
+		SkillData skillData = skillDataMap.get(surrenderedSkill);
+		
 		target.removeSkill(surrenderedSkill);
+		target.removeAbility(skillData.getCommands());
+		skillData.getSkillMods().forEach((skillModName, skillModValue) -> new SkillModIntent(skillModName, 0, -skillModValue, target).broadcast());
 		
 		// See if combat level changes are necessary
 		combatLevelCheck(target);
@@ -230,26 +234,6 @@ public class SkillService extends Service {
 				return false;
 		}
 		return true;
-	}
-	
-	private short attemptLevelUp(short currentLevel, CreatureObject creatureObject, int newXpTotal) {
-		if (currentLevel >= (playerLevelXp.size() + 1)) {
-			return currentLevel;
-		}
-		
-		short nextLevel = (short) (currentLevel + 1);
-		PlayerLevelData nextLevelData = playerLevelXp.get(nextLevel);
-		Integer xpNextLevel = nextLevelData.getRequiredXp();
-		int additionalHealth = nextLevelData.getAdditionalHealth();
-		
-		creatureObject.setLevelHealthGranted(creatureObject.getLevelHealthGranted() + additionalHealth);
-		int newMaxHealth = creatureObject.getMaxHealth() + additionalHealth;
-		
-		creatureObject.setMaxHealth(newMaxHealth);
-		creatureObject.setHealth(newMaxHealth);
-		
-		// Recursively attempt to level up again, in case we've gained enough XP to level up multiple times.
-		return newXpTotal >= xpNextLevel ? attemptLevelUp(nextLevel, creatureObject, newXpTotal) : currentLevel;
 	}
 	
 	private void grantSkill(SkillData skillData, String skillName, CreatureObject target) {

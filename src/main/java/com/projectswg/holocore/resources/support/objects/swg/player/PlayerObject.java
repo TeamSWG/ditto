@@ -39,7 +39,9 @@ import com.projectswg.holocore.resources.support.global.player.Player;
 import com.projectswg.holocore.resources.support.global.player.PlayerFlags;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class PlayerObject extends IntangibleObject {
 	
@@ -263,6 +265,10 @@ public class PlayerObject extends IntangibleObject {
 	public void addDraftSchematic(int serverCrc, int clientCrc, int counter) {
 		long combinedCrc = (((long) serverCrc << 32) & 0xFFFFFFFF00000000L) | (clientCrc & 0x00000000FFFFFFFFL);
 		play9.addDraftSchematic(combinedCrc, counter , this);
+	}
+	
+	public Map<String, Integer> getExperience() {
+		return Collections.unmodifiableMap(play8.getExperience());
 	}
 	
 	public int getExperiencePoints(String xpType) {

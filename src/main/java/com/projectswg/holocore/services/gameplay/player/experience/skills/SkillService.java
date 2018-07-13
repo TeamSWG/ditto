@@ -1,8 +1,11 @@
 package com.projectswg.holocore.services.gameplay.player.experience.skills;
 
+import com.projectswg.common.data.info.RelationalDatabase;
+import com.projectswg.common.data.info.RelationalServerFactory;
 import com.projectswg.common.data.swgfile.ClientFactory;
 import com.projectswg.common.data.swgfile.visitors.DatatableData;
 import com.projectswg.holocore.intents.gameplay.player.badge.SetTitleIntent;
+import com.projectswg.holocore.intents.gameplay.player.experience.LevelChangedIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.skills.SkillModIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.skills.GrantSkillIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.skills.SurrenderSkillIntent;
@@ -11,21 +14,39 @@ import me.joshlarson.jlcommon.control.IntentHandler;
 import me.joshlarson.jlcommon.control.Service;
 import me.joshlarson.jlcommon.log.Log;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class SkillService extends Service {
 	
+	private static final String GET_ALL_LEVELS = "SELECT * FROM player_level";
+	private static final String GET_ALL_MULTIPLIERS = "SELECT * FROM combat_xp_multipliers";
+	
 	private final Map<String, SkillData> skillDataMap;
+	private final Map<String, Integer> levelXpMultipliers;
+	private final Map<Short, PlayerLevelData> playerLevelXp;
 	
 	public SkillService() {
 		skillDataMap = new HashMap<>();
+		levelXpMultipliers = new HashMap<>();
+		playerLevelXp = new HashMap<>();
 	}
 	
 	@Override
 	public boolean initialize() {
+		loadSkills();
+		loadXpMultipliers();
+		loadPlayerLevelXp();
+		
+		return true;
+	}
+	
+	private void loadSkills() {
 		DatatableData skillsTable = (DatatableData) ClientFactory.getInfoFromFile("datatables/skill/skills.iff");
 		
 		for (int i = 0; i < skillsTable.getRowCount(); i++) {
@@ -50,10 +71,33 @@ public class SkillService extends Service {
 			
 			skillDataMap.put(skillName, skillData);
 		}
-		return true;
 	}
 	
-	private void loadSkills() {
+	private void loadXpMultipliers() {
+		try (RelationalDatabase spawnerDatabase = RelationalServerFactory.getServerData("experience/combat_xp_multipliers.db", "combat_xp_multipliers")) {
+			try (ResultSet set = spawnerDatabase.executeQuery(GET_ALL_MULTIPLIERS)) {
+				while (set.next()) {
+					levelXpMultipliers.put(set.getString("xp_type"), set.getInt("multiplier"));
+				}
+			}
+		} catch (SQLException e) {
+			Log.e(e);
+		}
+	}
+	
+	private void loadPlayerLevelXp() {
+		try (RelationalDatabase spawnerDatabase = RelationalServerFactory.getServerData("experience/player_level.db", "player_level")) {
+			try (ResultSet set = spawnerDatabase.executeQuery(GET_ALL_LEVELS)) {
+				while (set.next()) {
+					// Load player level
+					PlayerLevelData data = new PlayerLevelData(set.getInt("required_combat_xp"), set.getInt("level_health_added"));
+					
+					playerLevelXp.put(set.getShort("level"), data);
+				}
+			}
+		} catch (SQLException e) {
+			Log.e(e);
+		}
 	}
 	
 	private String [] splitCsv(String str) {
@@ -82,6 +126,9 @@ public class SkillService extends Service {
 		} else {
 			grantSkill(skillData, skillName, target);
 		}
+		
+		// See if combat level changes are necessary
+		combatLevelCheck(target);
 	}
 	
 	@IntentHandler
@@ -137,6 +184,9 @@ public class SkillService extends Service {
 		}
 		
 		target.removeSkill(surrenderedSkill);
+		
+		// See if combat level changes are necessary
+		combatLevelCheck(target);
 	}
 	
 	private void recursivelyGrantSkills(SkillData skillData, String skillName, CreatureObject target) {
@@ -182,6 +232,26 @@ public class SkillService extends Service {
 		return true;
 	}
 	
+	private short attemptLevelUp(short currentLevel, CreatureObject creatureObject, int newXpTotal) {
+		if (currentLevel >= (playerLevelXp.size() + 1)) {
+			return currentLevel;
+		}
+		
+		short nextLevel = (short) (currentLevel + 1);
+		PlayerLevelData nextLevelData = playerLevelXp.get(nextLevel);
+		Integer xpNextLevel = nextLevelData.getRequiredXp();
+		int additionalHealth = nextLevelData.getAdditionalHealth();
+		
+		creatureObject.setLevelHealthGranted(creatureObject.getLevelHealthGranted() + additionalHealth);
+		int newMaxHealth = creatureObject.getMaxHealth() + additionalHealth;
+		
+		creatureObject.setMaxHealth(newMaxHealth);
+		creatureObject.setHealth(newMaxHealth);
+		
+		// Recursively attempt to level up again, in case we've gained enough XP to level up multiple times.
+		return newXpTotal >= xpNextLevel ? attemptLevelUp(nextLevel, creatureObject, newXpTotal) : currentLevel;
+	}
+	
 	private void grantSkill(SkillData skillData, String skillName, CreatureObject target) {
 		target.addSkill(skillName);
 		target.addAbility(skillData.getCommands());
@@ -189,6 +259,51 @@ public class SkillService extends Service {
 		skillData.getSkillMods().forEach((skillModName, skillModValue) -> new SkillModIntent(skillModName, 0, skillModValue, target).broadcast());
 		
 		new GrantSkillIntent(GrantSkillIntent.IntentType.GIVEN, skillName, target, false).broadcast();
+	}
+	
+	private void combatLevelCheck(CreatureObject target) {
+		short oldLevel = target.getLevel();
+		
+		int combatLevelXp = skillDataMap.entrySet().stream()
+				.filter(entry -> target.hasSkill(entry.getKey()))    // We're only interested in the skill entries that the target has
+				.filter(entry -> entry.getValue().getXpType() != null)
+				.filter(entry -> levelXpMultipliers.containsKey(entry.getValue().getXpType()))    // Skip XP non-combat XP types
+				.map(entry -> levelXpMultipliers.get(entry.getValue().getXpType()) * entry.getValue().getXpCost())	// XP type multiplier is applied
+				.mapToInt(Integer::intValue).sum();
+		
+		Optional<Map.Entry<Short, PlayerLevelData>> optionalPlayerLevelEntry = playerLevelXp.entrySet().stream()
+				.filter(entry -> entry.getValue().getRequiredXp() >= combatLevelXp)
+				.findFirst();	// Find the first combat level that requires the amount of XP that I have
+		
+		
+		PlayerLevelData levelData;
+		short newLevel;
+		
+		if (optionalPlayerLevelEntry.isPresent()) {
+			Map.Entry<Short, PlayerLevelData> playerLevelEntry = optionalPlayerLevelEntry.get();
+			
+			levelData = playerLevelEntry.getValue();
+			newLevel = playerLevelEntry.getKey();
+		} else {
+			// We have reached max level. Last entry of the Map will an Entry for the max level.
+			newLevel = (short) (playerLevelXp.size() + 1);
+			levelData = playerLevelXp.get(newLevel);
+		}
+		
+		
+		if (oldLevel == newLevel) {
+			// They qualify for the exact same level. Do nothing.
+			return;
+		}
+		
+		int oldLevelHealth = target.getLevelHealthGranted();
+		int newLevelHealth = levelData.getAdditionalHealth();
+		int newMaxHealth = target.getMaxHealth() - oldLevelHealth + newLevelHealth;
+		
+		target.setLevelHealthGranted(newLevelHealth);
+		target.setMaxHealth(newMaxHealth);
+		target.setHealth(newMaxHealth);
+		target.setLevel(newLevel);
 	}
 	
 	private static class SkillData {
@@ -220,6 +335,24 @@ public class SkillService extends Service {
 		public String[] getCommands() { return commands; }
 		public Map<String, Integer> getSkillMods() { return skillMods; }
 		public String[] getSchematics() { return schematics; }
+	}
+	
+	private static class PlayerLevelData {
+		private final int requiredXp;
+		private final int additionalHealth;
+		
+		public PlayerLevelData(int requiredXp, int additionalHealth) {
+			this.requiredXp = requiredXp;
+			this.additionalHealth = additionalHealth;
+		}
+		
+		public int getRequiredXp() {
+			return requiredXp;
+		}
+		
+		public int getAdditionalHealth() {
+			return additionalHealth;
+		}
 	}
 	
 }

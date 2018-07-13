@@ -12,6 +12,7 @@ import com.projectswg.common.network.packets.swg.zone.object_controller.ShowFlyT
 import com.projectswg.common.network.packets.swg.zone.object_controller.ShowFlyText.Scale;
 import com.projectswg.holocore.intents.gameplay.player.experience.ExperienceIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.LevelChangedIntent;
+import com.projectswg.holocore.intents.gameplay.player.experience.skills.GrantSkillIntent;
 import com.projectswg.holocore.intents.support.global.chat.SystemMessageIntent;
 import com.projectswg.holocore.resources.support.data.config.ConfigFile;
 import com.projectswg.holocore.resources.support.objects.swg.creature.CreatureObject;
@@ -21,8 +22,6 @@ import me.joshlarson.jlcommon.control.IntentHandler;
 import me.joshlarson.jlcommon.control.Service;
 import me.joshlarson.jlcommon.log.Log;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,33 +41,6 @@ public class ExperienceLevelService extends Service {
 		xpMultiplier = DataManager.getConfig(ConfigFile.FEATURES).getDouble("XP-MULTIPLIER", 1);
 	}
 	
-	@Override
-	public boolean initialize() {
-		try (RelationalDatabase spawnerDatabase = RelationalServerFactory.getServerData("experience/player_level.db", "player_level")) {
-			try (ResultSet set = spawnerDatabase.executeQuery(GET_ALL_LEVELS)) {
-				while (set.next()) {
-					// Load player level
-					levelXpMap.put(set.getShort("level"), set.getInt("required_combat_xp"));
-					// TODO store level granted health
-				}
-			}
-		} catch (SQLException e) {
-			Log.e(e);
-		}
-		
-		try (RelationalDatabase spawnerDatabase = RelationalServerFactory.getServerData("experience/combat_xp_multipliers.db", "combat_xp_multipliers")) {
-			try (ResultSet set = spawnerDatabase.executeQuery(GET_ALL_MULTIPLIERS)) {
-				while (set.next()) {
-					combatXpMultiplierMap.put(set.getString("xp_type"), set.getInt("multiplier"));
-				}
-			}
-		} catch (SQLException e) {
-			Log.e(e);
-		}
-		
-		return super.initialize();
-	}
-	
 	@IntentHandler
 	private void handleExperienceIntent(ExperienceIntent ei) {
 		CreatureObject creatureObject = ei.getCreatureObject();
@@ -77,23 +49,7 @@ public class ExperienceLevelService extends Service {
 		if (playerObject != null) {
 			int experienceGained = ei.getExperienceGained();
 			String xpType = ei.getXpType();
-			
-			if (combatXpMultiplierMap.containsKey(xpType)) {
-				// Give Combat XP, which works toward their combat level
-				awardExperience(creatureObject, playerObject, COMBAT_XP_TYPE, experienceGained * combatXpMultiplierMap.get(xpType));
-			
-				int newXpTotal = awardExperience(creatureObject, playerObject, ei.getXpType(), ei.getExperienceGained());
-				
-				// At this point, we check if their level should be adjusted.
-				short oldLevel = creatureObject.getLevel();
-				short newLevel = attemptLevelUp(creatureObject.getLevel(), creatureObject, newXpTotal);
-				
-				if (oldLevel < newLevel) {	// If we've leveled up at least once
-					creatureObject.setLevel(newLevel);
-					new LevelChangedIntent(creatureObject, oldLevel, newLevel).broadcast();
-					Log.i("%s leveled from %d to %d", creatureObject, oldLevel, newLevel);
-				}
-			}
+			int newXpTotal = awardExperience(creatureObject, playerObject, xpType, ei.getExperienceGained());
 		}
 	}
 	

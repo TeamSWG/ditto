@@ -451,26 +451,26 @@ class CreatureObjectSharedNP implements Persistable {
 	}
 	
 	public void createBaseline6(Player target, BaselineBuilder bb) {
-		bb.addShort(level); // 8
-		bb.addInt(levelHealthGranted); // 9
-		bb.addAscii(animation); // 10
-		bb.addAscii(moodAnimation); // 11
-		bb.addLong(equippedWeapon == null ? 0 : equippedWeapon.getObjectId()); // 12
-		bb.addLong(groupId); // 13
-		bb.addObject(inviterData); // 14
-		bb.addInt(guildId); // 15
-		bb.addLong(lookAtTargetId); // 16
-		bb.addByte(moodId); // 18
-		bb.addInt(performanceCounter); // 19
-		bb.addInt(performanceId); // 20
-		bb.addObject(attributes); // 21
-		bb.addObject(maxAttributes); // 22
-		bb.addObject(equipmentList); // 23
-		bb.addAscii(costume); // 24
-		bb.addBoolean(visible); // 25
-		bb.addObject(buffs); // 26
-		bb.addBoolean(performing); // 27
-		bb.addByte(difficulty.getDifficulty()); // 28
+		bb.addShort(level); // 2
+		bb.addInt(levelHealthGranted); // 3
+		bb.addAscii(animation); // 4
+		bb.addAscii(moodAnimation); // 5
+		bb.addLong(equippedWeapon == null ? 0 : equippedWeapon.getObjectId()); // 6
+		bb.addLong(groupId); // 7
+		bb.addObject(inviterData); // 8
+		bb.addInt(guildId); // 9
+		bb.addLong(lookAtTargetId); // 10
+		bb.addByte(moodId); // 11
+		bb.addInt(performanceCounter); // 12
+		bb.addInt(performanceId); // 13
+		bb.addObject(attributes); // 14
+		bb.addObject(maxAttributes); // 15
+		bb.addObject(equipmentList); // 16
+		bb.addAscii(costume); // 17
+		bb.addBoolean(visible); // 18
+		bb.addObject(buffs); // 19
+		bb.addBoolean(performing); // 20
+		bb.addByte(difficulty.getDifficulty()); // 21
 		
 		bb.incrementOperandCount(21);
 	}

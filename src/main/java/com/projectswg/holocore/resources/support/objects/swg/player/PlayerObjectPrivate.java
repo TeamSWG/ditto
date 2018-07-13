@@ -38,6 +38,8 @@ import com.projectswg.holocore.resources.support.objects.swg.waypoint.WaypointOb
 import com.projectswg.holocore.resources.support.data.persistable.SWGObjectFactory;
 import com.projectswg.holocore.resources.support.global.player.Player;
 
+import java.util.Map;
+
 class PlayerObjectPrivate  implements Persistable {
 	
 	private final SWGMap<String, Integer> 		experience			= new SWGMap<>(8, 0, StringType.ASCII);
@@ -109,6 +111,10 @@ class PlayerObjectPrivate  implements Persistable {
 	
 	public void setActiveQuest(int activeQuest) {
 		this.activeQuest = activeQuest;
+	}
+	
+	public Map<String, Integer> getExperience() {
+		return experience;
 	}
 	
 	public int getExperiencePoints(String xpType) {

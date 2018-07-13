@@ -149,14 +149,14 @@ public class EntertainmentService extends Service {
 		switch (pei.getEvent()) {
 			case PE_LOGGED_OUT:
 				// Don't keep giving them XP if they log out
-				if (isEntertainer(creature) && creature.getPosture().equals(Posture.SKILL_ANIMATING)) {
+				if (creature.getPosture().equals(Posture.SKILL_ANIMATING)) {
 					cancelExperienceTask(creature);
 				}
 				
 				break;
 			case PE_ZONE_IN_SERVER:
 				// We need to check if they're dancing in order to start giving them XP
-				if (isEntertainer(creature) && creature.getPosture().equals(Posture.SKILL_ANIMATING)) {
+				if (creature.getPosture().equals(Posture.SKILL_ANIMATING)) {
 					scheduleExperienceTask(creature, danceMap.get(creature.getAnimation().replace("dance_", "")));
 				}
 				
@@ -171,7 +171,7 @@ public class EntertainmentService extends Service {
 				
 				// If a performer disappears, the audience needs to be cleared
 				// They're also removed from the map of active performers.
-				if (isEntertainer(creature) && creature.isPerforming()) {
+				if (creature.isPerforming()) {
 					performerMap.get(creature.getObjectId()).clearSpectators();
 					performerMap.remove(creature.getObjectId());
 				}
@@ -204,11 +204,6 @@ public class EntertainmentService extends Service {
 			CreatureObject actor = wi.getActor();
 			CreatureObject creature = (CreatureObject) target;
 			Player actorOwner = actor.getOwner();
-			
-			if (!isEntertainer(creature)) {
-				// We can't watch non-entertainers - do nothing
-				return;
-			}
 			
 			if (creature.isPlayer()) {
 				if (creature.isPerforming()) {
@@ -266,16 +261,6 @@ public class EntertainmentService extends Service {
 		
 	}
 	
-	/**
-	 * Checks if the {@code CreatureObject} is a Novice Entertainer.
-	 *
-	 * @param performer
-	 * @return true if {@code performer} is a Novice Entertainer and false if not
-	 */
-	private boolean isEntertainer(CreatureObject performer) {
-		return performer.hasSkill("class_entertainer_phase1_novice");    // First entertainer skillbox
-	}
-	
 	private void scheduleExperienceTask(CreatureObject performer, String performanceName) {
 		Log.d("Scheduled %s to receive XP every %d seconds", performer, XP_CYCLE_RATE);
 		synchronized (performerMap) {
@@ -317,9 +302,7 @@ public class EntertainmentService extends Service {
 		dancer.setPerforming(true);
 		dancer.setPosture(Posture.SKILL_ANIMATING);
 		
-		// Only entertainers get XP
-		if (isEntertainer(dancer))
-			scheduleExperienceTask(dancer, danceName);
+		scheduleExperienceTask(dancer, danceName);
 		
 		new SystemMessageIntent(dancer.getOwner(), "@performance:dance_start_self").broadcast();
 	}
@@ -332,10 +315,8 @@ public class EntertainmentService extends Service {
 			dancer.setAnimation("");
 			
 			// Non-entertainers don't receive XP and have no audience - ignore them
-			if (isEntertainer(dancer)) {
-				cancelExperienceTask(dancer);
-				performerMap.remove(dancer.getObjectId()).clearSpectators();
-			}
+			cancelExperienceTask(dancer);
+			performerMap.remove(dancer.getObjectId()).clearSpectators();
 			
 			new SystemMessageIntent(dancer.getOwner(), "@performance:dance_stop_self").broadcast();
 		} else {
@@ -457,7 +438,8 @@ public class EntertainmentService extends Service {
 			int xpGained = performanceCounter * flourishXpMod;
 			
 			if (xpGained > 0) {
-				new ExperienceIntent(performer, "entertainer", xpGained).broadcast();
+				new ExperienceIntent(performer, "dance", xpGained).broadcast();
+				new ExperienceIntent(performer, "entertainer", (int) Math.ceil(xpGained / 10f)).broadcast();
 				performer.setPerformanceCounter(performanceCounter - 1);
 			}
 		}

@@ -5,13 +5,16 @@ import com.projectswg.common.data.swgfile.visitors.DatatableData;
 import com.projectswg.holocore.intents.gameplay.player.badge.SetTitleIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.skills.SkillModIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.skills.GrantSkillIntent;
+import com.projectswg.holocore.intents.gameplay.player.experience.skills.SurrenderSkillIntent;
 import com.projectswg.holocore.resources.support.objects.swg.creature.CreatureObject;
 import me.joshlarson.jlcommon.control.IntentHandler;
 import me.joshlarson.jlcommon.control.Service;
 import me.joshlarson.jlcommon.log.Log;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class SkillService extends Service {
 	
@@ -98,6 +101,42 @@ public class SkillService extends Service {
 		}
 		
 		sti.getRequester().setTitle(title);
+	}
+	
+	@IntentHandler
+	private void handleSurrenderSkillIntent(SurrenderSkillIntent ssi) {
+		CreatureObject target = ssi.getTarget();
+		String surrenderedSkill = ssi.getSurrenderedSkill();
+		
+		if (!target.hasSkill(surrenderedSkill)) {
+			// They don't even have this skill. Do nothing.
+			
+			Log.w("%s could not surrender skill %s because they do not have it", target, surrenderedSkill);
+			
+			return;
+		}
+		
+		Optional<String[]> dependentSkills = target.getSkills().stream()
+				.map(skillDataMap::get)	// Get SkillData for this skill name
+				.map(SkillData::getRequiredSkills)	// Get required skills for the current skill
+				.filter(requiredSkills -> {
+					for (String requiredSkill : requiredSkills) {
+						if (requiredSkill.equals(surrenderedSkill)) {
+							return true;
+						}
+					}
+					
+					return false;
+				})
+				.findAny();
+		
+		if (dependentSkills.isPresent()) {
+			Log.d("%s could not surrender skill %s because these skills depend on it: ",
+					target, Arrays.toString(dependentSkills.get()));
+			return;
+		}
+		
+		target.removeSkill(surrenderedSkill);
 	}
 	
 	private void recursivelyGrantSkills(SkillData skillData, String skillName, CreatureObject target) {

@@ -151,6 +151,7 @@ public class CommandExecutionService extends Service {
 	
 	private void addGenericScripts() {
 		registerCallback("grantSkill", CmdGrantSkill::new);
+		registerCallback("surrenderSkill", CmdSurrenderSkill::new);
 		registerCallback("stopDance", CmdStopDance::new);
 		registerCallback("stopwatching", CmdStopWatching::new);
 		registerCallback("watch", CmdWatch::new);

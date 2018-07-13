@@ -202,7 +202,7 @@ public class CreatureObject extends TangibleObject {
 		creo6.removeEquipment(obj, this);
 	}
 	
-	public void addSkill(String ... skillList) {
+	public void addSkill(String... skillList) {
 		synchronized (skills) {
 			boolean delta = false;
 			for (String skillName : skillList)
@@ -218,6 +218,16 @@ public class CreatureObject extends TangibleObject {
 	
 	public Set<String> getSkills() {
 		return Collections.unmodifiableSet(skills);
+	}
+	
+	public void removeSkill(String... skillList) {
+		synchronized (skills) {
+			boolean delta = false;
+			for (String skillName : skillList)
+				delta |= skills.remove(skillName);
+			if (delta)
+				skills.sendDeltaMessage(this);
+		}
 	}
 	
 	public void handleLevelSkillMods(String modName, int modValue){

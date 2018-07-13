@@ -230,9 +230,9 @@ public class CombatCommandService extends Service {
 				
 				break;
 			}
-			
-			new ExperienceIntent(source, "medical", actualHealAmount);
 		}
+		
+		new ExperienceIntent(source, "medical", actualHealAmount);
 	}
 	
 	private void handleDelayAttack(CreatureObject source, SWGObject target, CombatCommand combatCommand, String arguments) {

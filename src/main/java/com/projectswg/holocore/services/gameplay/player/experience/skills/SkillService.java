@@ -26,6 +26,7 @@ public class SkillService extends Service {
 	
 	private static final String GET_ALL_LEVELS = "SELECT * FROM player_level";
 	private static final String GET_ALL_MULTIPLIERS = "SELECT * FROM combat_xp_multipliers";
+	private static final int SKILL_POINT_CAP = 250;
 	
 	private final Map<String, SkillData> skillDataMap;
 	private final Map<String, Integer> levelXpMultipliers;
@@ -60,6 +61,7 @@ public class SkillService extends Service {
 			
 			SkillData skillData = new SkillData(
 					(boolean) skillsTable.getCell(i, 4),	// Is title
+					(int) skillsTable.getCell(i, 8),		// Points required
 					splitCsv((String) skillsTable.getCell(i, 10)),	// required skills
 					(String) skillsTable.getCell(i, 1),				// parent skill
 					(String) skillsTable.getCell(i, 12),			// xp type
@@ -224,6 +226,15 @@ public class SkillService extends Service {
 		}
 	}
 	
+	private int skillPointsSpent(CreatureObject creature) {
+		return creature.getSkills().stream()
+				.map(skillDataMap::get)	// Get skill data for this skill
+				.map(SkillData::getPointsRequired)	// Get amount of points required for this skill
+				.mapToInt(Integer::intValue)
+				.sum();	// Add points required for all skills together
+	}
+	
+	
 	private boolean hasRequiredSkills(SkillData skillData, CreatureObject creatureObject) {
 		String[] requiredSkills = skillData.getRequiredSkills();
 		if (requiredSkills == null)
@@ -237,6 +248,16 @@ public class SkillService extends Service {
 	}
 	
 	private void grantSkill(SkillData skillData, String skillName, CreatureObject target) {
+		int pointsRequired = skillData.getPointsRequired();
+		int skillPointsSpent = skillPointsSpent(target);
+		
+		if (skillPointsSpent(target) + pointsRequired >= SKILL_POINT_CAP) {
+			int missingPoints = pointsRequired - (SKILL_POINT_CAP - skillPointsSpent);
+			
+			Log.d("%s cannot learn %s because they lack %d skill points", target, skillName, missingPoints);
+			return;
+		}
+		
 		target.addSkill(skillName);
 		target.addAbility(skillData.getCommands());
 		
@@ -291,7 +312,8 @@ public class SkillService extends Service {
 	}
 	
 	private static class SkillData {
-		private boolean title;
+		private final boolean title;
+		private final int pointsRequired;
 		private String[] requiredSkills;
 		private final String parentSkill;
 		private final String xpType;
@@ -300,8 +322,9 @@ public class SkillService extends Service {
 		private final Map<String, Integer> skillMods;
 		private final String[] schematics;
 
-		public SkillData(boolean title, String[] requiredSkills, String parentSkill, String xpType, int xpCost, String[] commands, Map<String, Integer> skillMods, String[] schematics) {
+		public SkillData(boolean title, int pointsRequired, String[] requiredSkills, String parentSkill, String xpType, int xpCost, String[] commands, Map<String, Integer> skillMods, String[] schematics) {
 			this.title = title;
+			this.pointsRequired = pointsRequired;
 			this.requiredSkills = requiredSkills;
 			this.parentSkill = parentSkill;
 			this.xpType = xpType;
@@ -311,6 +334,9 @@ public class SkillService extends Service {
 			this.schematics = schematics;
 		}
 		
+		public int getPointsRequired() {
+			return pointsRequired;
+		}
 		private boolean isTitle() { return title; }
 		public String[] getRequiredSkills() { return requiredSkills; }
 		public String getParentSkill() { return parentSkill; }

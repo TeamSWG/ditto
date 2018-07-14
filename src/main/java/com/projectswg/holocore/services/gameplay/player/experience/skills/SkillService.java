@@ -195,12 +195,10 @@ public class SkillService extends Service {
 		combatLevelCheck(target);
 	}
 	
-	private void recursivelyGrantSkills(SkillData skillData, String skillName, CreatureObject target) {
+	private boolean recursivelyGrantSkills(SkillData skillData, String skillName, CreatureObject target) {
 		if (skillData == null || skillName == null || target == null) {
-			return;
+			return false;
 		}
-		
-		grantSkill(skillData, skillName, target);	// Grant them that skill
 		
 		String[] requiredSkills = skillData.getRequiredSkills();
 		String parentSkillName = skillData.getParentSkill();
@@ -209,7 +207,7 @@ public class SkillService extends Service {
 			// Grant parent skill, if there is one and they don't have it
 			SkillData parentSkillData = skillDataMap.get(parentSkillName);
 			
-			recursivelyGrantSkills(parentSkillData, parentSkillName, target);	// Grant parent skill and any required
+			recursivelyGrantSkills(parentSkillData, parentSkillName, target);
 		}
 		
 		for (String requiredSkillName : requiredSkills) {
@@ -218,12 +216,17 @@ public class SkillService extends Service {
 				
 				if (requiredSkillData == null) {
 					Log.e("Missing SkillData for required skill name: %s", requiredSkillName);
-					return;
+					return false;
 				}
 				
-				recursivelyGrantSkills(requiredSkillData, requiredSkillName, target);
+				if (!recursivelyGrantSkills(requiredSkillData, requiredSkillName, target)) {
+					// We reached a limit of some sort - stop granting skills
+					return false;
+				}
 			}
 		}
+		
+		return grantSkill(skillData, skillName, target);	// Grant them that skill
 	}
 	
 	private int skillPointsSpent(CreatureObject creature) {
@@ -247,7 +250,7 @@ public class SkillService extends Service {
 		return true;
 	}
 	
-	private void grantSkill(SkillData skillData, String skillName, CreatureObject target) {
+	private boolean grantSkill(SkillData skillData, String skillName, CreatureObject target) {
 		int pointsRequired = skillData.getPointsRequired();
 		int skillPointsSpent = skillPointsSpent(target);
 		
@@ -255,7 +258,7 @@ public class SkillService extends Service {
 			int missingPoints = pointsRequired - (SKILL_POINT_CAP - skillPointsSpent);
 			
 			Log.d("%s cannot learn %s because they lack %d skill points", target, skillName, missingPoints);
-			return;
+			return false;
 		}
 		
 		target.addSkill(skillName);
@@ -264,6 +267,8 @@ public class SkillService extends Service {
 		skillData.getSkillMods().forEach((skillModName, skillModValue) -> new SkillModIntent(skillModName, 0, skillModValue, target).broadcast());
 		
 		new GrantSkillIntent(GrantSkillIntent.IntentType.GIVEN, skillName, target, false).broadcast();
+		
+		return true;
 	}
 	
 	private void combatLevelCheck(CreatureObject target) {

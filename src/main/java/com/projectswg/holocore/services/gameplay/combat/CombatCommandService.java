@@ -157,7 +157,6 @@ public class CombatCommandService extends Service {
 	private void handleHeal(CreatureObject source, SWGObject target, CombatCommand combatCommand) {
 		int healAmount = combatCommand.getAddedDamage();
 		int healingPotency = source.getSkillModValue("healing_efficiency");
-		int targetsHealed = 0;
 		int actualHealAmount = 0;
 		
 		if (healingPotency > 0) {
@@ -200,7 +199,6 @@ public class CombatCommandService extends Service {
 					}
 				}
 				
-				targetsHealed += 1;
 				break;
 			}
 			
@@ -224,7 +222,6 @@ public class CombatCommandService extends Service {
 						
 						// Heal nearby friendly
 						actualHealAmount += doHeal(source, nearbyCreature, healAmount, combatCommand);
-						targetsHealed += 1;
 					}
 				}
 				

@@ -136,11 +136,14 @@ public class CombatExperienceService extends Service {
 			return;
 		}
 		
+		int subTypeGain = (int) Math.ceil(experienceGained / 10f);
+		
 		// Scouts gain trapping XP by killing creatures
 		if (receiver.hasSkill("outdoors_scout_novice") && corpse.getGameObjectType() == GameObjectType.GOT_CREATURE) {
-			new ExperienceIntent(receiver, "trapping", (int) Math.ceil(experienceGained / 10f)).broadcast();
+			new ExperienceIntent(receiver, "trapping", subTypeGain).broadcast();
 		}
 		
+		new ExperienceIntent(receiver, "combat_general", subTypeGain).broadcast();
 		new ExperienceIntent(receiver, xpType, experienceGained).broadcast();
 	}
 	

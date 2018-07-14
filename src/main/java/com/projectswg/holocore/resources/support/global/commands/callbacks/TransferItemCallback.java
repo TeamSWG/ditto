@@ -120,11 +120,40 @@ public class TransferItemCallback implements ICmdCallback {
 
 			// Check if item is being equipped
 			if (newContainer.equals(actor)) {
-				// If armor, they must have the "wear_all_armor" ability
-				if (target.getAttribute("armor_category") != null && !actor.hasAbility("wear_all_armor")) {
-					new SystemMessageIntent(player, "@base_player:level_too_low").broadcast();
-					player.sendPacket(new PlayMusicMessage(0, "sound/ui_negative.snd", 1, false));
-					return;
+				String armorCategoryStringId = target.getAttribute("armor_category");
+				
+				if (armorCategoryStringId != null) {
+					String armorCategory = armorCategoryStringId.split(":")[1].replace("armor_", "");
+					
+					switch (armorCategory) {
+						case "assault":
+							if (	!actor.hasAbility("assault_move_mitigate_1") &&
+									!actor.hasAbility("assault_firerate_mitigate_1") &&
+									!actor.hasAbility("assault_accuracy_mitigate_1")) {
+								new SystemMessageIntent(player, "@base_player:not_correct_skill").broadcast();
+								player.sendPacket(new PlayMusicMessage(0, "sound/ui_negative.snd", 1, false));
+								return;
+							}
+							break;
+						case "battle":
+							if (	!actor.hasAbility("battle_move_mitigate_1") &&
+									!actor.hasAbility("battle_firerate_mitigate_1") &&
+									!actor.hasAbility("battle_accuracy_mitigate_1")) {
+								new SystemMessageIntent(player, "@base_player:not_correct_skill").broadcast();
+								player.sendPacket(new PlayMusicMessage(0, "sound/ui_negative.snd", 1, false));
+								return;
+							}
+							break;
+						case "reconnaissance":
+							if (	!actor.hasAbility("recon_move_mitigate_1") &&
+									!actor.hasAbility("recon_firerate_mitigate_1") &&
+									!actor.hasAbility("recon_accuracy_mitigate_1")) {
+								new SystemMessageIntent(player, "@base_player:not_correct_skill").broadcast();
+								player.sendPacket(new PlayMusicMessage(0, "sound/ui_negative.snd", 1, false));
+								return;
+							}
+							break;
+					}
 				}
 
 				// Check the players level, if they're too low of a level, don't allow them to wear it

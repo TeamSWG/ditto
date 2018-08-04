@@ -3,7 +3,10 @@
 # IDE-based
 Client Holocore.iml
 out
+bin
 .idea
+.project
+.classpath
 
 # Gradle
 build

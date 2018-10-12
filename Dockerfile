@@ -1,7 +1,6 @@
 FROM openjdk:10
 
 # 1. Transfer Gradle files
-ADD .gradle /.gradle
 ADD gradle /gradle
 ADD gradlew /gradlew
 ADD build.gradle /build.gradle

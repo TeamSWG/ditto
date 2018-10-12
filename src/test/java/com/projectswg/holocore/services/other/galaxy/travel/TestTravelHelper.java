@@ -61,7 +61,7 @@ public class TestTravelHelper extends TestRunnerNoIntents {
 			Terrain.CORELLIA,	Terrain.DANTOOINE,	Terrain.DATHOMIR,
 			Terrain.ENDOR,		Terrain.LOK,		Terrain.NABOO,
 			Terrain.RORI,		Terrain.TALUS,		Terrain.TATOOINE,
-			Terrain.YAVIN4,		Terrain.MUSTAFAR,	Terrain.KASHYYYK_MAIN
+			Terrain.YAVIN4
 		};
 		TravelHelper helper = new TravelHelper();
 		for (Terrain terrain : terrains) {

@@ -32,11 +32,9 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import com.projectswg.holocore.services.other.galaxy.travel.TestTravelGroup;
-import com.projectswg.holocore.services.other.galaxy.travel.TestTravelHelper;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	TestTravelHelper.class,
 	TestTravelGroup.class
 })
 public class TestGalaxy {

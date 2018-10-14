@@ -16,8 +16,5 @@ ADD serverdata /serverdata
 # 3. Construct JAR using the Gradle wrapper
 RUN ./gradlew clean build
 
-#4. Move resulting jar into the root folder
-ADD build/libs/ditto.jar /ditto.jar
-
 # Running
-CMD ["java","-jar","ditto.jar"]
+CMD ["java","-jar","build/libs/ditto.jar.jar"]

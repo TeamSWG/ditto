@@ -17,4 +17,4 @@ build
 /odb/
 /bin/
 *.db
-*.iff
+/serverdata/**/*.iff

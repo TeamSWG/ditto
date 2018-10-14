@@ -29,10 +29,13 @@ package com.projectswg.holocore.services.other.galaxy.travel;
 
 import java.util.List;
 
+import com.projectswg.holocore.resources.support.data.server_info.DataManager;
 import com.projectswg.holocore.runners.TestRunnerNoIntents;
 import com.projectswg.holocore.resources.gameplay.world.travel.TravelHelper;
 import com.projectswg.holocore.resources.gameplay.world.travel.TravelPoint;
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -46,6 +49,12 @@ import com.projectswg.holocore.test_resources.GenericCreatureObject;
 
 @RunWith(JUnit4.class)
 public class TestTravelHelper extends TestRunnerNoIntents {
+	
+	@BeforeClass
+	public static void initializeDataManager() {
+		// Make sure the DataManager is initialized, so reading configs doesn't result in an exception
+		DataManager.initialize();
+	}
 	
 	@Test
 	public void testTravelGroups() {

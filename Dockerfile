@@ -17,4 +17,4 @@ ADD serverdata /serverdata
 RUN ./gradlew clean build
 
 # Running
-CMD ["java","-jar","build/libs/ditto.jar.jar"]
+CMD ["java","-jar","build/libs/ditto.jar"]

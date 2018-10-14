@@ -36,9 +36,9 @@ by running `java -version`.
 ## Docker ##
 If you want to host a Combat Upgrade game server, you'll want to use our Docker image. You'll need to install Docker
 on the machine you'll be using. A container using the image can then be run like so:
-`docker run -i -t --network="host" teamswg/latest`
+`docker run -i -t --network="host" teamswg/ditto:v0.1.0`
 
-For developers, Docker images can be built of the code: `docker build -t teamswg/ditto:v0.1.0`
+For developers, Docker images can be built of the code: `docker build -t teamswg/ditto:vX.Y.Z .`
 
 ## Submodules ##
 

@@ -11,7 +11,6 @@ import com.projectswg.common.data.swgfile.visitors.DatatableData;
 import com.projectswg.common.network.packets.swg.zone.object_controller.ShowFlyText;
 import com.projectswg.holocore.intents.gameplay.player.badge.SetTitleIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.ExperienceIntent;
-import com.projectswg.holocore.intents.gameplay.player.experience.LevelChangedIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.skills.SkillModIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.skills.GrantSkillIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.skills.SurrenderSkillIntent;
@@ -27,7 +26,6 @@ import me.joshlarson.jlcommon.log.Log;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class SkillService extends Service {
 	
@@ -220,26 +218,27 @@ public class SkillService extends Service {
 	
 	private void awardExperience(CreatureObject creatureObject, PlayerObject playerObject, String xpType, int xpGained) {
 		int currentXp = playerObject.getExperiencePoints(xpType);
+		int gainableXp = 0;	// Amount of XP this player can gain without hitting the XP cap
+		Set<String> skills = creatureObject.getSkills();	// The skills that the player has
+		boolean validProfession = false;	// Whether they have a profession that actually requires this XP type or not
+		Collection<SkillData> skillDataCollection = skillDataMap.values();	// All skills
 		
 		// Check XP caps on skills that the player is progressing towards
-		
-		int gainableXp = 0;	// Amount of XP this player can gain without hitting the XP cap
-		Set<String> skills = creatureObject.getSkills();
-		boolean validProfession = false;	// Whether they have a profession that actually requires this XP type or not
-		
 		for (String skill : skills) {
-			SkillData skillData = skillDataMap.get(skill);
-			
-			if (!xpType.equals(skillData.getXpType())) {
-				// We only want to take skills that require the same XP type into consideration
-				continue;
+			for (SkillData skillData : skillDataCollection) {
+				String[] requiredSkills = skillData.getRequiredSkills();
+				
+				for (String requiredSkill : requiredSkills) {
+					if (requiredSkill.equals(skill)) {
+						if (skillData.getXpType().equals(xpType)) {
+							int xpCap = skillData.getXpCap();
+							
+							gainableXp += xpCap - currentXp;
+							validProfession = true;
+						}
+					}
+				}
 			}
-			
-			validProfession = true;
-			
-			int xpCap = skillData.getXpCap();
-			
-			gainableXp += xpCap - currentXp;
 		}
 		
 		if (!validProfession) {

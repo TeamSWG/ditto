@@ -489,12 +489,12 @@ public class StaticItemService extends Service {
 		protected void applyTypeAttributes(SWGObject object) {
 			super.applyTypeAttributes(object);
 			object.addAttribute("armor_category", armorCategory);
-			object.addAttribute("cat_armor_standard_protection.kinetic", kinetic);
+			object.addAttribute("cat_armor_standard_protection.armor_eff_kinetic", kinetic);
 			object.addAttribute("cat_armor_standard_protection.energy", energy);
-			object.addAttribute("cat_armor_special_protection.special_protection_type_heat", elementals);
-			object.addAttribute("cat_armor_special_protection.special_protection_type_cold", elementals);
-			object.addAttribute("cat_armor_special_protection.special_protection_type_acid", elementals);
-			object.addAttribute("cat_armor_special_protection.special_protection_type_electricity", elementals);
+			object.addAttribute("cat_armor_special_protection.armor_eff_elemental_heat", elementals);
+			object.addAttribute("cat_armor_special_protection.armor_eff_elemental_cold", elementals);
+			object.addAttribute("cat_armor_special_protection.armor_eff_elemental_acid", elementals);
+			object.addAttribute("cat_armor_special_protection.armor_eff_elemental_electrical", elementals);
 		}
 
 		private String getProtectionValue(short protection, float protectionWeight) {

@@ -1,0 +1,7 @@
+{
+  "name": "Composite Armor Helmet",
+  "template": "object/tangible/wearables/armor/composite/armor_composite_helmet.iff",
+  "condition": 30000,
+  "armor_category": "assault",
+  "protection": 1.0
+}

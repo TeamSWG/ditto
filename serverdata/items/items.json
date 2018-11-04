@@ -2,5 +2,9 @@
   {
     "type": "weapon",
     "file": "rifle_trando_hunter"
+  },
+  {
+    "type": "armor",
+    "file": "armor_composite_helmet"
   }
 ]

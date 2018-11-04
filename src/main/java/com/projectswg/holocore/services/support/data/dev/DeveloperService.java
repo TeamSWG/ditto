@@ -106,7 +106,7 @@ public class DeveloperService extends Service {
 			// Planet: Tatooine
 			new Location(-3941, 60, 6318, Terrain.TATOOINE),
 			new Location(7380, 122.8, 4298, Terrain.TATOOINE),
-			new Location(3525, 4, -4807, Terrain.TATOOINE),
+			new Location(3525, 5, -4807, Terrain.TATOOINE),
 			new Location(3684, 7.8, 2357, Terrain.TATOOINE),
 			new Location(57, 152.3, -79, Terrain.TATOOINE),
 			new Location(-5458, 11, 2601, Terrain.TATOOINE),

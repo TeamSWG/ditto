@@ -38,6 +38,7 @@ public class WeaponObject extends TangibleObject {
 	
 	private int minDamage;
 	private int maxDamage;
+	private int specialAttackCost;
 	// WEAO03
 	private float attackSpeed = 0.5f;
 	private int accuracy;
@@ -152,7 +153,7 @@ public class WeaponObject extends TangibleObject {
 		super.createBaseline3(target, bb);
 		
 		bb.addFloat(attackSpeed);
-		bb.addInt(accuracy); // pre-NGE
+		bb.addInt(accuracy);
 		bb.addFloat(minRange);
 		bb.addFloat(maxRange);
 		bb.addInt(damageType.getNum());
@@ -175,7 +176,7 @@ public class WeaponObject extends TangibleObject {
 	public void parseBaseline3(NetBuffer buffer) {
 		super.parseBaseline3(buffer);
 		attackSpeed = buffer.getFloat();
-		buffer.getInt(); // accuracy
+		accuracy = buffer.getInt(); // accuracy
 		buffer.getFloat(); // minRange
 		maxRange = buffer.getFloat();
 		buffer.getInt(); // damageType
@@ -200,7 +201,9 @@ public class WeaponObject extends TangibleObject {
 		stream.addInt(elementalValue);
 		stream.addFloat(attackSpeed);
 		stream.addFloat(maxRange);
+		stream.addInt(specialAttackCost);
 		stream.addAscii(type.name());
+		stream.addInt(accuracy);
 	}
 
 	@Override
@@ -211,16 +214,21 @@ public class WeaponObject extends TangibleObject {
 		maxDamage = stream.getInt();
 		damageType = DamageType.valueOf(stream.getAscii());
 		String elementalTypeName = stream.getAscii();
-
+		
 		// A weapon doesn't necessarily have an elemental type
 		if (!elementalTypeName.isEmpty()) {
 			elementalType = DamageType.valueOf(elementalTypeName);
 		}
-
+		
 		elementalValue = stream.getInt();
 		attackSpeed = stream.getFloat();
 		maxRange = stream.getFloat();
+		specialAttackCost = stream.getInt();
 		type = WeaponType.valueOf(stream.getAscii());
+		accuracy = stream.getInt();
 	}
 	
+	public void setSpecialAttackCost(int specialAttackCost) {
+		this.specialAttackCost = specialAttackCost;
+	}
 }

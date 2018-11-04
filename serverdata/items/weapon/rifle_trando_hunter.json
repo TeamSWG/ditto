@@ -1,0 +1,14 @@
+{
+  "name": "Trandoshan Hunting Rifle",
+  "template": "object/weapon/ranged/rifle/ep3/rifle_trando_hunter.iff",
+  "condition": 800,
+  "damageType": "energy",
+  "weaponType": "RIFLE",
+  "minDamage": 520,
+  "maxDamage": 1040,
+  "wound": 2.7,
+  "attackSpeed": 2.5,
+  "requiredLevel": 54,
+  "specialAttackCost": 95,
+  "range": 65
+}

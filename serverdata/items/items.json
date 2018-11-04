@@ -4,6 +4,10 @@
     "file": "rifle_trando_hunter"
   },
   {
+    "type": "weapon",
+    "file": "soul_leecher"
+  },
+  {
     "type": "armor",
     "file": "armor_composite_helmet"
   }

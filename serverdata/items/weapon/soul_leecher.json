@@ -1,0 +1,14 @@
+{
+  "name": "Urnsor'is SoulLeecher",
+  "template": "object/weapon/melee/sword/ep3_loot_ripper.iff",
+  "condition": 800,
+  "damageType": "kinetic",
+  "weaponType": "ONE_HANDED_MELEE",
+  "minDamage": 450,
+  "maxDamage": 900,
+  "attackSpeed": 2.5,
+  "wound": 2.9,
+  "requiredLevel": 50,
+  "specialAttackCost": 95,
+  "range": 5
+}

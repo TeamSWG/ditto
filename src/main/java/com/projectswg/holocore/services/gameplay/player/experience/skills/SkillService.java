@@ -212,6 +212,11 @@ public class SkillService extends Service {
 		if (playerObject != null) {
 			String xpType = ei.getXpType();
 			
+			if (!levelXpMultipliers.containsKey(xpType)) {
+				SystemMessageIntent.broadcastPersonal(creatureObject.getOwner(), "Invalid XP type : " + xpType);
+				return;
+			}
+			
 			awardExperience(creatureObject, playerObject, xpType, ei.getExperienceGained());
 		}
 	}

@@ -165,6 +165,11 @@ public class TransferItemCallback implements ICmdCallback {
 					return;
 				}
 				
+				// Check the the player has the skill to equip this item
+				if (!checkSkillRestriction(actor, target)) {
+					return;
+				}
+				
 				// Make sure the player can wear it based on their species
 				if (!checkSpeciesRestriction(actor, target))
 					return;
@@ -258,8 +263,14 @@ public class TransferItemCallback implements ICmdCallback {
 		return true;
 	}
 
-	private static String cleanProfessionString(String profession) {
-		return profession.substring(0, profession.lastIndexOf('_'));
+	private static boolean checkSkillRestriction(CreatureObject actor, SWGObject target) {
+		if (!target.hasAttribute("skill_required")) {
+			return true;	// Item has no skill restrictions - allow it
+		}
+		
+		String skillRequired = target.getAttribute("skill_required");
+		
+		return actor.getSkills().contains(skillRequired);
 	}
 	
 	private static void changeWeapon(CreatureObject actor, SWGObject target, boolean equip) {

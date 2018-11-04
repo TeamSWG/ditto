@@ -1,25 +1,32 @@
 package com.projectswg.holocore.services.gameplay.player.experience.skills;
 
+import com.projectswg.common.data.RGB;
+import com.projectswg.common.data.encodables.oob.OutOfBandPackage;
+import com.projectswg.common.data.encodables.oob.ProsePackage;
+import com.projectswg.common.data.encodables.oob.StringId;
 import com.projectswg.common.data.info.RelationalDatabase;
 import com.projectswg.common.data.info.RelationalServerFactory;
 import com.projectswg.common.data.swgfile.ClientFactory;
 import com.projectswg.common.data.swgfile.visitors.DatatableData;
+import com.projectswg.common.network.packets.swg.zone.object_controller.ShowFlyText;
 import com.projectswg.holocore.intents.gameplay.player.badge.SetTitleIntent;
+import com.projectswg.holocore.intents.gameplay.player.experience.ExperienceIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.LevelChangedIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.skills.SkillModIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.skills.GrantSkillIntent;
 import com.projectswg.holocore.intents.gameplay.player.experience.skills.SurrenderSkillIntent;
+import com.projectswg.holocore.intents.support.global.chat.SystemMessageIntent;
+import com.projectswg.holocore.resources.support.data.config.ConfigFile;
+import com.projectswg.holocore.resources.support.data.server_info.DataManager;
 import com.projectswg.holocore.resources.support.objects.swg.creature.CreatureObject;
+import com.projectswg.holocore.resources.support.objects.swg.player.PlayerObject;
 import me.joshlarson.jlcommon.control.IntentHandler;
 import me.joshlarson.jlcommon.control.Service;
 import me.joshlarson.jlcommon.log.Log;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class SkillService extends Service {
@@ -31,11 +38,14 @@ public class SkillService extends Service {
 	private final Map<String, SkillData> skillDataMap;
 	private final Map<String, Integer> levelXpMultipliers;
 	private final Map<Short, PlayerLevelData> playerLevelXp;
+	private final double xpMultiplier;
 	
 	public SkillService() {
 		skillDataMap = new HashMap<>();
 		levelXpMultipliers = new HashMap<>();
 		playerLevelXp = new HashMap<>();
+		xpMultiplier = DataManager.getConfig(ConfigFile.FEATURES).getDouble("XP-MULTIPLIER", 1);
+		
 	}
 	
 	@Override
@@ -66,6 +76,7 @@ public class SkillService extends Service {
 					(String) skillsTable.getCell(i, 1),				// parent skill
 					(String) skillsTable.getCell(i, 12),			// xp type
 					(int) skillsTable.getCell(i, 13),				// xp cost
+					(int) skillsTable.getCell(i, 14),				// xp cap
 					splitCsv((String) skillsTable.getCell(i, 21)),	// commands
 					skillMods,
 					splitCsv((String) skillsTable.getCell(i, 23))	// schematics
@@ -193,6 +204,69 @@ public class SkillService extends Service {
 		
 		// See if combat level changes are necessary
 		combatLevelCheck(target);
+	}
+	
+	@IntentHandler
+	private void handleExperienceIntent(ExperienceIntent ei) {
+		CreatureObject creatureObject = ei.getCreatureObject();
+		PlayerObject playerObject = creatureObject.getPlayerObject();
+		
+		if (playerObject != null) {
+			String xpType = ei.getXpType();
+			
+			awardExperience(creatureObject, playerObject, xpType, ei.getExperienceGained());
+		}
+	}
+	
+	private void awardExperience(CreatureObject creatureObject, PlayerObject playerObject, String xpType, int xpGained) {
+		int currentXp = playerObject.getExperiencePoints(xpType);
+		
+		// Check XP caps on skills that the player is progressing towards
+		
+		int gainableXp = 0;	// Amount of XP this player can gain without hitting the XP cap
+		Set<String> skills = creatureObject.getSkills();
+		boolean validProfession = false;	// Whether they have a profession that actually requires this XP type or not
+		
+		for (String skill : skills) {
+			SkillData skillData = skillDataMap.get(skill);
+			
+			if (!xpType.equals(skillData.getXpType())) {
+				// We only want to take skills that require the same XP type into consideration
+				continue;
+			}
+			
+			validProfession = true;
+			
+			int xpCap = skillData.getXpCap();
+			
+			gainableXp += xpCap - currentXp;
+		}
+		
+		if (!validProfession) {
+			// They don't have a profession with skills that use this XP type - do nothing
+			return;
+		}
+		
+		if (gainableXp <= 0) {
+			// They've hit the XP cap
+			SystemMessageIntent.broadcastPersonal(creatureObject.getOwner(), new ProsePackage(new StringId("base_player", "prose_hit_xp_cap"), "TO", new StringId("exp_n", xpType)));
+			return;
+		}
+		
+		int newXpTotal = currentXp + (int) (xpGained * xpMultiplier);
+		
+		
+		playerObject.setExperiencePoints(xpType, newXpTotal);
+		Log.d("%s gained %d %s XP", creatureObject, xpGained, xpType);
+		
+		// Show flytext above the creature that received XP, but only to them
+		creatureObject.sendSelf(new ShowFlyText(creatureObject.getObjectId(), new OutOfBandPackage(new ProsePackage(new StringId("base_player", "prose_flytext_xp"), "DI", xpGained)), ShowFlyText.Scale.MEDIUM, new RGB(255, 0, 255)));
+		
+		// TODO CU: flytext is displayed over the killed creature
+		// TODO CU: is the displayed number the gained Combat XP with all bonuses applied?
+		// TODO only display in console. Isn't displayed for Combat XP.
+		// TODO display different messages with inspiration bonus and/or group bonus. @base_player:prose_grant_buff_xp, @base_player:prose_grant_group_buff_xp, @base_player:prose_grant_group_xp
+		SystemMessageIntent.broadcastPersonal(creatureObject.getOwner(), new ProsePackage(new StringId("base_player", "prose_grant_xp"), "TO", new StringId("exp_n", xpType)));
 	}
 	
 	private boolean recursivelyGrantSkills(SkillData skillData, String skillName, CreatureObject target) {
@@ -323,17 +397,19 @@ public class SkillService extends Service {
 		private final String parentSkill;
 		private final String xpType;
 		private final int xpCost;
+		private final int xpCap;
 		private final String[] commands;
 		private final Map<String, Integer> skillMods;
 		private final String[] schematics;
 
-		public SkillData(boolean title, int pointsRequired, String[] requiredSkills, String parentSkill, String xpType, int xpCost, String[] commands, Map<String, Integer> skillMods, String[] schematics) {
+		public SkillData(boolean title, int pointsRequired, String[] requiredSkills, String parentSkill, String xpType, int xpCost, int xpCap, String[] commands, Map<String, Integer> skillMods, String[] schematics) {
 			this.title = title;
 			this.pointsRequired = pointsRequired;
 			this.requiredSkills = requiredSkills;
 			this.parentSkill = parentSkill;
 			this.xpType = xpType;
 			this.xpCost = xpCost;
+			this.xpCap = xpCap;
 			this.commands = commands;
 			this.skillMods = skillMods;
 			this.schematics = schematics;
@@ -350,6 +426,10 @@ public class SkillService extends Service {
 		public String[] getCommands() { return commands; }
 		public Map<String, Integer> getSkillMods() { return skillMods; }
 		public String[] getSchematics() { return schematics; }
+
+		public int getXpCap() {
+			return xpCap;
+		}
 	}
 	
 	private static class PlayerLevelData {

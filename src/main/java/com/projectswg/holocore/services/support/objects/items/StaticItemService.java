@@ -570,7 +570,7 @@ public class StaticItemService extends Service {
 
 			damageType = jsonObject.getString("damageType");
 			damageTypeEnum = getDamageTypeForName(damageType);
-			damageTypeString = "@obj_attr_n:armor_eff" + damageType;
+			damageTypeString = "@obj_attr_n:armor_eff_" + damageType;
 			attackSpeed = jsonObject.getFloat("attackSpeed");
 
 			maxRange = jsonObject.getInt("range");

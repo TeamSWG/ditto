@@ -10,5 +10,13 @@
   {
     "type": "armor",
     "file": "armor_composite_helmet"
+  },
+  {
+    "type": "wearable",
+    "file": "jedi_robe_arbiter"
+  },
+  {
+    "type": "wearable",
+    "file": "jedi_robe_padawan"
   }
 ]

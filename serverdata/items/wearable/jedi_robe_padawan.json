@@ -1,0 +1,5 @@
+{
+  "name": "Jedi Padawan Robe",
+  "template": "object/tangible/wearables/robe/robe_jedi_padawan.iff",
+  "condition": 1000
+}

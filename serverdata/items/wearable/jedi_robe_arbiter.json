@@ -1,0 +1,5 @@
+{
+  "name": "Jedi Arbiter Robe",
+  "template": "object/tangible/wearables/robe/robe_jedi_light_s04.iff",
+  "condition": 1000
+}

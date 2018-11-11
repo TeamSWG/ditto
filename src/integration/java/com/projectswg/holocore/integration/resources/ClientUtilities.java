@@ -30,8 +30,6 @@ public class ClientUtilities {
 		create.setClothes("combat_brawler");
 		create.setHeight(0.9648422f);
 		create.setTutorial(false);
-		create.setProfession("smuggler_1a");
-		create.setStartingPhase("class_smuggler_phase1_novice");
 		client.send(create);
 		
 		CreateCharacterSuccess success = (CreateCharacterSuccess) client.receive();

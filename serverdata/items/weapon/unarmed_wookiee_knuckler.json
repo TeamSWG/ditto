@@ -1,0 +1,17 @@
+{
+  "name": "Knuckles of The Katarn",
+  "template": "object/weapon/melee/special/wookiee_knuckler.iff",
+  "condition": 800,
+  "damageType": "kinetic",
+  "weaponType": "ONE_HANDED_MELEE",
+  "minDamage": 358,
+  "maxDamage": 715,
+  "elementalType": "COLD",
+  "elementalDamage": 120,
+  "attackSpeed": 2,
+  "wound": 2.7,
+  "requiredLevel": 54,
+  "requiredSkill": "combat_unarmed_master",
+  "specialAttackCost": 75,
+  "range": 5
+}

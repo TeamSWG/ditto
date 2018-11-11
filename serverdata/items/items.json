@@ -16,6 +16,10 @@
     "file": "soul_leecher"
   },
   {
+    "type": "weapon",
+    "file": "unarmed_wookiee_knuckler"
+  },
+  {
     "type": "armor",
     "file": "armor_composite_helmet"
   },

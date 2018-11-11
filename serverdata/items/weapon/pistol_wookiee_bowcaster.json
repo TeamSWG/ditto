@@ -1,0 +1,16 @@
+{
+  "name": "Kashyyyk Stalker Pistol",
+  "template": "object/weapon/ranged/pistol/ep3/pistol_wookiee_bowcaster.iff",
+  "condition": 800,
+  "damageType": "kinetic",
+  "weaponType": "PISTOL",
+  "minDamage": 390,
+  "maxDamage": 780,
+  "elementalType": "acid",
+  "elementalDamage": 75,
+  "wound": 1.7,
+  "attackSpeed": 2,
+  "requiredLevel": 54,
+  "specialAttackCost": 75,
+  "range": 35
+}

@@ -9,6 +9,10 @@
   },
   {
     "type": "weapon",
+    "file": "pistol_wookiee_bowcaster"
+  },
+  {
+    "type": "weapon",
     "file": "soul_leecher"
   },
   {

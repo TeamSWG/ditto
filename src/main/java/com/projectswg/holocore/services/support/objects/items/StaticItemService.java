@@ -389,7 +389,7 @@ public class StaticItemService extends Service {
 				object.addAttribute("faction_restriction", requiredFaction);
 			
 			if (requiredSkill != null) {
-				object.addAttribute("required_skill", requiredSkill);
+				object.addAttribute("skillmodmin", requiredSkill);
 			}
 
 			// Apply the mods!
@@ -580,11 +580,11 @@ public class StaticItemService extends Service {
 			maxDamage = jsonObject.getInt("maxDamage");
 			damageString = String.format("%d - %d", minDamage, maxDamage);
 			
-			if(jsonObject.containsKey("elemental_type")) {
-				elementalType = jsonObject.getString("elemental_type");
+			if(jsonObject.containsKey("elementalType")) {
+				elementalType = jsonObject.getString("elementalType");
 				elementalTypeEnum = getDamageTypeForName(elementalType);
 				elementalTypeString = "@obj_attr_n:elemental_" + elementalType;
-				elementalDamage = jsonObject.getInt("elemental_damage");
+				elementalDamage = jsonObject.getInt("elementalDamage");
 			}
 			
 			

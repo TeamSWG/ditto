@@ -74,7 +74,6 @@ public class TerminalCharacterBuilderRadial implements RadialHandlerInterface {
 	private static void handleWeapons(Player player) {
 		SuiListBox listBox = new SuiListBox(SuiButtons.OK_CANCEL, "Character Builder Terminal", "Select a weapon category to receive a weapon of that type.");
 		
-		listBox.addListItem("Lightsabers");
 		listBox.addListItem("Melee");
 		listBox.addListItem("Ranged");
 		
@@ -86,19 +85,9 @@ public class TerminalCharacterBuilderRadial implements RadialHandlerInterface {
 		int selection = SuiListBox.getSelectedRow(parameters);
 		
 		switch (selection) {
-			case 0: handleLightsabers(player); break;
-			case 1: handleMelee(player); break;
-			case 2: handleRanged(player); break;
+			case 0: handleMelee(player); break;
+			case 1: handleRanged(player); break;
 		}
-	}
-	
-	private static void handleLightsabers(Player player) {
-		spawnItems(player, 
-				"weapon_mandalorian_lightsaber_04_01",
-				"weapon_npe_lightsaber_02_01",
-				"weapon_npe_lightsaber_02_02",
-				"weapon_roadmap_lightsaber_02_02"
-		);
 	}
 	
 	private static void handleMelee(Player player) {
@@ -108,8 +97,9 @@ public class TerminalCharacterBuilderRadial implements RadialHandlerInterface {
 	}
 	
 	private static void handleRanged(Player player) {
-		spawnItems(player, 
-				"rifle_trando_hunter"
+		spawnItems(player,
+				"rifle_trando_hunter",
+				"pistol_trando_suppressor"
 		);
 	}
 	

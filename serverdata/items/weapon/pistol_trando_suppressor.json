@@ -1,0 +1,17 @@
+{
+  "name": "Trandoshan Suppressor Pistol",
+  "template": "object/weapon/ranged/pistol/ep3/pistol_trando_suppressor.iff",
+  "condition": 800,
+  "damageType": "energy",
+  "weaponType": "PISTOL",
+  "minDamage": 358,
+  "maxDamage": 715,
+  "elementalType": "electricity",
+  "elementalDamage": 120,
+  "wound": 2.7,
+  "attackSpeed": 2,
+  "requiredLevel": 54,
+  "requiredSkill": "combat_pistol_master",
+  "specialAttackCost": 75,
+  "range": 30
+}

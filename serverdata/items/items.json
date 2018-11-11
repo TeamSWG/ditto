@@ -5,6 +5,10 @@
   },
   {
     "type": "weapon",
+    "file": "pistol_trando_suppressor"
+  },
+  {
+    "type": "weapon",
     "file": "soul_leecher"
   },
   {
